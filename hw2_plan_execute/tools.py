@@ -199,15 +199,11 @@ class SubmitDiscoveryAssessmentInput(BaseModel):
     ] = Field(
         description="Підтверджений Discovery scope"
     )
-    discovery_points: Literal[
-        1,
-        2,
-        3,
-        5,
-        8,
-        13,
-    ] = Field(
-        description="Підтверджені Discovery Points за Fibonacci"
+    discovery_points: int = Field(
+        description=(
+            "Підтверджені Discovery Points за шкалою Fibonacci: "
+            "1, 2, 3, 5, 8 або 13"
+        ),
     )
     decision_summary: str = Field(
         min_length=10,
