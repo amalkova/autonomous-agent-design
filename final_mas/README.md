@@ -19,7 +19,7 @@
 - альтернативну реалізацію того самого кейсу в AG2;
 - виміряне порівняння LangGraph та AG2.
 
-Проєкт перевірено на Python 3.13.2. Повний test suite: **46 passed**.
+Проєкт перевірено на Python 3.13.2. Повний test suite: **47 passed**.
 
 ## 1. Бізнес-кейс
 
@@ -43,8 +43,8 @@ Business demand перед estimation проходить кілька взаєм
 | Plan-and-Execute агент | `plan_execute_agent.py`, Estimation Agent |
 | Agentic RAG + ChromaDB | `knowledge.py`, Requirements Agent, 12 документів |
 | ReAct агент | `react_agent.py`, Solution & Security Agent |
-| SqliteSaver persistence | `persistence_demo.py`, `agent_state.db` |
-| Crash → resume same thread | `test_persistence_resumes_same_thread` |
+| SQLite persistence | Production supervisor MAS: `AsyncSqliteSaver` у `mas_langgraph.py`; nested Plan-and-Execute: `SqliteSaver` у `persistence_demo.py`; artifact: `agent_state.db` |
+| Crash → resume same thread | `test_supervisor_mas_resumes_after_restart`, `test_persistence_resumes_same_thread` |
 | Static `interrupt_before` | `test_static_interrupt_pauses_before_approval` |
 | Dynamic HITL | `hitl.py`, approve/reject/edit через `Command(resume=...)` |
 | Trajectory з `agent_name` | `trajectory_logger.py`, `trajectory.json` |
@@ -62,7 +62,7 @@ Business demand перед estimation проходить кілька взаєм
 | Red team | `red_team_results.json`, 6/6 passed |
 | AG2 implementation | `mas_ag2.py` |
 | 3-query comparison | `framework_benchmark.py` |
-| Automated tests | 46 pytest tests |
+| Automated tests | 47 pytest tests |
 
 ## 3. Архітектура
 
@@ -231,23 +231,31 @@ Trajectory handoff містить:
 
 ## 6. Persistence та crash recovery
 
-`persistence_demo.py` використовує `SqliteSaver` і файл:
+Production supervisor MAS у `mas_langgraph.py` компілюється з `AsyncSqliteSaver` і зберігає верхній `MASState` у файлі:
 
 ```text
 agent_state.db
 ```
 
-Демонстрація виконує повний сценарій:
+Фактичний production demo зберіг checkpoints усіх трьох маршрутів:
 
-1. Запускає graph з унікальним `thread_id`.
-2. Зупиняє його перед `executor`.
-3. Закриває SQLite connection, імітуючи crash.
-4. Відкриває ту саму базу в новому runtime.
-5. Отримує state через `get_state()`.
-6. Продовжує виконання з тим самим `thread_id`.
-7. Перевіряє завершений результат.
+```text
+mas-requirements: 15 checkpoints
+mas-security: 10 checkpoints
+mas-estimation: 6 checkpoints
+```
 
-Фактичний demo підтверджує:
+Інтеграційний тест `test_supervisor_mas_resumes_after_restart` виконує повний offline-сценарій без LLM та мережевих викликів:
+
+1. Запускає supervisor MAS з унікальним `thread_id`.
+2. Supervisor маршрутизує request до Requirements Agent.
+3. `interrupt_before` зупиняє MAS перед specialist node.
+4. Async SQLite connection закривається, імітуючи crash.
+5. Новий connection і новий compiled graph читають збережений checkpoint.
+6. MAS продовжує виконання з тим самим `thread_id`.
+7. Тест перевіряє selected agent, handoff count і completed state.
+
+Окремий `persistence_demo.py` зберігає попередню Plan-and-Execute демонстрацію та static approval breakpoint:
 
 ```text
 checkpoint_survived_restart: true
@@ -255,10 +263,14 @@ paused_before_executor: true
 resumed_with_same_thread: true
 ```
 
-Запуск:
+Таким чином, `agent_state.db` містить як checkpoints вкладеного Plan-and-Execute workflow, так і persisted state верхнього supervisor MAS.
+
+Запуск доказових сценаріїв:
 
 ```bash
+python mas_langgraph.py
 python persistence_demo.py
+python -m pytest -v tests/test_persistence.py
 ```
 
 ## 7. Human-in-the-Loop і коментар ментора
@@ -944,7 +956,7 @@ python -m pytest -v
 Поточний результат:
 
 ```text
-46 passed in 4.53s
+47 passed in 4.64s
 ```
 
 Розподіл перевірок:
@@ -1013,4 +1025,4 @@ python -m pytest -v tests/test_artifacts.py
 1. `interrupt_before` передається в `compile()` і перевіряється окремим тестом.
 2. README містить окремі відповіді на п’ять аналітичних питань.
 
-Усі automated acceptance checks проходять успішно: **46/46**.
+Усі automated acceptance checks проходять успішно: **47/47**.

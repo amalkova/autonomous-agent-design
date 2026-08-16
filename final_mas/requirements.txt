@@ -1,6 +1,7 @@
 # Multi-agent frameworks
 langgraph==1.2.11
 langgraph-checkpoint-sqlite==3.1.1
+aiosqlite==0.22.1
 ag2[gemini]==1.0.2
 
 # LangChain and Gemini

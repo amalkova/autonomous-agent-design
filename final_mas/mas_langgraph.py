@@ -37,6 +37,9 @@ from langchain_google_genai import (
     ChatGoogleGenerativeAI,
 )
 from langgraph.checkpoint.memory import InMemorySaver
+from langgraph.checkpoint.sqlite.aio import (
+    AsyncSqliteSaver,
+)
 from langgraph.graph import END, START, StateGraph
 from pydantic import BaseModel, Field
 
@@ -62,6 +65,7 @@ from trajectory_logger import save_trajectory
 
 
 BASE_DIR = Path(__file__).resolve().parent
+MAS_DATABASE_PATH = BASE_DIR / "agent_state.db"
 load_dotenv(BASE_DIR / ".env")
 
 
@@ -185,6 +189,7 @@ def build_mas_graph(
     agent_runners: dict[AgentName, AgentRunner],
     checkpointer: Any | None = None,
     rate_limiter: RollingWindowRateLimiter | None = None,
+    interrupt_before: list[str] | None = None,
 ) -> Any:
     """Побудувати supervisor MAS graph."""
 
@@ -476,7 +481,8 @@ def build_mas_graph(
             checkpointer
             if checkpointer is not None
             else InMemorySaver()
-        )
+        ),
+        interrupt_before=interrupt_before,
     )
 
 
@@ -540,6 +546,7 @@ def make_agent_runner(
 async def build_production_mas(
     model: BaseChatModel | None = None,
     checkpointer: Any | None = None,
+    interrupt_before: list[str] | None = None,
 ) -> Any:
     """Побудувати MAS з Gemini та MCP tools."""
 
@@ -632,6 +639,7 @@ async def build_production_mas(
         route_selector=production_route_selector,
         agent_runners=runners,
         checkpointer=checkpointer,
+        interrupt_before=interrupt_before,
     )
 
 
@@ -723,9 +731,7 @@ async def run_mas_query(
 
 
 async def main() -> None:
-    """Запустити три routing demo cases."""
-
-    graph = await build_production_mas()
+    """Запустити routing demo з SQLite persistence."""
 
     demo_cases = [
         (
@@ -748,19 +754,28 @@ async def main() -> None:
         ),
     ]
 
-    for thread_id, request in demo_cases:
-        result = await run_mas_query(
-            graph,
-            request,
-            thread_id,
-            log_trajectory=True,
+    async with AsyncSqliteSaver.from_conn_string(
+        str(MAS_DATABASE_PATH)
+    ) as checkpointer:
+        await checkpointer.setup()
+
+        graph = await build_production_mas(
+            checkpointer=checkpointer,
         )
 
-        print(
-            f"\n[{thread_id}] "
-            f"agent={result.get('current_agent')}"
-        )
-        print(result["final_answer"])
+        for thread_id, request in demo_cases:
+            result = await run_mas_query(
+                graph,
+                request,
+                thread_id,
+                log_trajectory=True,
+            )
+
+            print(
+                f"\n[{thread_id}] "
+                f"agent={result.get('current_agent')}"
+            )
+            print(result["final_answer"])
 
 
 if __name__ == "__main__":

@@ -20,7 +20,7 @@ Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
 
-[08/16/26 23:24:22] INFO     Starting MCP server                transport.py:241
+[08/17/26 00:36:51] INFO     Starting MCP server                transport.py:241
                              'requirements_estimation' with                     
                              transport 'stdio'                                  
 Direct use of automatic function calling (AFC) in AsyncModels.generate_content is not recommended. Instead, we recommend to use AFC in AsyncChat.send_message. Similarly, direct use of AFC in AsyncModels.generate_content_stream is not recommended. Instead, we recommend to use AFC in AsyncChat.send_message_stream.
@@ -47,7 +47,7 @@ Key 'additionalProperties' is not supported in schema, ignoring
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
 
-[08/16/26 23:24:39] INFO     Starting MCP server                transport.py:241
+[08/17/26 00:37:22] INFO     Starting MCP server                transport.py:241
                              'requirements_estimation' with                     
                              transport 'stdio'                                  
 Key 'additionalProperties' is not supported in schema, ignoring
@@ -71,7 +71,7 @@ Key 'additionalProperties' is not supported in schema, ignoring
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
 
-[08/16/26 23:24:44] INFO     Starting MCP server                transport.py:241
+[08/17/26 00:37:28] INFO     Starting MCP server                transport.py:241
                              'requirements_estimation' with                     
                              transport 'stdio'                                  
 Key 'additionalProperties' is not supported in schema, ignoring
@@ -81,27 +81,28 @@ Direct use of automatic function calling (AFC) in Models.generate_content is not
 [mas-requirements] agent=requirements_agent
 Ініціатива **DEM-101** наразі **не готова** до передачі на оцінку (estimation handover).
 
-Згідно з внутрішнім стандартом *Definition of Ready for estimation*, пакет вимог є неповним. Хоча ви зазначили, що бізнес-мета (business objective) визначена, система показує відсутність даних у всіх ключових полях.
+Згідно з внутрішнім стандартом *Definition of Ready for estimation (kb-001)*, пакет вимог має бути повним, щоб мінімізувати ризики невизначеності. На даний момент виявлено критичні прогалини:
 
-### Аналіз готовності (Gaps Analysis):
-*   **Статус готовності:** 0%
-*   **Критичні блокери:**
-    *   Відсутні Acceptance Criteria (критерії приймання).
-    *   Відсутні NFR (нефункціональні вимоги).
-    *   Відсутні Functional Requirements (функціональні вимоги).
-    *   Відсутні Integration Scope та Data Requirements.
-*   **Необхідні дії для усунення прогалин:**
-    1.  Визначити та задокументувати **Functional Requirements**.
-    2.  Сформулювати **Acceptance Criteria**, які мають бути тестованими (testable).
-    3.  Провести **NFR Review** (продуктивність, безпека, доступність тощо).
-    4.  Визначити **Integration Scope** та підтвердити **Data Owners**.
-    5.  Завершити **Security Classification**.
+### Статус готовності:
+*   **Готовність:** 0%
+*   **Статус:** Блоковано (необхідне уточнення)
 
-**Рекомендація:**
-Будь ласка, оновіть документацію ініціативи DEM-101, додавши відсутні розділи. Після того, як ви заповните ці дані, я зможу повторно перевірити готовність і підтвердити, чи можна передавати ініціативу на оцінку.
+### Виявлені прогалини (Gaps):
+Для успішного handover необхідно заповнити наступні обов'язкові поля:
+1.  **Functional Requirements:** Відсутні.
+2.  **Non-Functional Requirements (NFR):** Відсутні (необхідно провести review).
+3.  **Acceptance Criteria:** Відсутні (мають бути тестованими).
+4.  **Solution Scope:** Не визначено.
+5.  **Integration Scope:** Відсутні дані про інтеграції.
+6.  **Data Requirements:** Відсутні дані про джерела та власників (data owners не підтверджені).
+7.  **Security Classification:** Не виконано.
+8.  **Dependencies:** Не підтверджено.
+
+### Наступні кроки:
+Будь ласка, надайте відсутню інформацію для заповнення вимог. Як тільки ви підготуєте опис функціональних вимог, NFR та критеріїв приймання, я зможу повторно перевірити готовність ініціативи до передачі команді оцінки.
 
 [mas-security] agent=solution_security_agent
-Для проведення аналізу ризиків по ініціативі DEM-102 мені недостатньо вхідних даних. Будь ласка, надайте інформацію щодо: 1. Переліку інтегрованих систем та протоколів взаємодії. 2. Класифікації даних (тип, конфіденційність, обсяги). 3. Вимог до безпеки та відповідності регуляторним нормам. 4. Наявності документації з архітектури (C4 model, DFD). Щойно ви надасте ці дані, я зможу проаналізувати інтеграційні, дані та безпекові ризики, а також виявити можливі прогалини для оцінки складності.
+Для аналізу ризиків по DEM-102 недостатньо даних. Будь ласка, надайте інформацію про інтеграційні точки, тип даних (чи є персональні дані), та чи проходила ініціатива початкову класифікацію безпеки. Також вкажіть, чи є у вас список нефункціональних вимог.
 
 [mas-estimation] agent=estimation_agent
-Estimation for initiative DEM-103 is complete. Complexity: High. Points: 8. This assessment reflects the high criticality of NFRs, the complexity of required data migration, necessary security reviews, the number of integrations and dependencies, as well as the partial stability of requirements.
+Ініціатива DEM-103 має високий рівень складності (High), що оцінюється у 8 балів за Фібоначчі. Ця оцінка враховує: інтеграцію 3 систем, 2 зовнішні інтеграції, високу критичність нефункціональних вимог (NFR), необхідність міграції даних та проведення аудиту безпеки. Додатковими факторами складності є наявність 2 залежностей та часткова стабільність вимог, що вимагає додаткових зусиль на узгодження та ризик-менеджмент.
