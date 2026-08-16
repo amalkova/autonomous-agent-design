@@ -1,0 +1,171 @@
+{
+  "created_at": "2026-08-16T12:21:40.460718+00:00",
+  "model": "gemini-3.1-flash-lite",
+  "database": "agent_state.db",
+  "summary": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0,
+    "success_rate_percent": 100.0,
+    "execution_time_seconds": 2.308
+  },
+  "acceptance_cases": [
+    {
+      "test_id": "AC-001",
+      "name": "Unit та integration tests",
+      "expected_result": {
+        "return_code": 0,
+        "minimum_tests": 29
+      },
+      "actual_result": {
+        "passed": true,
+        "return_code": 0,
+        "execution_time_seconds": 2.236,
+        "output": ".............................                                            [100%]\n29 passed in 1.51s"
+      },
+      "passed": true
+    },
+    {
+      "test_id": "AC-002",
+      "name": "Plan-and-Execute graph",
+      "expected_result": [
+        "planner",
+        "executor",
+        "replanner"
+      ],
+      "actual_result": [
+        "planner",
+        "executor",
+        "replanner"
+      ],
+      "passed": true
+    },
+    {
+      "test_id": "AC-003",
+      "name": "Чотири валідовані tools",
+      "expected_result": [
+        "check_intake_completeness",
+        "classify_discovery_scope",
+        "search_knowledge",
+        "submit_discovery_assessment"
+      ],
+      "actual_result": [
+        "check_intake_completeness",
+        "classify_discovery_scope",
+        "search_knowledge",
+        "submit_discovery_assessment"
+      ],
+      "passed": true
+    },
+    {
+      "test_id": "AC-004",
+      "name": "ChromaDB knowledge base",
+      "expected_result": {
+        "minimum_documents": 8,
+        "search_results": 3
+      },
+      "actual_result": {
+        "documents_count": 12,
+        "configured_search_results": 3
+      },
+      "passed": true
+    },
+    {
+      "test_id": "AC-005",
+      "name": "SQLite persistence та незалежні thread_id",
+      "expected_result": {
+        "persistence-demo-001": "completed",
+        "persistence-demo-002": "running",
+        "threads_are_independent": true
+      },
+      "actual_result": {
+        "persistence-demo-001": {
+          "exists": true,
+          "status": "completed",
+          "current_step": 3,
+          "completed": true,
+          "used_tools": [
+            "check_intake_completeness",
+            "classify_discovery_scope",
+            "search_knowledge"
+          ],
+          "final_answer": "Оцінка ініціативи DEM-004 завершена: 1. Intake: повний. 2. Discovery Points: 8, що відповідає 'Deep' scope. 3. Рекомендований timebox: 6-10 тижнів (згідно з kb-006). Усі необхідні дані для підготовки Discovery зібрані.",
+          "next_nodes": []
+        },
+        "persistence-demo-002": {
+          "exists": true,
+          "status": "running",
+          "current_step": 1,
+          "completed": false,
+          "used_tools": [
+            "check_intake_completeness"
+          ],
+          "final_answer": null,
+          "next_nodes": [
+            "replanner"
+          ]
+        },
+        "threads_are_independent": true
+      },
+      "passed": true
+    },
+    {
+      "test_id": "AC-006",
+      "name": "Agentic RAG",
+      "expected_result": {
+        "tool": "search_knowledge",
+        "scope": "Deep",
+        "timebox": "6–10 тижнів"
+      },
+      "actual_result": {
+        "used_tools": [
+          "check_intake_completeness",
+          "classify_discovery_scope",
+          "search_knowledge"
+        ],
+        "final_answer": "Оцінка ініціативи DEM-004 завершена: 1. Intake: повний. 2. Discovery Points: 8, що відповідає 'Deep' scope. 3. Рекомендований timebox: 6-10 тижнів (згідно з kb-006). Усі необхідні дані для підготовки Discovery зібрані."
+      },
+      "passed": true
+    },
+    {
+      "test_id": "AC-007",
+      "name": "HITL approve",
+      "expected_result": {
+        "status": "completed",
+        "tool_executed": true,
+        "submission_created": true
+      },
+      "actual_result": {
+        "exists": true,
+        "status": "completed",
+        "current_step": 1,
+        "completed": true,
+        "used_tools": [
+          "submit_discovery_assessment"
+        ],
+        "final_answer": "Фінальний Discovery assessment для ініціативи DEM-010 успішно відправлено. ID відправки: SUB-001. Параметри: scope=Deep, points=8, summary=Ініціатива потребує глибокого discovery через високу технічну невизначеність та кілька залежних систем.",
+        "next_nodes": []
+      },
+      "passed": true
+    },
+    {
+      "test_id": "AC-008",
+      "name": "HITL reject",
+      "expected_result": {
+        "status": "rejected",
+        "tool_executed": false,
+        "submission_created": false
+      },
+      "actual_result": {
+        "exists": true,
+        "status": "rejected",
+        "current_step": 1,
+        "completed": true,
+        "used_tools": [],
+        "final_answer": "Не вдалося відправити Discovery assessment для DEM-011. Отримано відмову: 'Потрібне додаткове погодження LBA'. Будь ласка, отримайте погодження LBA перед повторною спробою.",
+        "next_nodes": []
+      },
+      "passed": true
+    }
+  ]
+}
