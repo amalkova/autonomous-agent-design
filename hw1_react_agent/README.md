@@ -138,7 +138,7 @@ python agent.py
 Приклад запиту:
 
 ```text
-Какой статус у инициативы DEM-001?
+Який статус ініціативи DEM-001?
 ```
 
 Для завершення:
@@ -158,7 +158,7 @@ pytest -q
 Поточний результат:
 
 ```text
-11 passed
+15 passed
 ```
 
 End-to-end сценарії з реальною моделлю:
@@ -197,7 +197,7 @@ hw1_react_agent/
 ├── test_results.json
 ├── requirements.txt
 ├── README.md
-├── .env
+├── .env                 # локальний файл, не комітиться
 └── .gitignore
 ```
 
