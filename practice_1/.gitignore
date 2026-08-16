@@ -1,0 +1,12 @@
+.venv/
+.env
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.DS_Store
+.ipynb_checkpoints/
+
+chroma_db/
+submitted_estimation_requests.json
+agent_state.db-shm
+agent_state.db-wal
