@@ -1,0 +1,3056 @@
+{
+  "summary": {
+    "project": "practice-2-malkova-demand-mas",
+    "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+    "root_run_name": "LangGraph",
+    "runs_count": 17,
+    "llm_runs_count": 3,
+    "prompt_tokens": 1214,
+    "completion_tokens": 464,
+    "total_tokens": 1678
+  },
+  "runs": [
+    {
+      "id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "name": "LangGraph",
+      "start_time": "2026-08-16T17:47:48.261848Z",
+      "run_type": "chain",
+      "end_time": "2026-08-16T17:48:03.776462Z",
+      "extra": {
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "ls_integration": "langgraph",
+          "ls_run_depth": 0,
+          "revision_id": "c501abf",
+          "thread_id": "practice-2-trace-001"
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        }
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:47:48.261848+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:48:03.776462+00:00"
+        }
+      ],
+      "inputs": {
+        "blocked": false,
+        "completed": false,
+        "handoff_count": 0,
+        "trajectory": [],
+        "user_request": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request."
+      },
+      "outputs": {
+        "agent_output": "Для ініціативи **DEM-021** було проведено оцінку складності. Нижче наведено результати:\n\n### Результати оцінки\n*   **Complexity (Складність):** Medium (Середня)\n*   **Fibonacci Points:** 5\n\n### Основні драйвери оцінки (Main Drivers)\nОцінка базується на наступних факторах:\n1.  **Висока критичність NFR (High NFR Criticality):** Це основний драйвер, який суттєво підвищує вимоги до якості, продуктивності та надійності рішення.\n2.  **Необхідність Security Review:** Обов'язкова перевірка безпеки додає етап до процесу розробки та вимагає додаткового часу на узгодження та впровадження вимог безпеки.\n3.  **Часткова стабільність вимог (Partial Requirements Stability):** Невизначеність у вимогах створює ризик переробок, що вимагає закладення додаткового буфера в оцінку.\n4.  **Масштаб рішення:** Взаємодія між 3 системами та 2 інтеграціями створює помірну технічну складність, що вимагає ретельного проектування інтерфейсів та потоків даних.\n\n*Примітка: Оцінка є попередньою та базується на наданих параметрах. Запит на оцінку не був відправлений у систему для фіналізації.*",
+        "blocked": false,
+        "completed": true,
+        "current_agent": "estimation_agent",
+        "final_answer": "Для ініціативи **DEM-021** було проведено оцінку складності. Нижче наведено результати:\n\n### Результати оцінки\n*   **Complexity (Складність):** Medium (Середня)\n*   **Fibonacci Points:** 5\n\n### Основні драйвери оцінки (Main Drivers)\nОцінка базується на наступних факторах:\n1.  **Висока критичність NFR (High NFR Criticality):** Це основний драйвер, який суттєво підвищує вимоги до якості, продуктивності та надійності рішення.\n2.  **Необхідність Security Review:** Обов'язкова перевірка безпеки додає етап до процесу розробки та вимагає додаткового часу на узгодження та впровадження вимог безпеки.\n3.  **Часткова стабільність вимог (Partial Requirements Stability):** Невизначеність у вимогах створює ризик переробок, що вимагає закладення додаткового буфера в оцінку.\n4.  **Масштаб рішення:** Взаємодія між 3 системами та 2 інтеграціями створює помірну технічну складність, що вимагає ретельного проектування інтерфейсів та потоків даних.\n\n*Примітка: Оцінка є попередньою та базується на наданих параметрах. Запит на оцінку не був відправлений у систему для фіналізації.*",
+        "handoff_count": 1,
+        "route_reasoning": "The user explicitly requested an estimation for demand DEM-021, including complexity, Fibonacci points, and main drivers, which falls directly under the scope of the estimation_agent.",
+        "trajectory": [
+          {
+            "agent_name": "input_guardrail",
+            "details": {
+              "category": "safe"
+            },
+            "event": "input_allowed",
+            "timestamp": "2026-08-16T17:47:48.305168+00:00"
+          },
+          {
+            "agent_name": "demand_supervisor",
+            "details": {
+              "reasoning": "The user explicitly requested an estimation for demand DEM-021, including complexity, Fibonacci points, and main drivers, which falls directly under the scope of the estimation_agent.",
+              "target_agent": "estimation_agent"
+            },
+            "event": "handoff",
+            "timestamp": "2026-08-16T17:47:54.677711+00:00"
+          },
+          {
+            "agent_name": "estimation_agent",
+            "details": {
+              "output_length": 1073
+            },
+            "event": "agent_completed",
+            "timestamp": "2026-08-16T17:48:03.774731+00:00"
+          },
+          {
+            "agent_name": "output_guardrail",
+            "details": {
+              "pii_redacted": false
+            },
+            "event": "output_processed",
+            "timestamp": "2026-08-16T17:48:03.775907+00:00"
+          }
+        ],
+        "user_request": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request."
+      },
+      "reference_example_id": null,
+      "parent_run_id": null,
+      "tags": [
+        "langgraph",
+        "requirements-estimation",
+        "practice-2"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00baf-d6a5-7440-ad70-869307861344?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:47:48.261848",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 1214,
+      "completion_tokens": 464,
+      "total_tokens": 1678,
+      "prompt_token_details": {
+        "cache_read": 0
+      },
+      "completion_token_details": {},
+      "first_token_time": null,
+      "total_cost": "0.0009995",
+      "prompt_cost": "0.0003035",
+      "completion_cost": "0.000696",
+      "prompt_cost_details": {
+        "cache_read": "0.0"
+      },
+      "completion_cost_details": {},
+      "parent_run_ids": [],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344",
+      "in_dataset": false
+    },
+    {
+      "id": "01a00baf-d6d0-7ea2-abce-0c9b158b00b4",
+      "name": "input_guardrail",
+      "start_time": "2026-08-16T17:47:48.304529Z",
+      "run_type": "chain",
+      "end_time": "2026-08-16T17:47:48.305847Z",
+      "extra": {
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "langgraph_checkpoint_ns": "input_guardrail:dc3e23fa-dcfd-ba0a-4498-b4cf96ea02c1",
+          "langgraph_node": "input_guardrail",
+          "langgraph_path": [
+            "__pregel_pull",
+            "input_guardrail"
+          ],
+          "langgraph_step": 1,
+          "langgraph_triggers": [
+            "branch:to:input_guardrail"
+          ],
+          "ls_integration": "langgraph",
+          "ls_run_depth": 1,
+          "revision_id": "c501abf",
+          "thread_id": "practice-2-trace-001"
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        }
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:47:48.304529+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:47:48.305847+00:00"
+        }
+      ],
+      "inputs": {
+        "blocked": false,
+        "completed": false,
+        "handoff_count": 0,
+        "trajectory": [],
+        "user_request": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request."
+      },
+      "outputs": {
+        "blocked": false,
+        "trajectory": [
+          {
+            "agent_name": "input_guardrail",
+            "details": {
+              "category": "safe"
+            },
+            "event": "input_allowed",
+            "timestamp": "2026-08-16T17:47:48.305168+00:00"
+          }
+        ]
+      },
+      "reference_example_id": null,
+      "parent_run_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "tags": [
+        "langgraph",
+        "requirements-estimation",
+        "graph:step:1",
+        "practice-2"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00baf-d6d0-7ea2-abce-0c9b158b00b4?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:47:48.304529",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "prompt_token_details": null,
+      "completion_token_details": null,
+      "first_token_time": null,
+      "total_cost": null,
+      "prompt_cost": null,
+      "completion_cost": null,
+      "prompt_cost_details": null,
+      "completion_cost_details": null,
+      "parent_run_ids": [
+        "01a00baf-d6a5-7440-ad70-869307861344"
+      ],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344.20260816T174748304529Z01a00baf-d6d0-7ea2-abce-0c9b158b00b4",
+      "in_dataset": false
+    },
+    {
+      "id": "01a00baf-d6d1-7282-af0d-8802e627a58a",
+      "name": "route_after_input",
+      "start_time": "2026-08-16T17:47:48.305390Z",
+      "run_type": "chain",
+      "end_time": "2026-08-16T17:47:48.305660Z",
+      "extra": {
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "langgraph_checkpoint_ns": "input_guardrail:dc3e23fa-dcfd-ba0a-4498-b4cf96ea02c1",
+          "langgraph_node": "input_guardrail",
+          "langgraph_path": [
+            "__pregel_pull",
+            "input_guardrail"
+          ],
+          "langgraph_step": 1,
+          "langgraph_triggers": [
+            "branch:to:input_guardrail"
+          ],
+          "ls_integration": "langgraph",
+          "ls_run_depth": 2,
+          "revision_id": "c501abf",
+          "thread_id": "practice-2-trace-001"
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        }
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:47:48.305390+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:47:48.305660+00:00"
+        }
+      ],
+      "inputs": {
+        "blocked": false,
+        "completed": false,
+        "handoff_count": 0,
+        "trajectory": [
+          {
+            "agent_name": "input_guardrail",
+            "details": {
+              "category": "safe"
+            },
+            "event": "input_allowed",
+            "timestamp": "2026-08-16T17:47:48.305168+00:00"
+          }
+        ],
+        "user_request": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request."
+      },
+      "outputs": {
+        "output": "supervisor"
+      },
+      "reference_example_id": null,
+      "parent_run_id": "01a00baf-d6d0-7ea2-abce-0c9b158b00b4",
+      "tags": [
+        "langgraph",
+        "requirements-estimation",
+        "practice-2",
+        "seq:step:3"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00baf-d6d1-7282-af0d-8802e627a58a?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:47:48.305390",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "prompt_token_details": null,
+      "completion_token_details": null,
+      "first_token_time": null,
+      "total_cost": null,
+      "prompt_cost": null,
+      "completion_cost": null,
+      "prompt_cost_details": null,
+      "completion_cost_details": null,
+      "parent_run_ids": [
+        "01a00baf-d6a5-7440-ad70-869307861344",
+        "01a00baf-d6d0-7ea2-abce-0c9b158b00b4"
+      ],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344.20260816T174748304529Z01a00baf-d6d0-7ea2-abce-0c9b158b00b4.20260816T174748305390Z01a00baf-d6d1-7282-af0d-8802e627a58a",
+      "in_dataset": false
+    },
+    {
+      "id": "01a00baf-d6d2-7991-8b1f-a22845e75e0a",
+      "name": "supervisor",
+      "start_time": "2026-08-16T17:47:48.306178Z",
+      "run_type": "chain",
+      "end_time": "2026-08-16T17:47:54.678723Z",
+      "extra": {
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "langgraph_checkpoint_ns": "supervisor:2386ec0a-577f-ad15-4b95-55b6dbe94256",
+          "langgraph_node": "supervisor",
+          "langgraph_path": [
+            "__pregel_pull",
+            "supervisor"
+          ],
+          "langgraph_step": 2,
+          "langgraph_triggers": [
+            "branch:to:supervisor"
+          ],
+          "ls_integration": "langgraph",
+          "ls_run_depth": 1,
+          "revision_id": "c501abf",
+          "thread_id": "practice-2-trace-001"
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        }
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:47:48.306178+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:47:54.678723+00:00"
+        }
+      ],
+      "inputs": {
+        "blocked": false,
+        "completed": false,
+        "handoff_count": 0,
+        "trajectory": [
+          {
+            "agent_name": "input_guardrail",
+            "details": {
+              "category": "safe"
+            },
+            "event": "input_allowed",
+            "timestamp": "2026-08-16T17:47:48.305168+00:00"
+          }
+        ],
+        "user_request": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request."
+      },
+      "outputs": {
+        "current_agent": "estimation_agent",
+        "handoff_count": 1,
+        "route_reasoning": "The user explicitly requested an estimation for demand DEM-021, including complexity, Fibonacci points, and main drivers, which falls directly under the scope of the estimation_agent.",
+        "trajectory": [
+          {
+            "agent_name": "demand_supervisor",
+            "details": {
+              "reasoning": "The user explicitly requested an estimation for demand DEM-021, including complexity, Fibonacci points, and main drivers, which falls directly under the scope of the estimation_agent.",
+              "target_agent": "estimation_agent"
+            },
+            "event": "handoff",
+            "timestamp": "2026-08-16T17:47:54.677711+00:00"
+          }
+        ]
+      },
+      "reference_example_id": null,
+      "parent_run_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "tags": [
+        "langgraph",
+        "requirements-estimation",
+        "practice-2",
+        "graph:step:2"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00baf-d6d2-7991-8b1f-a22845e75e0a?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:47:48.306178",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 140,
+      "completion_tokens": 56,
+      "total_tokens": 196,
+      "prompt_token_details": {
+        "cache_read": 0
+      },
+      "completion_token_details": {},
+      "first_token_time": null,
+      "total_cost": "0.000119",
+      "prompt_cost": "0.000035",
+      "completion_cost": "0.000084",
+      "prompt_cost_details": {
+        "cache_read": "0.0"
+      },
+      "completion_cost_details": {},
+      "parent_run_ids": [
+        "01a00baf-d6a5-7440-ad70-869307861344"
+      ],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344.20260816T174748306178Z01a00baf-d6d2-7991-8b1f-a22845e75e0a",
+      "in_dataset": false
+    },
+    {
+      "id": "01a00baf-d6d2-7991-8b1f-a236551fa380",
+      "name": "RunnableSequence",
+      "start_time": "2026-08-16T17:47:48.306389Z",
+      "run_type": "chain",
+      "end_time": "2026-08-16T17:47:54.677527Z",
+      "extra": {
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "checkpoint_ns": "supervisor:2386ec0a-577f-ad15-4b95-55b6dbe94256",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "langgraph_checkpoint_ns": "supervisor:2386ec0a-577f-ad15-4b95-55b6dbe94256",
+          "langgraph_node": "supervisor",
+          "langgraph_path": [
+            "__pregel_pull",
+            "supervisor"
+          ],
+          "langgraph_step": 2,
+          "langgraph_triggers": [
+            "branch:to:supervisor"
+          ],
+          "ls_integration": "langgraph",
+          "ls_run_depth": 2,
+          "revision_id": "c501abf",
+          "thread_id": "practice-2-trace-001"
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        }
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:47:48.306389+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:47:54.677527+00:00"
+        }
+      ],
+      "inputs": {
+        "input": [
+          {
+            "content": "Ти Demand Supervisor. Маршрутизуй запит:\n- requirements_agent: requirements, readiness, gaps, acceptance criteria;\n- solution_security_agent: solution, integrations, NFR, data, security;\n- estimation_agent: complexity, points, estimation.\nОбери рівно одного agent.",
+            "role": "system"
+          },
+          {
+            "content": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request.",
+            "role": "user"
+          }
+        ]
+      },
+      "outputs": {
+        "output": {
+          "action": "estimation_agent",
+          "reasoning": "The user explicitly requested an estimation for demand DEM-021, including complexity, Fibonacci points, and main drivers, which falls directly under the scope of the estimation_agent."
+        }
+      },
+      "reference_example_id": null,
+      "parent_run_id": "01a00baf-d6d2-7991-8b1f-a22845e75e0a",
+      "tags": [
+        "langgraph",
+        "requirements-estimation",
+        "practice-2",
+        "seq:step:1"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00baf-d6d2-7991-8b1f-a236551fa380?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:47:48.306389",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 140,
+      "completion_tokens": 56,
+      "total_tokens": 196,
+      "prompt_token_details": {
+        "cache_read": 0
+      },
+      "completion_token_details": {},
+      "first_token_time": null,
+      "total_cost": "0.000119",
+      "prompt_cost": "0.000035",
+      "completion_cost": "0.000084",
+      "prompt_cost_details": {
+        "cache_read": "0.0"
+      },
+      "completion_cost_details": {},
+      "parent_run_ids": [
+        "01a00baf-d6a5-7440-ad70-869307861344",
+        "01a00baf-d6d2-7991-8b1f-a22845e75e0a"
+      ],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344.20260816T174748306178Z01a00baf-d6d2-7991-8b1f-a22845e75e0a.20260816T174748306389Z01a00baf-d6d2-7991-8b1f-a236551fa380",
+      "in_dataset": false
+    },
+    {
+      "id": "01a00baf-d6d3-7322-ad5f-b98b5d9ca81f",
+      "name": "ChatGoogleGenerativeAI",
+      "start_time": "2026-08-16T17:47:48.307125Z",
+      "run_type": "llm",
+      "end_time": "2026-08-16T17:47:54.673936Z",
+      "extra": {
+        "batch_size": 1,
+        "invocation_params": {
+          "_type": "chat-google-generative-ai",
+          "frequency_penalty": null,
+          "image_config": null,
+          "include_thoughts": null,
+          "max_output_tokens": null,
+          "media_resolution": null,
+          "model": "gemini-3.1-flash-lite",
+          "n": 1,
+          "presence_penalty": null,
+          "response_json_schema": {
+            "description": "Structured output demand supervisor.",
+            "properties": {
+              "action": {
+                "description": "Agent, який має обробити demand request.",
+                "enum": [
+                  "requirements_agent",
+                  "solution_security_agent",
+                  "estimation_agent"
+                ],
+                "title": "Action",
+                "type": "string"
+              },
+              "reasoning": {
+                "description": "Коротке пояснення routing decision.",
+                "maxLength": 500,
+                "minLength": 3,
+                "title": "Reasoning",
+                "type": "string"
+              }
+            },
+            "required": [
+              "action",
+              "reasoning"
+            ],
+            "title": "RouteDecision",
+            "type": "object"
+          },
+          "response_mime_type": "application/json",
+          "response_modalities": null,
+          "safety_settings": null,
+          "stop": null,
+          "temperature": 0.0,
+          "thinking_budget": null,
+          "thinking_config": null,
+          "thinking_level": null,
+          "top_k": null,
+          "top_p": null
+        },
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "_type": "chat-google-generative-ai",
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "checkpoint_ns": "supervisor:2386ec0a-577f-ad15-4b95-55b6dbe94256",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "frequency_penalty": null,
+          "image_config": null,
+          "include_thoughts": null,
+          "langgraph_checkpoint_ns": "supervisor:2386ec0a-577f-ad15-4b95-55b6dbe94256",
+          "langgraph_node": "supervisor",
+          "langgraph_path": [
+            "__pregel_pull",
+            "supervisor"
+          ],
+          "langgraph_step": 2,
+          "langgraph_triggers": [
+            "branch:to:supervisor"
+          ],
+          "lc_versions": {
+            "langchain": "1.3.15",
+            "langchain-core": "1.5.5",
+            "langchain-google-genai": "4.3.4"
+          },
+          "ls_integration": "langchain_chat_model",
+          "ls_model_name": "gemini-3.1-flash-lite",
+          "ls_model_type": "chat",
+          "ls_provider": "google_genai",
+          "ls_run_depth": 3,
+          "ls_temperature": 0.0,
+          "max_output_tokens": null,
+          "media_resolution": null,
+          "model": "gemini-3.1-flash-lite",
+          "n": 1,
+          "presence_penalty": null,
+          "response_json_schema": {
+            "description": "Structured output demand supervisor.",
+            "properties": {
+              "action": {
+                "description": "Agent, який має обробити demand request.",
+                "enum": [
+                  "requirements_agent",
+                  "solution_security_agent",
+                  "estimation_agent"
+                ],
+                "title": "Action",
+                "type": "string"
+              },
+              "reasoning": {
+                "description": "Коротке пояснення routing decision.",
+                "maxLength": 500,
+                "minLength": 3,
+                "title": "Reasoning",
+                "type": "string"
+              }
+            },
+            "required": [
+              "action",
+              "reasoning"
+            ],
+            "title": "RouteDecision",
+            "type": "object"
+          },
+          "response_mime_type": "application/json",
+          "response_modalities": null,
+          "revision_id": "c501abf",
+          "safety_settings": null,
+          "stop": null,
+          "temperature": 0.0,
+          "thinking_budget": null,
+          "thinking_config": null,
+          "thinking_level": null,
+          "thread_id": "practice-2-trace-001",
+          "top_k": null,
+          "top_p": null,
+          "usage_metadata": {
+            "input_token_details": {
+              "cache_read": 0
+            },
+            "input_tokens": 140,
+            "output_tokens": 56,
+            "total_tokens": 196
+          }
+        },
+        "options": {
+          "ls_structured_output_format": {
+            "kwargs": {
+              "method": "json_schema"
+            },
+            "schema": {
+              "description": "Structured output demand supervisor.",
+              "properties": {
+                "action": {
+                  "description": "Agent, який має обробити demand request.",
+                  "enum": [
+                    "requirements_agent",
+                    "solution_security_agent",
+                    "estimation_agent"
+                  ],
+                  "type": "string"
+                },
+                "reasoning": {
+                  "description": "Коротке пояснення routing decision.",
+                  "maxLength": 500,
+                  "minLength": 3,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "action",
+                "reasoning"
+              ],
+              "title": "RouteDecision",
+              "type": "object"
+            }
+          },
+          "stop": null
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        }
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:47:48.307125+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:47:54.673936+00:00"
+        }
+      ],
+      "inputs": {
+        "messages": [
+          [
+            {
+              "id": [
+                "langchain",
+                "schema",
+                "messages",
+                "SystemMessage"
+              ],
+              "kwargs": {
+                "content": "Ти Demand Supervisor. Маршрутизуй запит:\n- requirements_agent: requirements, readiness, gaps, acceptance criteria;\n- solution_security_agent: solution, integrations, NFR, data, security;\n- estimation_agent: complexity, points, estimation.\nОбери рівно одного agent.",
+                "type": "system"
+              },
+              "lc": 1,
+              "type": "constructor"
+            },
+            {
+              "id": [
+                "langchain",
+                "schema",
+                "messages",
+                "HumanMessage"
+              ],
+              "kwargs": {
+                "content": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request.",
+                "type": "human"
+              },
+              "lc": 1,
+              "type": "constructor"
+            }
+          ]
+        ]
+      },
+      "outputs": {
+        "generations": [
+          [
+            {
+              "generation_info": {
+                "finish_reason": "STOP",
+                "model_name": "gemini-3.1-flash-lite",
+                "safety_ratings": []
+              },
+              "message": {
+                "id": [
+                  "langchain",
+                  "schema",
+                  "messages",
+                  "AIMessage"
+                ],
+                "kwargs": {
+                  "content": [
+                    {
+                      "extras": {
+                        "signature": "EnEKbwERTTIPByVvwic0BDMgDK5BXbr6VcDygsXTN8QrAyKd/iG+b3N25a6V+vuqx/yRc9oPI14ezAeMV/apDw68b4/rk1S2clcREnQp0+4AMQUK3+UC73gEsJZJxekQo57tUlxFGsFs/6axvKkahZ1BrA=="
+                      },
+                      "text": "{\n  \"action\": \"estimation_agent\",\n  \"reasoning\": \"The user explicitly requested an estimation for demand DEM-021, including complexity, Fibonacci points, and main drivers, which falls directly under the scope of the estimation_agent.\"\n}",
+                      "type": "text"
+                    }
+                  ],
+                  "id": "lc_run--01a00baf-d6d3-7322-ad5f-b98b5d9ca81f-0",
+                  "invalid_tool_calls": [],
+                  "response_metadata": {
+                    "finish_reason": "STOP",
+                    "model_name": "gemini-3.1-flash-lite",
+                    "model_provider": "google_genai",
+                    "safety_ratings": []
+                  },
+                  "tool_calls": [],
+                  "type": "ai",
+                  "usage_metadata": {
+                    "input_token_details": {
+                      "cache_read": 0
+                    },
+                    "input_tokens": 140,
+                    "output_tokens": 56,
+                    "total_tokens": 196
+                  }
+                },
+                "lc": 1,
+                "type": "constructor"
+              },
+              "text": "{\n  \"action\": \"estimation_agent\",\n  \"reasoning\": \"The user explicitly requested an estimation for demand DEM-021, including complexity, Fibonacci points, and main drivers, which falls directly under the scope of the estimation_agent.\"\n}",
+              "type": "ChatGeneration"
+            }
+          ]
+        ],
+        "llm_output": {},
+        "run": null,
+        "type": "LLMResult"
+      },
+      "reference_example_id": null,
+      "parent_run_id": "01a00baf-d6d2-7991-8b1f-a236551fa380",
+      "tags": [
+        "langgraph",
+        "requirements-estimation",
+        "practice-2",
+        "seq:step:1"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00baf-d6d3-7322-ad5f-b98b5d9ca81f?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:47:48.307125",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 140,
+      "completion_tokens": 56,
+      "total_tokens": 196,
+      "prompt_token_details": {
+        "cache_read": 0
+      },
+      "completion_token_details": {},
+      "first_token_time": null,
+      "total_cost": "0.000119",
+      "prompt_cost": "0.000035",
+      "completion_cost": "0.000084",
+      "prompt_cost_details": {
+        "cache_read": "0.0"
+      },
+      "completion_cost_details": {},
+      "parent_run_ids": [
+        "01a00baf-d6a5-7440-ad70-869307861344",
+        "01a00baf-d6d2-7991-8b1f-a22845e75e0a",
+        "01a00baf-d6d2-7991-8b1f-a236551fa380"
+      ],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344.20260816T174748306178Z01a00baf-d6d2-7991-8b1f-a22845e75e0a.20260816T174748306389Z01a00baf-d6d2-7991-8b1f-a236551fa380.20260816T174748307125Z01a00baf-d6d3-7322-ad5f-b98b5d9ca81f",
+      "in_dataset": false
+    },
+    {
+      "id": "01a00baf-efb3-7631-ae74-2a995fe48143",
+      "name": "PydanticOutputParser",
+      "start_time": "2026-08-16T17:47:54.675800Z",
+      "run_type": "parser",
+      "end_time": "2026-08-16T17:47:54.677191Z",
+      "extra": {
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "checkpoint_ns": "supervisor:2386ec0a-577f-ad15-4b95-55b6dbe94256",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "langgraph_checkpoint_ns": "supervisor:2386ec0a-577f-ad15-4b95-55b6dbe94256",
+          "langgraph_node": "supervisor",
+          "langgraph_path": [
+            "__pregel_pull",
+            "supervisor"
+          ],
+          "langgraph_step": 2,
+          "langgraph_triggers": [
+            "branch:to:supervisor"
+          ],
+          "ls_integration": "langgraph",
+          "ls_run_depth": 3,
+          "revision_id": "c501abf",
+          "thread_id": "practice-2-trace-001"
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        }
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:47:54.675800+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:47:54.677191+00:00"
+        }
+      ],
+      "inputs": {
+        "input": {
+          "additional_kwargs": {},
+          "content": [
+            {
+              "extras": {
+                "signature": "EnEKbwERTTIPByVvwic0BDMgDK5BXbr6VcDygsXTN8QrAyKd/iG+b3N25a6V+vuqx/yRc9oPI14ezAeMV/apDw68b4/rk1S2clcREnQp0+4AMQUK3+UC73gEsJZJxekQo57tUlxFGsFs/6axvKkahZ1BrA=="
+              },
+              "text": "{\n  \"action\": \"estimation_agent\",\n  \"reasoning\": \"The user explicitly requested an estimation for demand DEM-021, including complexity, Fibonacci points, and main drivers, which falls directly under the scope of the estimation_agent.\"\n}",
+              "type": "text"
+            }
+          ],
+          "id": "lc_run--01a00baf-d6d3-7322-ad5f-b98b5d9ca81f-0",
+          "invalid_tool_calls": [],
+          "response_metadata": {
+            "finish_reason": "STOP",
+            "model_name": "gemini-3.1-flash-lite",
+            "model_provider": "google_genai",
+            "safety_ratings": []
+          },
+          "tool_calls": [],
+          "type": "ai",
+          "usage_metadata": {
+            "input_token_details": {
+              "cache_read": 0
+            },
+            "input_tokens": 140,
+            "output_tokens": 56,
+            "total_tokens": 196
+          }
+        }
+      },
+      "outputs": {
+        "output": {
+          "action": "estimation_agent",
+          "reasoning": "The user explicitly requested an estimation for demand DEM-021, including complexity, Fibonacci points, and main drivers, which falls directly under the scope of the estimation_agent."
+        }
+      },
+      "reference_example_id": null,
+      "parent_run_id": "01a00baf-d6d2-7991-8b1f-a236551fa380",
+      "tags": [
+        "langgraph",
+        "requirements-estimation",
+        "seq:step:2",
+        "practice-2"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00baf-efb3-7631-ae74-2a995fe48143?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:47:54.675800",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "prompt_token_details": null,
+      "completion_token_details": null,
+      "first_token_time": null,
+      "total_cost": null,
+      "prompt_cost": null,
+      "completion_cost": null,
+      "prompt_cost_details": null,
+      "completion_cost_details": null,
+      "parent_run_ids": [
+        "01a00baf-d6a5-7440-ad70-869307861344",
+        "01a00baf-d6d2-7991-8b1f-a22845e75e0a",
+        "01a00baf-d6d2-7991-8b1f-a236551fa380"
+      ],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344.20260816T174748306178Z01a00baf-d6d2-7991-8b1f-a22845e75e0a.20260816T174748306389Z01a00baf-d6d2-7991-8b1f-a236551fa380.20260816T174754675800Z01a00baf-efb3-7631-ae74-2a995fe48143",
+      "in_dataset": false
+    },
+    {
+      "id": "01a00baf-efb5-7881-a01b-ad148a5edc61",
+      "name": "route_to_specialist",
+      "start_time": "2026-08-16T17:47:54.677999Z",
+      "run_type": "chain",
+      "end_time": "2026-08-16T17:47:54.678510Z",
+      "extra": {
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "langgraph_checkpoint_ns": "supervisor:2386ec0a-577f-ad15-4b95-55b6dbe94256",
+          "langgraph_node": "supervisor",
+          "langgraph_path": [
+            "__pregel_pull",
+            "supervisor"
+          ],
+          "langgraph_step": 2,
+          "langgraph_triggers": [
+            "branch:to:supervisor"
+          ],
+          "ls_integration": "langgraph",
+          "ls_run_depth": 2,
+          "revision_id": "c501abf",
+          "thread_id": "practice-2-trace-001"
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        }
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:47:54.677999+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:47:54.678510+00:00"
+        }
+      ],
+      "inputs": {
+        "blocked": false,
+        "completed": false,
+        "current_agent": "estimation_agent",
+        "handoff_count": 1,
+        "route_reasoning": "The user explicitly requested an estimation for demand DEM-021, including complexity, Fibonacci points, and main drivers, which falls directly under the scope of the estimation_agent.",
+        "trajectory": [
+          {
+            "agent_name": "input_guardrail",
+            "details": {
+              "category": "safe"
+            },
+            "event": "input_allowed",
+            "timestamp": "2026-08-16T17:47:48.305168+00:00"
+          },
+          {
+            "agent_name": "demand_supervisor",
+            "details": {
+              "reasoning": "The user explicitly requested an estimation for demand DEM-021, including complexity, Fibonacci points, and main drivers, which falls directly under the scope of the estimation_agent.",
+              "target_agent": "estimation_agent"
+            },
+            "event": "handoff",
+            "timestamp": "2026-08-16T17:47:54.677711+00:00"
+          }
+        ],
+        "user_request": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request."
+      },
+      "outputs": {
+        "output": "estimation_agent"
+      },
+      "reference_example_id": null,
+      "parent_run_id": "01a00baf-d6d2-7991-8b1f-a22845e75e0a",
+      "tags": [
+        "langgraph",
+        "requirements-estimation",
+        "practice-2",
+        "seq:step:3"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00baf-efb5-7881-a01b-ad148a5edc61?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:47:54.677999",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "prompt_token_details": null,
+      "completion_token_details": null,
+      "first_token_time": null,
+      "total_cost": null,
+      "prompt_cost": null,
+      "completion_cost": null,
+      "prompt_cost_details": null,
+      "completion_cost_details": null,
+      "parent_run_ids": [
+        "01a00baf-d6a5-7440-ad70-869307861344",
+        "01a00baf-d6d2-7991-8b1f-a22845e75e0a"
+      ],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344.20260816T174748306178Z01a00baf-d6d2-7991-8b1f-a22845e75e0a.20260816T174754677999Z01a00baf-efb5-7881-a01b-ad148a5edc61",
+      "in_dataset": false
+    },
+    {
+      "id": "01a00baf-efb7-7272-b096-e2a846e29bfe",
+      "name": "estimation_agent",
+      "start_time": "2026-08-16T17:47:54.679736Z",
+      "run_type": "chain",
+      "end_time": "2026-08-16T17:48:03.774851Z",
+      "extra": {
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "langgraph_checkpoint_ns": "estimation_agent:69a8aa0a-d7c4-9e87-9621-9ceb5e36d725",
+          "langgraph_node": "estimation_agent",
+          "langgraph_path": [
+            "__pregel_pull",
+            "estimation_agent"
+          ],
+          "langgraph_step": 3,
+          "langgraph_triggers": [
+            "branch:to:estimation_agent"
+          ],
+          "ls_integration": "langgraph",
+          "ls_run_depth": 1,
+          "revision_id": "c501abf",
+          "thread_id": "practice-2-trace-001"
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        }
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:47:54.679736+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:48:03.774851+00:00"
+        }
+      ],
+      "inputs": {
+        "blocked": false,
+        "completed": false,
+        "current_agent": "estimation_agent",
+        "handoff_count": 1,
+        "route_reasoning": "The user explicitly requested an estimation for demand DEM-021, including complexity, Fibonacci points, and main drivers, which falls directly under the scope of the estimation_agent.",
+        "trajectory": [
+          {
+            "agent_name": "input_guardrail",
+            "details": {
+              "category": "safe"
+            },
+            "event": "input_allowed",
+            "timestamp": "2026-08-16T17:47:48.305168+00:00"
+          },
+          {
+            "agent_name": "demand_supervisor",
+            "details": {
+              "reasoning": "The user explicitly requested an estimation for demand DEM-021, including complexity, Fibonacci points, and main drivers, which falls directly under the scope of the estimation_agent.",
+              "target_agent": "estimation_agent"
+            },
+            "event": "handoff",
+            "timestamp": "2026-08-16T17:47:54.677711+00:00"
+          }
+        ],
+        "user_request": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request."
+      },
+      "outputs": {
+        "agent_output": "Для ініціативи **DEM-021** було проведено оцінку складності. Нижче наведено результати:\n\n### Результати оцінки\n*   **Complexity (Складність):** Medium (Середня)\n*   **Fibonacci Points:** 5\n\n### Основні драйвери оцінки (Main Drivers)\nОцінка базується на наступних факторах:\n1.  **Висока критичність NFR (High NFR Criticality):** Це основний драйвер, який суттєво підвищує вимоги до якості, продуктивності та надійності рішення.\n2.  **Необхідність Security Review:** Обов'язкова перевірка безпеки додає етап до процесу розробки та вимагає додаткового часу на узгодження та впровадження вимог безпеки.\n3.  **Часткова стабільність вимог (Partial Requirements Stability):** Невизначеність у вимогах створює ризик переробок, що вимагає закладення додаткового буфера в оцінку.\n4.  **Масштаб рішення:** Взаємодія між 3 системами та 2 інтеграціями створює помірну технічну складність, що вимагає ретельного проектування інтерфейсів та потоків даних.\n\n*Примітка: Оцінка є попередньою та базується на наданих параметрах. Запит на оцінку не був відправлений у систему для фіналізації.*",
+        "trajectory": [
+          {
+            "agent_name": "estimation_agent",
+            "details": {
+              "output_length": 1073
+            },
+            "event": "agent_completed",
+            "timestamp": "2026-08-16T17:48:03.774731+00:00"
+          }
+        ]
+      },
+      "reference_example_id": null,
+      "parent_run_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "tags": [
+        "langgraph",
+        "requirements-estimation",
+        "practice-2",
+        "graph:step:3"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00baf-efb7-7272-b096-e2a846e29bfe?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:47:54.679736",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 1074,
+      "completion_tokens": 408,
+      "total_tokens": 1482,
+      "prompt_token_details": {
+        "cache_read": 0
+      },
+      "completion_token_details": {},
+      "first_token_time": null,
+      "total_cost": "0.0008805",
+      "prompt_cost": "0.0002685",
+      "completion_cost": "0.000612",
+      "prompt_cost_details": {
+        "cache_read": "0.0"
+      },
+      "completion_cost_details": {},
+      "parent_run_ids": [
+        "01a00baf-d6a5-7440-ad70-869307861344"
+      ],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344.20260816T174754679736Z01a00baf-efb7-7272-b096-e2a846e29bfe",
+      "in_dataset": false
+    },
+    {
+      "id": "01a00baf-efb8-7381-b3ee-0544664829fc",
+      "name": "LangGraph",
+      "start_time": "2026-08-16T17:47:54.680188Z",
+      "run_type": "chain",
+      "end_time": "2026-08-16T17:48:03.774556Z",
+      "extra": {
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "checkpoint_ns": "estimation_agent:69a8aa0a-d7c4-9e87-9621-9ceb5e36d725",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "langgraph_checkpoint_ns": "estimation_agent:69a8aa0a-d7c4-9e87-9621-9ceb5e36d725",
+          "langgraph_node": "estimation_agent",
+          "langgraph_path": [
+            "__pregel_pull",
+            "estimation_agent"
+          ],
+          "langgraph_step": 3,
+          "langgraph_triggers": [
+            "branch:to:estimation_agent"
+          ],
+          "ls_integration": "langchain_create_agent",
+          "ls_run_depth": 2,
+          "revision_id": "c501abf",
+          "thread_id": "practice-2-trace-001"
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        }
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:47:54.680188+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:48:03.774556+00:00"
+        }
+      ],
+      "inputs": {
+        "messages": [
+          {
+            "content": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request.",
+            "role": "user"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "additional_kwargs": {},
+            "content": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request.",
+            "id": "5ed834c7-5047-4cd8-b775-2c19c2978b46",
+            "response_metadata": {},
+            "type": "human"
+          },
+          {
+            "additional_kwargs": {
+              "__gemini_function_call_thought_signatures__": {
+                "call_2758017": "EnEKbwERTTIP3McKz1TjZfuAXuFuMGHb5R4TXI9gsvGuzpy/X+hb1to1mDA2OyX6KXrxgEMeydPo8Db5K9AbkwPWliIuXQAS+qXVKnvkMEd73AkA1DcbsYahRtX6H8J9k9EB9/d7JuNLd9UoRn3oojNOzA=="
+              },
+              "function_call": {
+                "arguments": "{\"nfr_criticality\": \"high\", \"data_migration_required\": false, \"systems_count\": 3, \"security_review_required\": true, \"initiative_id\": \"DEM-021\", \"integration_count\": 2, \"requirements_stability\": \"partial\", \"dependency_count\": 1}",
+                "name": "classify_estimation_complexity"
+              }
+            },
+            "content": [],
+            "id": "lc_run--01a00baf-efba-7073-91de-cce545425261-0",
+            "invalid_tool_calls": [],
+            "response_metadata": {
+              "finish_reason": "STOP",
+              "model_name": "gemini-3.1-flash-lite",
+              "model_provider": "google_genai",
+              "safety_ratings": []
+            },
+            "tool_calls": [
+              {
+                "args": {
+                  "data_migration_required": false,
+                  "dependency_count": 1,
+                  "initiative_id": "DEM-021",
+                  "integration_count": 2,
+                  "nfr_criticality": "high",
+                  "requirements_stability": "partial",
+                  "security_review_required": true,
+                  "systems_count": 3
+                },
+                "id": "call_2758017",
+                "name": "classify_estimation_complexity",
+                "type": "tool_call"
+              }
+            ],
+            "type": "ai",
+            "usage_metadata": {
+              "input_token_details": {
+                "cache_read": 0
+              },
+              "input_tokens": 421,
+              "output_tokens": 76,
+              "total_tokens": 497
+            }
+          },
+          {
+            "additional_kwargs": {},
+            "artifact": {
+              "structured_content": {
+                "result": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-021\",\"raw_score\":7,\"estimation_points\":5,\"estimation_complexity\":\"Medium\",\"scoring_breakdown\":{\"systems\":1,\"integrations\":1,\"nfr_criticality\":2,\"data_migration\":0,\"security_review\":1,\"dependencies\":1,\"requirements_stability\":1},\"requires_human_confirmation\":true},\"error\":null}"
+              }
+            },
+            "content": [
+              {
+                "id": "lc_5dcc7986-3b4d-47b8-a760-23ce10f24b65",
+                "text": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-021\",\"raw_score\":7,\"estimation_points\":5,\"estimation_complexity\":\"Medium\",\"scoring_breakdown\":{\"systems\":1,\"integrations\":1,\"nfr_criticality\":2,\"data_migration\":0,\"security_review\":1,\"dependencies\":1,\"requirements_stability\":1},\"requires_human_confirmation\":true},\"error\":null}",
+                "type": "text"
+              }
+            ],
+            "id": "96b4c1ed-62fd-4d54-88af-49002ffc0811",
+            "name": "classify_estimation_complexity",
+            "response_metadata": {},
+            "status": "success",
+            "tool_call_id": "call_2758017",
+            "type": "tool"
+          },
+          {
+            "additional_kwargs": {},
+            "content": [
+              {
+                "extras": {
+                  "signature": "EnEKbwERTTIP8AdEGr3CJdlhECwLWWhK6Efv2WaGKvH4ZrOftovtpZa2rUs/Wx01S2iIfGcvaOFzkeh0cTEREMRFBGTqkwPQujKxqo5maw0CLZRszQ4yRQJTou1tFzQgkp+aT+d/wbxRzttnbk2Xx8huFA=="
+                },
+                "text": "Для ініціативи **DEM-021** було проведено оцінку складності. Нижче наведено результати:\n\n### Результати оцінки\n*   **Complexity (Складність):** Medium (Середня)\n*   **Fibonacci Points:** 5\n\n### Основні драйвери оцінки (Main Drivers)\nОцінка базується на наступних факторах:\n1.  **Висока критичність NFR (High NFR Criticality):** Це основний драйвер, який суттєво підвищує вимоги до якості, продуктивності та надійності рішення.\n2.  **Необхідність Security Review:** Обов'язкова перевірка безпеки додає етап до процесу розробки та вимагає додаткового часу на узгодження та впровадження вимог безпеки.\n3.  **Часткова стабільність вимог (Partial Requirements Stability):** Невизначеність у вимогах створює ризик переробок, що вимагає закладення додаткового буфера в оцінку.\n4.  **Масштаб рішення:** Взаємодія між 3 системами та 2 інтеграціями створює помірну технічну складність, що вимагає ретельного проектування інтерфейсів та потоків даних.\n\n*Примітка: Оцінка є попередньою та базується на наданих параметрах. Запит на оцінку не був відправлений у систему для фіналізації.*",
+                "type": "text"
+              }
+            ],
+            "id": "lc_run--01a00bb0-09a7-7223-80ca-517123ee838e-0",
+            "invalid_tool_calls": [],
+            "response_metadata": {
+              "finish_reason": "STOP",
+              "model_name": "gemini-3.1-flash-lite",
+              "model_provider": "google_genai",
+              "safety_ratings": []
+            },
+            "tool_calls": [],
+            "type": "ai",
+            "usage_metadata": {
+              "input_token_details": {
+                "cache_read": 0
+              },
+              "input_tokens": 653,
+              "output_tokens": 332,
+              "total_tokens": 985
+            }
+          }
+        ]
+      },
+      "reference_example_id": null,
+      "parent_run_id": "01a00baf-efb7-7272-b096-e2a846e29bfe",
+      "tags": [
+        "langgraph",
+        "requirements-estimation",
+        "practice-2",
+        "seq:step:1"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00baf-efb8-7381-b3ee-0544664829fc?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:47:54.680188",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 1074,
+      "completion_tokens": 408,
+      "total_tokens": 1482,
+      "prompt_token_details": {
+        "cache_read": 0
+      },
+      "completion_token_details": {},
+      "first_token_time": null,
+      "total_cost": "0.0008805",
+      "prompt_cost": "0.0002685",
+      "completion_cost": "0.000612",
+      "prompt_cost_details": {
+        "cache_read": "0.0"
+      },
+      "completion_cost_details": {},
+      "parent_run_ids": [
+        "01a00baf-d6a5-7440-ad70-869307861344",
+        "01a00baf-efb7-7272-b096-e2a846e29bfe"
+      ],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344.20260816T174754679736Z01a00baf-efb7-7272-b096-e2a846e29bfe.20260816T174754680188Z01a00baf-efb8-7381-b3ee-0544664829fc",
+      "in_dataset": false
+    },
+    {
+      "id": "01a00baf-efb9-7921-afe1-834e07b87e25",
+      "name": "model",
+      "start_time": "2026-08-16T17:47:54.681615Z",
+      "run_type": "chain",
+      "end_time": "2026-08-16T17:48:00.302287Z",
+      "extra": {
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "checkpoint_ns": "estimation_agent:69a8aa0a-d7c4-9e87-9621-9ceb5e36d725",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "langgraph_checkpoint_ns": "estimation_agent:69a8aa0a-d7c4-9e87-9621-9ceb5e36d725|model:6af8fa9b-21d0-d05f-69e8-688f5d1af59b",
+          "langgraph_node": "model",
+          "langgraph_path": [
+            "__pregel_pull",
+            "model"
+          ],
+          "langgraph_step": 1,
+          "langgraph_triggers": [
+            "branch:to:model"
+          ],
+          "ls_integration": "langchain_create_agent",
+          "ls_run_depth": 3,
+          "revision_id": "c501abf",
+          "thread_id": "practice-2-trace-001"
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        }
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:47:54.681615+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:48:00.302287+00:00"
+        }
+      ],
+      "inputs": {
+        "messages": [
+          {
+            "additional_kwargs": {},
+            "content": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request.",
+            "id": "5ed834c7-5047-4cd8-b775-2c19c2978b46",
+            "response_metadata": {},
+            "type": "human"
+          }
+        ]
+      },
+      "outputs": {
+        "output": [
+          {
+            "goto": [],
+            "graph": null,
+            "resume": null,
+            "update": {
+              "messages": [
+                {
+                  "additional_kwargs": {
+                    "__gemini_function_call_thought_signatures__": {
+                      "call_2758017": "EnEKbwERTTIP3McKz1TjZfuAXuFuMGHb5R4TXI9gsvGuzpy/X+hb1to1mDA2OyX6KXrxgEMeydPo8Db5K9AbkwPWliIuXQAS+qXVKnvkMEd73AkA1DcbsYahRtX6H8J9k9EB9/d7JuNLd9UoRn3oojNOzA=="
+                    },
+                    "function_call": {
+                      "arguments": "{\"nfr_criticality\": \"high\", \"data_migration_required\": false, \"systems_count\": 3, \"security_review_required\": true, \"initiative_id\": \"DEM-021\", \"integration_count\": 2, \"requirements_stability\": \"partial\", \"dependency_count\": 1}",
+                      "name": "classify_estimation_complexity"
+                    }
+                  },
+                  "content": [],
+                  "id": "lc_run--01a00baf-efba-7073-91de-cce545425261-0",
+                  "invalid_tool_calls": [],
+                  "response_metadata": {
+                    "finish_reason": "STOP",
+                    "model_name": "gemini-3.1-flash-lite",
+                    "model_provider": "google_genai",
+                    "safety_ratings": []
+                  },
+                  "tool_calls": [
+                    {
+                      "args": {
+                        "data_migration_required": false,
+                        "dependency_count": 1,
+                        "initiative_id": "DEM-021",
+                        "integration_count": 2,
+                        "nfr_criticality": "high",
+                        "requirements_stability": "partial",
+                        "security_review_required": true,
+                        "systems_count": 3
+                      },
+                      "id": "call_2758017",
+                      "name": "classify_estimation_complexity",
+                      "type": "tool_call"
+                    }
+                  ],
+                  "type": "ai",
+                  "usage_metadata": {
+                    "input_token_details": {
+                      "cache_read": 0
+                    },
+                    "input_tokens": 421,
+                    "output_tokens": 76,
+                    "total_tokens": 497
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "reference_example_id": null,
+      "parent_run_id": "01a00baf-efb8-7381-b3ee-0544664829fc",
+      "tags": [
+        "langgraph",
+        "requirements-estimation",
+        "graph:step:1",
+        "practice-2"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00baf-efb9-7921-afe1-834e07b87e25?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:47:54.681615",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 421,
+      "completion_tokens": 76,
+      "total_tokens": 497,
+      "prompt_token_details": {
+        "cache_read": 0
+      },
+      "completion_token_details": {},
+      "first_token_time": null,
+      "total_cost": "0.00021925",
+      "prompt_cost": "0.00010525",
+      "completion_cost": "0.000114",
+      "prompt_cost_details": {
+        "cache_read": "0.0"
+      },
+      "completion_cost_details": {},
+      "parent_run_ids": [
+        "01a00baf-d6a5-7440-ad70-869307861344",
+        "01a00baf-efb7-7272-b096-e2a846e29bfe",
+        "01a00baf-efb8-7381-b3ee-0544664829fc"
+      ],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344.20260816T174754679736Z01a00baf-efb7-7272-b096-e2a846e29bfe.20260816T174754680188Z01a00baf-efb8-7381-b3ee-0544664829fc.20260816T174754681615Z01a00baf-efb9-7921-afe1-834e07b87e25",
+      "in_dataset": false
+    },
+    {
+      "id": "01a00baf-efba-7073-91de-cce545425261",
+      "name": "ChatGoogleGenerativeAI",
+      "start_time": "2026-08-16T17:47:54.682467Z",
+      "run_type": "llm",
+      "end_time": "2026-08-16T17:48:00.301766Z",
+      "extra": {
+        "batch_size": 1,
+        "invocation_params": {
+          "_type": "chat-google-generative-ai",
+          "frequency_penalty": null,
+          "image_config": null,
+          "include_thoughts": null,
+          "max_output_tokens": null,
+          "media_resolution": null,
+          "model": "gemini-3.1-flash-lite",
+          "n": 1,
+          "presence_penalty": null,
+          "response_modalities": null,
+          "safety_settings": null,
+          "stop": null,
+          "temperature": 0.0,
+          "thinking_budget": null,
+          "thinking_config": null,
+          "thinking_level": null,
+          "tools": [
+            {
+              "function": {
+                "description": "Класифікувати estimation complexity та Fibonacci points.",
+                "name": "classify_estimation_complexity",
+                "parameters": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "data_migration_required": {
+                      "description": "Чи потрібна міграція даних.",
+                      "type": "boolean"
+                    },
+                    "dependency_count": {
+                      "description": "Кількість зовнішніх залежностей.",
+                      "type": "integer"
+                    },
+                    "initiative_id": {
+                      "description": "Унікальний ID ініціативи.",
+                      "type": "string"
+                    },
+                    "integration_count": {
+                      "description": "Кількість інтеграцій.",
+                      "type": "integer"
+                    },
+                    "nfr_criticality": {
+                      "description": "Критичність NFR.",
+                      "enum": [
+                        "low",
+                        "medium",
+                        "high"
+                      ],
+                      "type": "string"
+                    },
+                    "requirements_stability": {
+                      "description": "Стабільність requirements.",
+                      "enum": [
+                        "high",
+                        "partial",
+                        "low"
+                      ],
+                      "type": "string"
+                    },
+                    "security_review_required": {
+                      "description": "Чи потрібен security review.",
+                      "type": "boolean"
+                    },
+                    "systems_count": {
+                      "description": "Кількість систем у solution scope.",
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "initiative_id",
+                    "systems_count",
+                    "integration_count",
+                    "nfr_criticality",
+                    "data_migration_required",
+                    "security_review_required",
+                    "dependency_count",
+                    "requirements_stability"
+                  ],
+                  "type": "object"
+                }
+              },
+              "type": "function"
+            }
+          ],
+          "top_k": null,
+          "top_p": null
+        },
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "_type": "chat-google-generative-ai",
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "checkpoint_ns": "estimation_agent:69a8aa0a-d7c4-9e87-9621-9ceb5e36d725",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "frequency_penalty": null,
+          "image_config": null,
+          "include_thoughts": null,
+          "langgraph_checkpoint_ns": "estimation_agent:69a8aa0a-d7c4-9e87-9621-9ceb5e36d725|model:6af8fa9b-21d0-d05f-69e8-688f5d1af59b",
+          "langgraph_node": "model",
+          "langgraph_path": [
+            "__pregel_pull",
+            "model"
+          ],
+          "langgraph_step": 1,
+          "langgraph_triggers": [
+            "branch:to:model"
+          ],
+          "lc_versions": {
+            "langchain": "1.3.15",
+            "langchain-core": "1.5.5",
+            "langchain-google-genai": "4.3.4"
+          },
+          "ls_integration": "langchain_chat_model",
+          "ls_model_name": "gemini-3.1-flash-lite",
+          "ls_model_type": "chat",
+          "ls_provider": "google_genai",
+          "ls_run_depth": 4,
+          "ls_temperature": 0.0,
+          "max_output_tokens": null,
+          "media_resolution": null,
+          "model": "gemini-3.1-flash-lite",
+          "n": 1,
+          "presence_penalty": null,
+          "response_modalities": null,
+          "revision_id": "c501abf",
+          "safety_settings": null,
+          "stop": null,
+          "temperature": 0.0,
+          "thinking_budget": null,
+          "thinking_config": null,
+          "thinking_level": null,
+          "thread_id": "practice-2-trace-001",
+          "top_k": null,
+          "top_p": null,
+          "usage_metadata": {
+            "input_token_details": {
+              "cache_read": 0
+            },
+            "input_tokens": 421,
+            "output_tokens": 76,
+            "total_tokens": 497
+          }
+        },
+        "options": {
+          "stop": null
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        },
+        "tool_call_count": 1
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:47:54.682467+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:48:00.301766+00:00"
+        }
+      ],
+      "inputs": {
+        "messages": [
+          [
+            {
+              "id": [
+                "langchain",
+                "schema",
+                "messages",
+                "SystemMessage"
+              ],
+              "kwargs": {
+                "content": "Ти Estimation Agent. Класифікуй complexity та Fibonacci points через MCP tool. Не викликай submit_estimation_request: цей risky tool виконується лише окремим HITL approval workflow.",
+                "type": "system"
+              },
+              "lc": 1,
+              "type": "constructor"
+            },
+            {
+              "id": [
+                "langchain",
+                "schema",
+                "messages",
+                "HumanMessage"
+              ],
+              "kwargs": {
+                "content": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request.",
+                "id": "5ed834c7-5047-4cd8-b775-2c19c2978b46",
+                "type": "human"
+              },
+              "lc": 1,
+              "type": "constructor"
+            }
+          ]
+        ]
+      },
+      "outputs": {
+        "generations": [
+          [
+            {
+              "generation_info": {
+                "finish_reason": "STOP",
+                "model_name": "gemini-3.1-flash-lite",
+                "safety_ratings": []
+              },
+              "message": {
+                "id": [
+                  "langchain",
+                  "schema",
+                  "messages",
+                  "AIMessage"
+                ],
+                "kwargs": {
+                  "additional_kwargs": {
+                    "__gemini_function_call_thought_signatures__": {
+                      "call_2758017": "EnEKbwERTTIP3McKz1TjZfuAXuFuMGHb5R4TXI9gsvGuzpy/X+hb1to1mDA2OyX6KXrxgEMeydPo8Db5K9AbkwPWliIuXQAS+qXVKnvkMEd73AkA1DcbsYahRtX6H8J9k9EB9/d7JuNLd9UoRn3oojNOzA=="
+                    },
+                    "function_call": {
+                      "arguments": "{\"nfr_criticality\": \"high\", \"data_migration_required\": false, \"systems_count\": 3, \"security_review_required\": true, \"initiative_id\": \"DEM-021\", \"integration_count\": 2, \"requirements_stability\": \"partial\", \"dependency_count\": 1}",
+                      "name": "classify_estimation_complexity"
+                    }
+                  },
+                  "content": [],
+                  "id": "lc_run--01a00baf-efba-7073-91de-cce545425261-0",
+                  "invalid_tool_calls": [],
+                  "response_metadata": {
+                    "finish_reason": "STOP",
+                    "model_name": "gemini-3.1-flash-lite",
+                    "model_provider": "google_genai",
+                    "safety_ratings": []
+                  },
+                  "tool_calls": [
+                    {
+                      "args": {
+                        "data_migration_required": false,
+                        "dependency_count": 1,
+                        "initiative_id": "DEM-021",
+                        "integration_count": 2,
+                        "nfr_criticality": "high",
+                        "requirements_stability": "partial",
+                        "security_review_required": true,
+                        "systems_count": 3
+                      },
+                      "id": "call_2758017",
+                      "name": "classify_estimation_complexity",
+                      "type": "tool_call"
+                    }
+                  ],
+                  "type": "ai",
+                  "usage_metadata": {
+                    "input_token_details": {
+                      "cache_read": 0
+                    },
+                    "input_tokens": 421,
+                    "output_tokens": 76,
+                    "total_tokens": 497
+                  }
+                },
+                "lc": 1,
+                "type": "constructor"
+              },
+              "text": "",
+              "type": "ChatGeneration"
+            }
+          ]
+        ],
+        "llm_output": {},
+        "run": null,
+        "type": "LLMResult"
+      },
+      "reference_example_id": null,
+      "parent_run_id": "01a00baf-efb9-7921-afe1-834e07b87e25",
+      "tags": [
+        "langgraph",
+        "requirements-estimation",
+        "practice-2",
+        "seq:step:1"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00baf-efba-7073-91de-cce545425261?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:47:54.682467",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 421,
+      "completion_tokens": 76,
+      "total_tokens": 497,
+      "prompt_token_details": {
+        "cache_read": 0
+      },
+      "completion_token_details": {},
+      "first_token_time": null,
+      "total_cost": "0.00021925",
+      "prompt_cost": "0.00010525",
+      "completion_cost": "0.000114",
+      "prompt_cost_details": {
+        "cache_read": "0.0"
+      },
+      "completion_cost_details": {},
+      "parent_run_ids": [
+        "01a00baf-d6a5-7440-ad70-869307861344",
+        "01a00baf-efb7-7272-b096-e2a846e29bfe",
+        "01a00baf-efb8-7381-b3ee-0544664829fc",
+        "01a00baf-efb9-7921-afe1-834e07b87e25"
+      ],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344.20260816T174754679736Z01a00baf-efb7-7272-b096-e2a846e29bfe.20260816T174754680188Z01a00baf-efb8-7381-b3ee-0544664829fc.20260816T174754681615Z01a00baf-efb9-7921-afe1-834e07b87e25.20260816T174754682467Z01a00baf-efba-7073-91de-cce545425261",
+      "in_dataset": false
+    },
+    {
+      "id": "01a00bb0-05ae-7700-af01-72e74c1f6813",
+      "name": "tools",
+      "start_time": "2026-08-16T17:48:00.302797Z",
+      "run_type": "chain",
+      "end_time": "2026-08-16T17:48:01.318734Z",
+      "extra": {
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "checkpoint_ns": "estimation_agent:69a8aa0a-d7c4-9e87-9621-9ceb5e36d725",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "langgraph_checkpoint_ns": "estimation_agent:69a8aa0a-d7c4-9e87-9621-9ceb5e36d725|tools:9b96a9fe-d3c3-4de2-8c0e-268fc31aeb0b",
+          "langgraph_node": "tools",
+          "langgraph_path": [
+            "__pregel_push",
+            0,
+            false
+          ],
+          "langgraph_step": 2,
+          "langgraph_triggers": [
+            "__pregel_push"
+          ],
+          "ls_integration": "langchain_create_agent",
+          "ls_run_depth": 3,
+          "revision_id": "c501abf",
+          "thread_id": "practice-2-trace-001"
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        }
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:48:00.302797+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:48:01.318734+00:00"
+        }
+      ],
+      "inputs": {
+        "input": [
+          {
+            "args": {
+              "data_migration_required": false,
+              "dependency_count": 1,
+              "initiative_id": "DEM-021",
+              "integration_count": 2,
+              "nfr_criticality": "high",
+              "requirements_stability": "partial",
+              "security_review_required": true,
+              "systems_count": 3
+            },
+            "id": "call_2758017",
+            "name": "classify_estimation_complexity",
+            "type": "tool_call"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "additional_kwargs": {},
+            "artifact": {
+              "structured_content": {
+                "result": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-021\",\"raw_score\":7,\"estimation_points\":5,\"estimation_complexity\":\"Medium\",\"scoring_breakdown\":{\"systems\":1,\"integrations\":1,\"nfr_criticality\":2,\"data_migration\":0,\"security_review\":1,\"dependencies\":1,\"requirements_stability\":1},\"requires_human_confirmation\":true},\"error\":null}"
+              }
+            },
+            "content": [
+              {
+                "id": "lc_5dcc7986-3b4d-47b8-a760-23ce10f24b65",
+                "text": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-021\",\"raw_score\":7,\"estimation_points\":5,\"estimation_complexity\":\"Medium\",\"scoring_breakdown\":{\"systems\":1,\"integrations\":1,\"nfr_criticality\":2,\"data_migration\":0,\"security_review\":1,\"dependencies\":1,\"requirements_stability\":1},\"requires_human_confirmation\":true},\"error\":null}",
+                "type": "text"
+              }
+            ],
+            "id": "96b4c1ed-62fd-4d54-88af-49002ffc0811",
+            "name": "classify_estimation_complexity",
+            "response_metadata": {},
+            "status": "success",
+            "tool_call_id": "call_2758017",
+            "type": "tool"
+          }
+        ]
+      },
+      "reference_example_id": null,
+      "parent_run_id": "01a00baf-efb8-7381-b3ee-0544664829fc",
+      "tags": [
+        "langgraph",
+        "requirements-estimation",
+        "practice-2",
+        "graph:step:2"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00bb0-05ae-7700-af01-72e74c1f6813?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:48:00.302797",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "prompt_token_details": null,
+      "completion_token_details": null,
+      "first_token_time": null,
+      "total_cost": null,
+      "prompt_cost": null,
+      "completion_cost": null,
+      "prompt_cost_details": null,
+      "completion_cost_details": null,
+      "parent_run_ids": [
+        "01a00baf-d6a5-7440-ad70-869307861344",
+        "01a00baf-efb7-7272-b096-e2a846e29bfe",
+        "01a00baf-efb8-7381-b3ee-0544664829fc"
+      ],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344.20260816T174754679736Z01a00baf-efb7-7272-b096-e2a846e29bfe.20260816T174754680188Z01a00baf-efb8-7381-b3ee-0544664829fc.20260816T174800302797Z01a00bb0-05ae-7700-af01-72e74c1f6813",
+      "in_dataset": false
+    },
+    {
+      "id": "01a00bb0-05af-7851-b0e1-fc9be4d36da9",
+      "name": "classify_estimation_complexity",
+      "start_time": "2026-08-16T17:48:00.303217Z",
+      "run_type": "tool",
+      "end_time": "2026-08-16T17:48:01.318060Z",
+      "extra": {
+        "color": "green",
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "_meta": {
+            "fastmcp": {
+              "tags": []
+            }
+          },
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "checkpoint_ns": "estimation_agent:69a8aa0a-d7c4-9e87-9621-9ceb5e36d725",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "langgraph_checkpoint_ns": "estimation_agent:69a8aa0a-d7c4-9e87-9621-9ceb5e36d725|tools:9b96a9fe-d3c3-4de2-8c0e-268fc31aeb0b",
+          "langgraph_node": "tools",
+          "langgraph_path": [
+            "__pregel_push",
+            0,
+            false
+          ],
+          "langgraph_step": 2,
+          "langgraph_triggers": [
+            "__pregel_push"
+          ],
+          "ls_integration": "langchain_create_agent",
+          "ls_run_depth": 4,
+          "revision_id": "c501abf",
+          "thread_id": "practice-2-trace-001"
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        },
+        "tool_call_id": "call_2758017"
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:48:00.303217+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:48:01.318060+00:00"
+        }
+      ],
+      "inputs": {
+        "data_migration_required": false,
+        "dependency_count": 1,
+        "initiative_id": "DEM-021",
+        "integration_count": 2,
+        "nfr_criticality": "high",
+        "requirements_stability": "partial",
+        "security_review_required": true,
+        "systems_count": 3
+      },
+      "outputs": {
+        "output": {
+          "additional_kwargs": {},
+          "artifact": {
+            "structured_content": {
+              "result": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-021\",\"raw_score\":7,\"estimation_points\":5,\"estimation_complexity\":\"Medium\",\"scoring_breakdown\":{\"systems\":1,\"integrations\":1,\"nfr_criticality\":2,\"data_migration\":0,\"security_review\":1,\"dependencies\":1,\"requirements_stability\":1},\"requires_human_confirmation\":true},\"error\":null}"
+            }
+          },
+          "content": [
+            {
+              "id": "lc_5dcc7986-3b4d-47b8-a760-23ce10f24b65",
+              "text": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-021\",\"raw_score\":7,\"estimation_points\":5,\"estimation_complexity\":\"Medium\",\"scoring_breakdown\":{\"systems\":1,\"integrations\":1,\"nfr_criticality\":2,\"data_migration\":0,\"security_review\":1,\"dependencies\":1,\"requirements_stability\":1},\"requires_human_confirmation\":true},\"error\":null}",
+              "type": "text"
+            }
+          ],
+          "name": "classify_estimation_complexity",
+          "response_metadata": {},
+          "status": "success",
+          "tool_call_id": "call_2758017",
+          "type": "tool"
+        }
+      },
+      "reference_example_id": null,
+      "parent_run_id": "01a00bb0-05ae-7700-af01-72e74c1f6813",
+      "tags": [
+        "langgraph",
+        "requirements-estimation",
+        "practice-2",
+        "seq:step:1"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00bb0-05af-7851-b0e1-fc9be4d36da9?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:48:00.303217",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "prompt_token_details": null,
+      "completion_token_details": null,
+      "first_token_time": null,
+      "total_cost": null,
+      "prompt_cost": null,
+      "completion_cost": null,
+      "prompt_cost_details": null,
+      "completion_cost_details": null,
+      "parent_run_ids": [
+        "01a00baf-d6a5-7440-ad70-869307861344",
+        "01a00baf-efb7-7272-b096-e2a846e29bfe",
+        "01a00baf-efb8-7381-b3ee-0544664829fc",
+        "01a00bb0-05ae-7700-af01-72e74c1f6813"
+      ],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344.20260816T174754679736Z01a00baf-efb7-7272-b096-e2a846e29bfe.20260816T174754680188Z01a00baf-efb8-7381-b3ee-0544664829fc.20260816T174800302797Z01a00bb0-05ae-7700-af01-72e74c1f6813.20260816T174800303217Z01a00bb0-05af-7851-b0e1-fc9be4d36da9",
+      "in_dataset": false
+    },
+    {
+      "id": "01a00bb0-09a7-7223-80ca-5161ebd0ab11",
+      "name": "model",
+      "start_time": "2026-08-16T17:48:01.319348Z",
+      "run_type": "chain",
+      "end_time": "2026-08-16T17:48:03.773868Z",
+      "extra": {
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "checkpoint_ns": "estimation_agent:69a8aa0a-d7c4-9e87-9621-9ceb5e36d725",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "langgraph_checkpoint_ns": "estimation_agent:69a8aa0a-d7c4-9e87-9621-9ceb5e36d725|model:0ece088e-e9c1-131e-c83f-07e3ca8fa4c6",
+          "langgraph_node": "model",
+          "langgraph_path": [
+            "__pregel_pull",
+            "model"
+          ],
+          "langgraph_step": 3,
+          "langgraph_triggers": [
+            "branch:to:model"
+          ],
+          "ls_integration": "langchain_create_agent",
+          "ls_run_depth": 3,
+          "revision_id": "c501abf",
+          "thread_id": "practice-2-trace-001"
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        }
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:48:01.319348+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:48:03.773868+00:00"
+        }
+      ],
+      "inputs": {
+        "messages": [
+          {
+            "additional_kwargs": {},
+            "content": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request.",
+            "id": "5ed834c7-5047-4cd8-b775-2c19c2978b46",
+            "response_metadata": {},
+            "type": "human"
+          },
+          {
+            "additional_kwargs": {
+              "__gemini_function_call_thought_signatures__": {
+                "call_2758017": "EnEKbwERTTIP3McKz1TjZfuAXuFuMGHb5R4TXI9gsvGuzpy/X+hb1to1mDA2OyX6KXrxgEMeydPo8Db5K9AbkwPWliIuXQAS+qXVKnvkMEd73AkA1DcbsYahRtX6H8J9k9EB9/d7JuNLd9UoRn3oojNOzA=="
+              },
+              "function_call": {
+                "arguments": "{\"nfr_criticality\": \"high\", \"data_migration_required\": false, \"systems_count\": 3, \"security_review_required\": true, \"initiative_id\": \"DEM-021\", \"integration_count\": 2, \"requirements_stability\": \"partial\", \"dependency_count\": 1}",
+                "name": "classify_estimation_complexity"
+              }
+            },
+            "content": [],
+            "id": "lc_run--01a00baf-efba-7073-91de-cce545425261-0",
+            "invalid_tool_calls": [],
+            "response_metadata": {
+              "finish_reason": "STOP",
+              "model_name": "gemini-3.1-flash-lite",
+              "model_provider": "google_genai",
+              "safety_ratings": []
+            },
+            "tool_calls": [
+              {
+                "args": {
+                  "data_migration_required": false,
+                  "dependency_count": 1,
+                  "initiative_id": "DEM-021",
+                  "integration_count": 2,
+                  "nfr_criticality": "high",
+                  "requirements_stability": "partial",
+                  "security_review_required": true,
+                  "systems_count": 3
+                },
+                "id": "call_2758017",
+                "name": "classify_estimation_complexity",
+                "type": "tool_call"
+              }
+            ],
+            "type": "ai",
+            "usage_metadata": {
+              "input_token_details": {
+                "cache_read": 0
+              },
+              "input_tokens": 421,
+              "output_tokens": 76,
+              "total_tokens": 497
+            }
+          },
+          {
+            "additional_kwargs": {},
+            "artifact": {
+              "structured_content": {
+                "result": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-021\",\"raw_score\":7,\"estimation_points\":5,\"estimation_complexity\":\"Medium\",\"scoring_breakdown\":{\"systems\":1,\"integrations\":1,\"nfr_criticality\":2,\"data_migration\":0,\"security_review\":1,\"dependencies\":1,\"requirements_stability\":1},\"requires_human_confirmation\":true},\"error\":null}"
+              }
+            },
+            "content": [
+              {
+                "id": "lc_5dcc7986-3b4d-47b8-a760-23ce10f24b65",
+                "text": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-021\",\"raw_score\":7,\"estimation_points\":5,\"estimation_complexity\":\"Medium\",\"scoring_breakdown\":{\"systems\":1,\"integrations\":1,\"nfr_criticality\":2,\"data_migration\":0,\"security_review\":1,\"dependencies\":1,\"requirements_stability\":1},\"requires_human_confirmation\":true},\"error\":null}",
+                "type": "text"
+              }
+            ],
+            "id": "96b4c1ed-62fd-4d54-88af-49002ffc0811",
+            "name": "classify_estimation_complexity",
+            "response_metadata": {},
+            "status": "success",
+            "tool_call_id": "call_2758017",
+            "type": "tool"
+          }
+        ]
+      },
+      "outputs": {
+        "output": [
+          {
+            "goto": [],
+            "graph": null,
+            "resume": null,
+            "update": {
+              "messages": [
+                {
+                  "additional_kwargs": {},
+                  "content": [
+                    {
+                      "extras": {
+                        "signature": "EnEKbwERTTIP8AdEGr3CJdlhECwLWWhK6Efv2WaGKvH4ZrOftovtpZa2rUs/Wx01S2iIfGcvaOFzkeh0cTEREMRFBGTqkwPQujKxqo5maw0CLZRszQ4yRQJTou1tFzQgkp+aT+d/wbxRzttnbk2Xx8huFA=="
+                      },
+                      "text": "Для ініціативи **DEM-021** було проведено оцінку складності. Нижче наведено результати:\n\n### Результати оцінки\n*   **Complexity (Складність):** Medium (Середня)\n*   **Fibonacci Points:** 5\n\n### Основні драйвери оцінки (Main Drivers)\nОцінка базується на наступних факторах:\n1.  **Висока критичність NFR (High NFR Criticality):** Це основний драйвер, який суттєво підвищує вимоги до якості, продуктивності та надійності рішення.\n2.  **Необхідність Security Review:** Обов'язкова перевірка безпеки додає етап до процесу розробки та вимагає додаткового часу на узгодження та впровадження вимог безпеки.\n3.  **Часткова стабільність вимог (Partial Requirements Stability):** Невизначеність у вимогах створює ризик переробок, що вимагає закладення додаткового буфера в оцінку.\n4.  **Масштаб рішення:** Взаємодія між 3 системами та 2 інтеграціями створює помірну технічну складність, що вимагає ретельного проектування інтерфейсів та потоків даних.\n\n*Примітка: Оцінка є попередньою та базується на наданих параметрах. Запит на оцінку не був відправлений у систему для фіналізації.*",
+                      "type": "text"
+                    }
+                  ],
+                  "id": "lc_run--01a00bb0-09a7-7223-80ca-517123ee838e-0",
+                  "invalid_tool_calls": [],
+                  "response_metadata": {
+                    "finish_reason": "STOP",
+                    "model_name": "gemini-3.1-flash-lite",
+                    "model_provider": "google_genai",
+                    "safety_ratings": []
+                  },
+                  "tool_calls": [],
+                  "type": "ai",
+                  "usage_metadata": {
+                    "input_token_details": {
+                      "cache_read": 0
+                    },
+                    "input_tokens": 653,
+                    "output_tokens": 332,
+                    "total_tokens": 985
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "reference_example_id": null,
+      "parent_run_id": "01a00baf-efb8-7381-b3ee-0544664829fc",
+      "tags": [
+        "langgraph",
+        "requirements-estimation",
+        "practice-2",
+        "graph:step:3"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00bb0-09a7-7223-80ca-5161ebd0ab11?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:48:01.319348",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 653,
+      "completion_tokens": 332,
+      "total_tokens": 985,
+      "prompt_token_details": {
+        "cache_read": 0
+      },
+      "completion_token_details": {},
+      "first_token_time": null,
+      "total_cost": "0.00066125",
+      "prompt_cost": "0.00016325",
+      "completion_cost": "0.000498",
+      "prompt_cost_details": {
+        "cache_read": "0.0"
+      },
+      "completion_cost_details": {},
+      "parent_run_ids": [
+        "01a00baf-d6a5-7440-ad70-869307861344",
+        "01a00baf-efb7-7272-b096-e2a846e29bfe",
+        "01a00baf-efb8-7381-b3ee-0544664829fc"
+      ],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344.20260816T174754679736Z01a00baf-efb7-7272-b096-e2a846e29bfe.20260816T174754680188Z01a00baf-efb8-7381-b3ee-0544664829fc.20260816T174801319348Z01a00bb0-09a7-7223-80ca-5161ebd0ab11",
+      "in_dataset": false
+    },
+    {
+      "id": "01a00bb0-09a7-7223-80ca-517123ee838e",
+      "name": "ChatGoogleGenerativeAI",
+      "start_time": "2026-08-16T17:48:01.319981Z",
+      "run_type": "llm",
+      "end_time": "2026-08-16T17:48:03.773080Z",
+      "extra": {
+        "batch_size": 1,
+        "invocation_params": {
+          "_type": "chat-google-generative-ai",
+          "frequency_penalty": null,
+          "image_config": null,
+          "include_thoughts": null,
+          "max_output_tokens": null,
+          "media_resolution": null,
+          "model": "gemini-3.1-flash-lite",
+          "n": 1,
+          "presence_penalty": null,
+          "response_modalities": null,
+          "safety_settings": null,
+          "stop": null,
+          "temperature": 0.0,
+          "thinking_budget": null,
+          "thinking_config": null,
+          "thinking_level": null,
+          "tools": [
+            {
+              "function": {
+                "description": "Класифікувати estimation complexity та Fibonacci points.",
+                "name": "classify_estimation_complexity",
+                "parameters": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "data_migration_required": {
+                      "description": "Чи потрібна міграція даних.",
+                      "type": "boolean"
+                    },
+                    "dependency_count": {
+                      "description": "Кількість зовнішніх залежностей.",
+                      "type": "integer"
+                    },
+                    "initiative_id": {
+                      "description": "Унікальний ID ініціативи.",
+                      "type": "string"
+                    },
+                    "integration_count": {
+                      "description": "Кількість інтеграцій.",
+                      "type": "integer"
+                    },
+                    "nfr_criticality": {
+                      "description": "Критичність NFR.",
+                      "enum": [
+                        "low",
+                        "medium",
+                        "high"
+                      ],
+                      "type": "string"
+                    },
+                    "requirements_stability": {
+                      "description": "Стабільність requirements.",
+                      "enum": [
+                        "high",
+                        "partial",
+                        "low"
+                      ],
+                      "type": "string"
+                    },
+                    "security_review_required": {
+                      "description": "Чи потрібен security review.",
+                      "type": "boolean"
+                    },
+                    "systems_count": {
+                      "description": "Кількість систем у solution scope.",
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "initiative_id",
+                    "systems_count",
+                    "integration_count",
+                    "nfr_criticality",
+                    "data_migration_required",
+                    "security_review_required",
+                    "dependency_count",
+                    "requirements_stability"
+                  ],
+                  "type": "object"
+                }
+              },
+              "type": "function"
+            }
+          ],
+          "top_k": null,
+          "top_p": null
+        },
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "_type": "chat-google-generative-ai",
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "checkpoint_ns": "estimation_agent:69a8aa0a-d7c4-9e87-9621-9ceb5e36d725",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "frequency_penalty": null,
+          "image_config": null,
+          "include_thoughts": null,
+          "langgraph_checkpoint_ns": "estimation_agent:69a8aa0a-d7c4-9e87-9621-9ceb5e36d725|model:0ece088e-e9c1-131e-c83f-07e3ca8fa4c6",
+          "langgraph_node": "model",
+          "langgraph_path": [
+            "__pregel_pull",
+            "model"
+          ],
+          "langgraph_step": 3,
+          "langgraph_triggers": [
+            "branch:to:model"
+          ],
+          "lc_versions": {
+            "langchain": "1.3.15",
+            "langchain-core": "1.5.5",
+            "langchain-google-genai": "4.3.4"
+          },
+          "ls_integration": "langchain_chat_model",
+          "ls_model_name": "gemini-3.1-flash-lite",
+          "ls_model_type": "chat",
+          "ls_provider": "google_genai",
+          "ls_run_depth": 4,
+          "ls_temperature": 0.0,
+          "max_output_tokens": null,
+          "media_resolution": null,
+          "model": "gemini-3.1-flash-lite",
+          "n": 1,
+          "presence_penalty": null,
+          "response_modalities": null,
+          "revision_id": "c501abf",
+          "safety_settings": null,
+          "stop": null,
+          "temperature": 0.0,
+          "thinking_budget": null,
+          "thinking_config": null,
+          "thinking_level": null,
+          "thread_id": "practice-2-trace-001",
+          "top_k": null,
+          "top_p": null,
+          "usage_metadata": {
+            "input_token_details": {
+              "cache_read": 0
+            },
+            "input_tokens": 653,
+            "output_tokens": 332,
+            "total_tokens": 985
+          }
+        },
+        "options": {
+          "stop": null
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        }
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:48:01.319981+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:48:03.773080+00:00"
+        }
+      ],
+      "inputs": {
+        "messages": [
+          [
+            {
+              "id": [
+                "langchain",
+                "schema",
+                "messages",
+                "SystemMessage"
+              ],
+              "kwargs": {
+                "content": "Ти Estimation Agent. Класифікуй complexity та Fibonacci points через MCP tool. Не викликай submit_estimation_request: цей risky tool виконується лише окремим HITL approval workflow.",
+                "type": "system"
+              },
+              "lc": 1,
+              "type": "constructor"
+            },
+            {
+              "id": [
+                "langchain",
+                "schema",
+                "messages",
+                "HumanMessage"
+              ],
+              "kwargs": {
+                "content": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request.",
+                "id": "5ed834c7-5047-4cd8-b775-2c19c2978b46",
+                "type": "human"
+              },
+              "lc": 1,
+              "type": "constructor"
+            },
+            {
+              "id": [
+                "langchain",
+                "schema",
+                "messages",
+                "AIMessage"
+              ],
+              "kwargs": {
+                "additional_kwargs": {
+                  "__gemini_function_call_thought_signatures__": {
+                    "call_2758017": "EnEKbwERTTIP3McKz1TjZfuAXuFuMGHb5R4TXI9gsvGuzpy/X+hb1to1mDA2OyX6KXrxgEMeydPo8Db5K9AbkwPWliIuXQAS+qXVKnvkMEd73AkA1DcbsYahRtX6H8J9k9EB9/d7JuNLd9UoRn3oojNOzA=="
+                  },
+                  "function_call": {
+                    "arguments": "{\"nfr_criticality\": \"high\", \"data_migration_required\": false, \"systems_count\": 3, \"security_review_required\": true, \"initiative_id\": \"DEM-021\", \"integration_count\": 2, \"requirements_stability\": \"partial\", \"dependency_count\": 1}",
+                    "name": "classify_estimation_complexity"
+                  }
+                },
+                "content": [],
+                "id": "lc_run--01a00baf-efba-7073-91de-cce545425261-0",
+                "invalid_tool_calls": [],
+                "response_metadata": {
+                  "finish_reason": "STOP",
+                  "model_name": "gemini-3.1-flash-lite",
+                  "model_provider": "google_genai",
+                  "safety_ratings": []
+                },
+                "tool_calls": [
+                  {
+                    "args": {
+                      "data_migration_required": false,
+                      "dependency_count": 1,
+                      "initiative_id": "DEM-021",
+                      "integration_count": 2,
+                      "nfr_criticality": "high",
+                      "requirements_stability": "partial",
+                      "security_review_required": true,
+                      "systems_count": 3
+                    },
+                    "id": "call_2758017",
+                    "name": "classify_estimation_complexity",
+                    "type": "tool_call"
+                  }
+                ],
+                "type": "ai",
+                "usage_metadata": {
+                  "input_token_details": {
+                    "cache_read": 0
+                  },
+                  "input_tokens": 421,
+                  "output_tokens": 76,
+                  "total_tokens": 497
+                }
+              },
+              "lc": 1,
+              "type": "constructor"
+            },
+            {
+              "id": [
+                "langchain",
+                "schema",
+                "messages",
+                "ToolMessage"
+              ],
+              "kwargs": {
+                "artifact": {
+                  "structured_content": {
+                    "result": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-021\",\"raw_score\":7,\"estimation_points\":5,\"estimation_complexity\":\"Medium\",\"scoring_breakdown\":{\"systems\":1,\"integrations\":1,\"nfr_criticality\":2,\"data_migration\":0,\"security_review\":1,\"dependencies\":1,\"requirements_stability\":1},\"requires_human_confirmation\":true},\"error\":null}"
+                  }
+                },
+                "content": [
+                  {
+                    "id": "lc_5dcc7986-3b4d-47b8-a760-23ce10f24b65",
+                    "text": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-021\",\"raw_score\":7,\"estimation_points\":5,\"estimation_complexity\":\"Medium\",\"scoring_breakdown\":{\"systems\":1,\"integrations\":1,\"nfr_criticality\":2,\"data_migration\":0,\"security_review\":1,\"dependencies\":1,\"requirements_stability\":1},\"requires_human_confirmation\":true},\"error\":null}",
+                    "type": "text"
+                  }
+                ],
+                "id": "96b4c1ed-62fd-4d54-88af-49002ffc0811",
+                "name": "classify_estimation_complexity",
+                "status": "success",
+                "tool_call_id": "call_2758017",
+                "type": "tool"
+              },
+              "lc": 1,
+              "type": "constructor"
+            }
+          ]
+        ]
+      },
+      "outputs": {
+        "generations": [
+          [
+            {
+              "generation_info": {
+                "finish_reason": "STOP",
+                "model_name": "gemini-3.1-flash-lite",
+                "safety_ratings": []
+              },
+              "message": {
+                "id": [
+                  "langchain",
+                  "schema",
+                  "messages",
+                  "AIMessage"
+                ],
+                "kwargs": {
+                  "content": [
+                    {
+                      "extras": {
+                        "signature": "EnEKbwERTTIP8AdEGr3CJdlhECwLWWhK6Efv2WaGKvH4ZrOftovtpZa2rUs/Wx01S2iIfGcvaOFzkeh0cTEREMRFBGTqkwPQujKxqo5maw0CLZRszQ4yRQJTou1tFzQgkp+aT+d/wbxRzttnbk2Xx8huFA=="
+                      },
+                      "text": "Для ініціативи **DEM-021** було проведено оцінку складності. Нижче наведено результати:\n\n### Результати оцінки\n*   **Complexity (Складність):** Medium (Середня)\n*   **Fibonacci Points:** 5\n\n### Основні драйвери оцінки (Main Drivers)\nОцінка базується на наступних факторах:\n1.  **Висока критичність NFR (High NFR Criticality):** Це основний драйвер, який суттєво підвищує вимоги до якості, продуктивності та надійності рішення.\n2.  **Необхідність Security Review:** Обов'язкова перевірка безпеки додає етап до процесу розробки та вимагає додаткового часу на узгодження та впровадження вимог безпеки.\n3.  **Часткова стабільність вимог (Partial Requirements Stability):** Невизначеність у вимогах створює ризик переробок, що вимагає закладення додаткового буфера в оцінку.\n4.  **Масштаб рішення:** Взаємодія між 3 системами та 2 інтеграціями створює помірну технічну складність, що вимагає ретельного проектування інтерфейсів та потоків даних.\n\n*Примітка: Оцінка є попередньою та базується на наданих параметрах. Запит на оцінку не був відправлений у систему для фіналізації.*",
+                      "type": "text"
+                    }
+                  ],
+                  "id": "lc_run--01a00bb0-09a7-7223-80ca-517123ee838e-0",
+                  "invalid_tool_calls": [],
+                  "response_metadata": {
+                    "finish_reason": "STOP",
+                    "model_name": "gemini-3.1-flash-lite",
+                    "model_provider": "google_genai",
+                    "safety_ratings": []
+                  },
+                  "tool_calls": [],
+                  "type": "ai",
+                  "usage_metadata": {
+                    "input_token_details": {
+                      "cache_read": 0
+                    },
+                    "input_tokens": 653,
+                    "output_tokens": 332,
+                    "total_tokens": 985
+                  }
+                },
+                "lc": 1,
+                "type": "constructor"
+              },
+              "text": "Для ініціативи **DEM-021** було проведено оцінку складності. Нижче наведено результати:\n\n### Результати оцінки\n*   **Complexity (Складність):** Medium (Середня)\n*   **Fibonacci Points:** 5\n\n### Основні драйвери оцінки (Main Drivers)\nОцінка базується на наступних факторах:\n1.  **Висока критичність NFR (High NFR Criticality):** Це основний драйвер, який суттєво підвищує вимоги до якості, продуктивності та надійності рішення.\n2.  **Необхідність Security Review:** Обов'язкова перевірка безпеки додає етап до процесу розробки та вимагає додаткового часу на узгодження та впровадження вимог безпеки.\n3.  **Часткова стабільність вимог (Partial Requirements Stability):** Невизначеність у вимогах створює ризик переробок, що вимагає закладення додаткового буфера в оцінку.\n4.  **Масштаб рішення:** Взаємодія між 3 системами та 2 інтеграціями створює помірну технічну складність, що вимагає ретельного проектування інтерфейсів та потоків даних.\n\n*Примітка: Оцінка є попередньою та базується на наданих параметрах. Запит на оцінку не був відправлений у систему для фіналізації.*",
+              "type": "ChatGeneration"
+            }
+          ]
+        ],
+        "llm_output": {},
+        "run": null,
+        "type": "LLMResult"
+      },
+      "reference_example_id": null,
+      "parent_run_id": "01a00bb0-09a7-7223-80ca-5161ebd0ab11",
+      "tags": [
+        "langgraph",
+        "requirements-estimation",
+        "practice-2",
+        "seq:step:1"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00bb0-09a7-7223-80ca-517123ee838e?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:48:01.319981",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 653,
+      "completion_tokens": 332,
+      "total_tokens": 985,
+      "prompt_token_details": {
+        "cache_read": 0
+      },
+      "completion_token_details": {},
+      "first_token_time": null,
+      "total_cost": "0.00066125",
+      "prompt_cost": "0.00016325",
+      "completion_cost": "0.000498",
+      "prompt_cost_details": {
+        "cache_read": "0.0"
+      },
+      "completion_cost_details": {},
+      "parent_run_ids": [
+        "01a00baf-d6a5-7440-ad70-869307861344",
+        "01a00baf-efb7-7272-b096-e2a846e29bfe",
+        "01a00baf-efb8-7381-b3ee-0544664829fc",
+        "01a00bb0-09a7-7223-80ca-5161ebd0ab11"
+      ],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344.20260816T174754679736Z01a00baf-efb7-7272-b096-e2a846e29bfe.20260816T174754680188Z01a00baf-efb8-7381-b3ee-0544664829fc.20260816T174801319348Z01a00bb0-09a7-7223-80ca-5161ebd0ab11.20260816T174801319981Z01a00bb0-09a7-7223-80ca-517123ee838e",
+      "in_dataset": false
+    },
+    {
+      "id": "01a00bb0-133f-7fd1-9081-7fcf629efa7a",
+      "name": "output_guardrail",
+      "start_time": "2026-08-16T17:48:03.775474Z",
+      "run_type": "chain",
+      "end_time": "2026-08-16T17:48:03.776085Z",
+      "extra": {
+        "metadata": {
+          "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+          "LANGSMITH_PROJECT": "practice-2-malkova-demand-mas",
+          "LANGSMITH_TRACING": "true",
+          "assignment": "Practical Assignment 2",
+          "case": "Requirements & Estimation",
+          "contains_real_pii": false,
+          "framework": "LangGraph",
+          "langgraph_checkpoint_ns": "output_guardrail:a510126a-b133-f484-56d9-157500ac1af5",
+          "langgraph_node": "output_guardrail",
+          "langgraph_path": [
+            "__pregel_pull",
+            "output_guardrail"
+          ],
+          "langgraph_step": 4,
+          "langgraph_triggers": [
+            "branch:to:output_guardrail"
+          ],
+          "ls_integration": "langgraph",
+          "ls_run_depth": 1,
+          "revision_id": "c501abf",
+          "thread_id": "practice-2-trace-001"
+        },
+        "runtime": {
+          "langchain_core_version": "1.5.5",
+          "langchain_version": "1.3.15",
+          "library": "langchain-core",
+          "library_version": "1.5.5",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "py_implementation": "CPython",
+          "runtime": "python",
+          "runtime_version": "3.13.2",
+          "sdk": "langsmith-py",
+          "sdk_version": "0.11.0"
+        }
+      },
+      "error": null,
+      "serialized": null,
+      "events": [
+        {
+          "name": "start",
+          "time": "2026-08-16T17:48:03.775474+00:00"
+        },
+        {
+          "name": "end",
+          "time": "2026-08-16T17:48:03.776085+00:00"
+        }
+      ],
+      "inputs": {
+        "agent_output": "Для ініціативи **DEM-021** було проведено оцінку складності. Нижче наведено результати:\n\n### Результати оцінки\n*   **Complexity (Складність):** Medium (Середня)\n*   **Fibonacci Points:** 5\n\n### Основні драйвери оцінки (Main Drivers)\nОцінка базується на наступних факторах:\n1.  **Висока критичність NFR (High NFR Criticality):** Це основний драйвер, який суттєво підвищує вимоги до якості, продуктивності та надійності рішення.\n2.  **Необхідність Security Review:** Обов'язкова перевірка безпеки додає етап до процесу розробки та вимагає додаткового часу на узгодження та впровадження вимог безпеки.\n3.  **Часткова стабільність вимог (Partial Requirements Stability):** Невизначеність у вимогах створює ризик переробок, що вимагає закладення додаткового буфера в оцінку.\n4.  **Масштаб рішення:** Взаємодія між 3 системами та 2 інтеграціями створює помірну технічну складність, що вимагає ретельного проектування інтерфейсів та потоків даних.\n\n*Примітка: Оцінка є попередньою та базується на наданих параметрах. Запит на оцінку не був відправлений у систему для фіналізації.*",
+        "blocked": false,
+        "completed": false,
+        "current_agent": "estimation_agent",
+        "handoff_count": 1,
+        "route_reasoning": "The user explicitly requested an estimation for demand DEM-021, including complexity, Fibonacci points, and main drivers, which falls directly under the scope of the estimation_agent.",
+        "trajectory": [
+          {
+            "agent_name": "input_guardrail",
+            "details": {
+              "category": "safe"
+            },
+            "event": "input_allowed",
+            "timestamp": "2026-08-16T17:47:48.305168+00:00"
+          },
+          {
+            "agent_name": "demand_supervisor",
+            "details": {
+              "reasoning": "The user explicitly requested an estimation for demand DEM-021, including complexity, Fibonacci points, and main drivers, which falls directly under the scope of the estimation_agent.",
+              "target_agent": "estimation_agent"
+            },
+            "event": "handoff",
+            "timestamp": "2026-08-16T17:47:54.677711+00:00"
+          },
+          {
+            "agent_name": "estimation_agent",
+            "details": {
+              "output_length": 1073
+            },
+            "event": "agent_completed",
+            "timestamp": "2026-08-16T17:48:03.774731+00:00"
+          }
+        ],
+        "user_request": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request."
+      },
+      "outputs": {
+        "completed": true,
+        "final_answer": "Для ініціативи **DEM-021** було проведено оцінку складності. Нижче наведено результати:\n\n### Результати оцінки\n*   **Complexity (Складність):** Medium (Середня)\n*   **Fibonacci Points:** 5\n\n### Основні драйвери оцінки (Main Drivers)\nОцінка базується на наступних факторах:\n1.  **Висока критичність NFR (High NFR Criticality):** Це основний драйвер, який суттєво підвищує вимоги до якості, продуктивності та надійності рішення.\n2.  **Необхідність Security Review:** Обов'язкова перевірка безпеки додає етап до процесу розробки та вимагає додаткового часу на узгодження та впровадження вимог безпеки.\n3.  **Часткова стабільність вимог (Partial Requirements Stability):** Невизначеність у вимогах створює ризик переробок, що вимагає закладення додаткового буфера в оцінку.\n4.  **Масштаб рішення:** Взаємодія між 3 системами та 2 інтеграціями створює помірну технічну складність, що вимагає ретельного проектування інтерфейсів та потоків даних.\n\n*Примітка: Оцінка є попередньою та базується на наданих параметрах. Запит на оцінку не був відправлений у систему для фіналізації.*",
+        "trajectory": [
+          {
+            "agent_name": "output_guardrail",
+            "details": {
+              "pii_redacted": false
+            },
+            "event": "output_processed",
+            "timestamp": "2026-08-16T17:48:03.775907+00:00"
+          }
+        ]
+      },
+      "reference_example_id": null,
+      "parent_run_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "tags": [
+        "langgraph",
+        "practice-2",
+        "requirements-estimation",
+        "graph:step:4"
+      ],
+      "attachments": {},
+      "session_id": "235d045d-a088-4900-ba94-7a6e8d2c73c8",
+      "child_run_ids": null,
+      "child_runs": null,
+      "feedback_stats": null,
+      "app_path": "/o/7fe73952-db63-4588-b1f2-a4740b72671c/projects/p/235d045d-a088-4900-ba94-7a6e8d2c73c8/r/01a00bb0-133f-7fd1-9081-7fcf629efa7a?trace_id=01a00baf-d6a5-7440-ad70-869307861344&start_time=2026-08-16T17:48:03.775474",
+      "manifest_id": null,
+      "status": "success",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "prompt_token_details": null,
+      "completion_token_details": null,
+      "first_token_time": null,
+      "total_cost": null,
+      "prompt_cost": null,
+      "completion_cost": null,
+      "prompt_cost_details": null,
+      "completion_cost_details": null,
+      "parent_run_ids": [
+        "01a00baf-d6a5-7440-ad70-869307861344"
+      ],
+      "trace_id": "01a00baf-d6a5-7440-ad70-869307861344",
+      "dotted_order": "20260816T174748261848Z01a00baf-d6a5-7440-ad70-869307861344.20260816T174803775474Z01a00bb0-133f-7fd1-9081-7fcf629efa7a",
+      "in_dataset": false
+    }
+  ]
+}

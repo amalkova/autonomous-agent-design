@@ -1,0 +1,18 @@
+[
+  {
+    "framework": "LangGraph",
+    "file": "mas_langgraph.py",
+    "total_lines": 666,
+    "code_lines": 570,
+    "functions": 20,
+    "classes": 2
+  },
+  {
+    "framework": "AG2 v1",
+    "file": "mas_ag2.py",
+    "total_lines": 304,
+    "code_lines": 246,
+    "functions": 8,
+    "classes": 2
+  }
+]

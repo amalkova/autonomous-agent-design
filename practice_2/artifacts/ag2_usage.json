@@ -1,0 +1,95 @@
+{
+  "framework": "AG2 v1",
+  "selected_agent": "estimation_agent",
+  "model_calls": 3,
+  "total": {
+    "prompt_tokens": 1274.0,
+    "completion_tokens": 413.0,
+    "total_tokens": 1687.0,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "thinking_tokens": 0
+  },
+  "supervisor": {
+    "model_calls": 1,
+    "total": {
+      "prompt_tokens": 147.0,
+      "completion_tokens": 60.0,
+      "total_tokens": 207.0,
+      "cache_read_input_tokens": null,
+      "cache_creation_input_tokens": null,
+      "thinking_tokens": null
+    },
+    "by_model": {
+      "gemini-3.1-flash-lite": {
+        "prompt_tokens": 147.0,
+        "completion_tokens": 60.0,
+        "total_tokens": 207.0,
+        "cache_read_input_tokens": null,
+        "cache_creation_input_tokens": null,
+        "thinking_tokens": null
+      }
+    },
+    "by_provider": {
+      "google": {
+        "prompt_tokens": 147.0,
+        "completion_tokens": 60.0,
+        "total_tokens": 207.0,
+        "cache_read_input_tokens": null,
+        "cache_creation_input_tokens": null,
+        "thinking_tokens": null
+      }
+    },
+    "by_kind": {
+      "model_call": {
+        "prompt_tokens": 147.0,
+        "completion_tokens": 60.0,
+        "total_tokens": 207.0,
+        "cache_read_input_tokens": null,
+        "cache_creation_input_tokens": null,
+        "thinking_tokens": null
+      }
+    }
+  },
+  "specialist": {
+    "model_calls": 2,
+    "total": {
+      "prompt_tokens": 1127.0,
+      "completion_tokens": 353.0,
+      "total_tokens": 1480.0,
+      "cache_read_input_tokens": null,
+      "cache_creation_input_tokens": null,
+      "thinking_tokens": null
+    },
+    "by_model": {
+      "gemini-3.1-flash-lite": {
+        "prompt_tokens": 1127.0,
+        "completion_tokens": 353.0,
+        "total_tokens": 1480.0,
+        "cache_read_input_tokens": null,
+        "cache_creation_input_tokens": null,
+        "thinking_tokens": null
+      }
+    },
+    "by_provider": {
+      "google": {
+        "prompt_tokens": 1127.0,
+        "completion_tokens": 353.0,
+        "total_tokens": 1480.0,
+        "cache_read_input_tokens": null,
+        "cache_creation_input_tokens": null,
+        "thinking_tokens": null
+      }
+    },
+    "by_kind": {
+      "model_call": {
+        "prompt_tokens": 1127.0,
+        "completion_tokens": 353.0,
+        "total_tokens": 1480.0,
+        "cache_read_input_tokens": null,
+        "cache_creation_input_tokens": null,
+        "thinking_tokens": null
+      }
+    }
+  }
+}
