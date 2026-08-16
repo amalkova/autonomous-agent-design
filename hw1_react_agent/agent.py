@@ -2,7 +2,6 @@
 
 import operator
 from typing import Annotated, Any, Literal
-from trajectory_logger import save_trajectory
 
 from dotenv import load_dotenv
 from langchain.messages import (
@@ -23,6 +22,7 @@ from tools import (
     classify_discovery_scope,
     get_initiative_status,
 )
+from trajectory_logger import save_trajectory
 
 
 load_dotenv()
@@ -50,7 +50,12 @@ class ModelAnswer(BaseModel):
 class AgentResponse(BaseModel):
     """Фінальний результат запуску ReAct-агента."""
 
-    status: Literal["completed", "needs_input", "safety_stop", "error"]
+    status: Literal[
+        "completed",
+        "needs_input",
+        "safety_stop",
+        "error",
+    ]
     answer: str
     requires_human_confirmation: bool = False
     used_tools: list[str] = Field(default_factory=list)
@@ -96,6 +101,7 @@ STRUCTURED_MODEL = BASE_MODEL.with_structured_output(
     method="json_schema",
 )
 
+
 def collect_used_tools(messages: list[AnyMessage]) -> list[str]:
     """Збирає назви фактично викликаних інструментів."""
 
@@ -114,8 +120,8 @@ def collect_used_tools(messages: list[AnyMessage]) -> list[str]:
 def build_agent_graph(safety: SafetyController):
     """Створює окремий LangGraph для одного запуску агента."""
 
-    def llm_node(state: AgentState) -> dict[str, Any]:
-        """Модель обирає інструмент або формує попередню відповідь."""
+    def agent_node(state: AgentState) -> dict[str, Any]:
+        """Обирає інструмент або формує попередню відповідь."""
 
         safety.check_before_step()
 
@@ -168,7 +174,7 @@ def build_agent_graph(safety: SafetyController):
 
         return {"messages": tool_messages}
 
-    def route_after_llm(
+    def route_after_agent(
         state: AgentState,
     ) -> Literal["tools", "finalize"]:
         """Визначає, чи треба виконувати інструмент."""
@@ -206,20 +212,20 @@ def build_agent_graph(safety: SafetyController):
 
     builder = StateGraph(AgentState)
 
-    builder.add_node("llm", llm_node)
+    builder.add_node("agent", agent_node)
     builder.add_node("tools", tool_node)
     builder.add_node("finalize", finalize_node)
 
-    builder.add_edge(START, "llm")
+    builder.add_edge(START, "agent")
     builder.add_conditional_edges(
-        "llm",
-        route_after_llm,
+        "agent",
+        route_after_agent,
         {
             "tools": "tools",
             "finalize": "finalize",
         },
     )
-    builder.add_edge("tools", "llm")
+    builder.add_edge("tools", "agent")
     builder.add_edge("finalize", END)
 
     return builder.compile()
@@ -290,6 +296,7 @@ def run_agent(
             safety=safety.snapshot(),
         ).model_dump()
 
+
 if __name__ == "__main__":
     import json
 
@@ -299,7 +306,12 @@ if __name__ == "__main__":
     while True:
         user_input = input("You: ").strip()
 
-        if user_input.lower() in {"exit", "quit", "выход", "вихід"}:
+        if user_input.lower() in {
+            "exit",
+            "quit",
+            "выход",
+            "вихід",
+        }:
             print("Agent stopped.")
             break
 

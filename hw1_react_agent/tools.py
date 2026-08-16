@@ -3,7 +3,7 @@
 from typing import Any, Literal
 
 from langchain_core.tools import tool
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 
 class ToolResult(BaseModel):
@@ -13,14 +13,40 @@ class ToolResult(BaseModel):
     data: dict[str, Any] | None = None
     error: str | None = None
 
+def normalize_initiative_id(value: object) -> str:
+    """Перевіряє та нормалізує ID у форматі DEM-001."""
+
+    if not isinstance(value, str):
+        raise ValueError("initiative_id має бути текстовим значенням.")
+
+    normalized_id = value.strip().upper()
+
+    if (
+        len(normalized_id) != 7
+        or not normalized_id.startswith("DEM-")
+        or not normalized_id[4:].isdigit()
+    ):
+        raise ValueError(
+            "initiative_id має відповідати формату DEM-001."
+        )
+
+    return normalized_id
 
 class GetInitiativeStatusInput(BaseModel):
     """Вхідні дані для пошуку ініціативи."""
 
+    model_config = ConfigDict(str_strip_whitespace=True)
+
     initiative_id: str = Field(
-        description="Ідентифікатор ініціативи, наприклад DEM-001"
+        description="Ідентифікатор ініціативи у форматі DEM-001"
     )
 
+    @field_validator("initiative_id", mode="before")
+    @classmethod
+    def validate_initiative_id(cls, value: object) -> str:
+        """Перевіряє формат і нормалізує ID."""
+
+        return normalize_initiative_id(value)
 
 # Синтетичні дані для навчального проєкту.
 INITIATIVES = {
@@ -69,7 +95,11 @@ def get_initiative_status(initiative_id: str) -> str:
 class CheckIntakeCompletenessInput(BaseModel):
     """Вхідні дані для перевірки повноти intake."""
 
-    initiative_id: str = Field(description="Ідентифікатор ініціативи")
+    model_config = ConfigDict(str_strip_whitespace=True)
+
+    initiative_id: str = Field(
+        description="Ідентифікатор ініціативи у форматі DEM-001"
+    )
     business_owner: str | None = Field(
         default=None,
         description="Власник ініціативи",
@@ -91,6 +121,37 @@ class CheckIntakeCompletenessInput(BaseModel):
         description="Відомі обмеження або явна вказівка, що їх немає",
     )
 
+    @field_validator("initiative_id", mode="before")
+    @classmethod
+    def validate_initiative_id(cls, value: object) -> str:
+        """Перевіряє формат і нормалізує ID."""
+
+        return normalize_initiative_id(value)
+
+    @field_validator(
+        "business_owner",
+        "business_driver",
+        "success_metrics",
+        "financial_effect",
+        "constraints",
+        mode="before",
+    )
+    @classmethod
+    def normalize_optional_text(
+        cls,
+        value: object,
+    ) -> str | None:
+        """Перетворює порожні текстові поля на None."""
+
+        if value is None:
+            return None
+
+        if not isinstance(value, str):
+            raise ValueError("Значення intake-поля має бути текстом.")
+
+        normalized_value = value.strip()
+
+        return normalized_value or None
 
 @tool(args_schema=CheckIntakeCompletenessInput)
 def check_intake_completeness(
@@ -133,20 +194,65 @@ def check_intake_completeness(
 class ClassifyDiscoveryScopeInput(BaseModel):
     """Фактори для оцінювання складності discovery."""
 
-    initiative_id: str = Field(description="Ідентифікатор ініціативи")
+    model_config = ConfigDict(str_strip_whitespace=True)
+
+    initiative_id: str = Field(
+        description="Ідентифікатор ініціативи у форматі DEM-001"
+    )
     systems_count: int = Field(
         ge=1,
+        le=50,
         description="Кількість систем, яких стосується ініціатива",
     )
-    ownership_clarity: Literal["clear", "partial", "unclear"]
-    technical_uncertainty: Literal["low", "medium", "high"]
+    ownership_clarity: Literal[
+        "clear",
+        "partial",
+        "unclear",
+    ] = Field(
+        description=(
+            "Зрозумілість ownership: clear, partial або unclear"
+        )
+    )
+    technical_uncertainty: Literal[
+        "low",
+        "medium",
+        "high",
+    ] = Field(
+        description=(
+            "Рівень технічної невизначеності: low, medium або high"
+        )
+    )
     dependency_count: int = Field(
         ge=0,
+        le=50,
         description="Кількість зовнішніх командних залежностей",
     )
-    regulatory_impact: Literal["none", "possible", "confirmed"]
-    data_readiness: Literal["ready", "partial", "unknown", "unavailable"]
+    regulatory_impact: Literal[
+        "none",
+        "possible",
+        "confirmed",
+    ] = Field(
+        description=(
+            "Регуляторний вплив: none, possible або confirmed"
+        )
+    )
+    data_readiness: Literal[
+        "ready",
+        "partial",
+        "unknown",
+        "unavailable",
+    ] = Field(
+        description=(
+            "Готовність даних: ready, partial, unknown або unavailable"
+        )
+    )
 
+    @field_validator("initiative_id", mode="before")
+    @classmethod
+    def validate_initiative_id(cls, value: object) -> str:
+        """Перевіряє формат і нормалізує ID."""
+
+        return normalize_initiative_id(value)
 
 @tool(args_schema=ClassifyDiscoveryScopeInput)
 def classify_discovery_scope(
@@ -248,13 +354,67 @@ def classify_discovery_scope(
 class CalculatePriorityScoreInput(BaseModel):
     """Оцінки критеріїв, підтверджені людиною."""
 
-    initiative_id: str = Field(description="Ідентифікатор ініціативи")
-    strategic_alignment: int = Field(ge=1, le=5)
-    customer_impact: int = Field(ge=1, le=5)
-    financial_impact: int = Field(ge=1, le=5)
-    regulatory_urgency: int = Field(ge=1, le=5)
-    implementation_feasibility: int = Field(ge=1, le=5)
+    model_config = ConfigDict(str_strip_whitespace=True)
 
+    initiative_id: str = Field(
+        description="Ідентифікатор ініціативи у форматі DEM-001"
+    )
+    strategic_alignment: int = Field(
+        ge=1,
+        le=5,
+        description="Стратегічна відповідність від 1 до 5",
+    )
+    customer_impact: int = Field(
+        ge=1,
+        le=5,
+        description="Вплив на клієнта від 1 до 5",
+    )
+    financial_impact: int = Field(
+        ge=1,
+        le=5,
+        description="Фінансовий вплив від 1 до 5",
+    )
+    regulatory_urgency: int = Field(
+        ge=1,
+        le=5,
+        description="Регуляторна терміновість від 1 до 5",
+    )
+    implementation_feasibility: int = Field(
+        ge=1,
+        le=5,
+        description="Реалістичність реалізації від 1 до 5",
+    )
+
+    @field_validator("initiative_id", mode="before")
+    @classmethod
+    def validate_initiative_id(cls, value: object) -> str:
+        """Перевіряє формат і нормалізує ID."""
+
+        return normalize_initiative_id(value)
+
+    @field_validator(
+        "strategic_alignment",
+        "customer_impact",
+        "financial_impact",
+        "regulatory_urgency",
+        "implementation_feasibility",
+        mode="before",
+    )
+    @classmethod
+    def validate_score(cls, value: object) -> int:
+        """Перевіряє, що людська оцінка є цілим числом 1–5."""
+
+        if isinstance(value, bool) or not isinstance(value, int):
+            raise ValueError(
+                "Оцінка критерію має бути цілим числом від 1 до 5."
+            )
+
+        if not 1 <= value <= 5:
+            raise ValueError(
+                "Оцінка критерію має бути в діапазоні від 1 до 5."
+            )
+
+        return value
 
 @tool(args_schema=CalculatePriorityScoreInput)
 def calculate_priority_score(

@@ -1,20 +1,36 @@
 {
-  "created_at": "2026-08-16T10:04:54.808656+00:00",
+  "created_at": "2026-08-16T10:37:37.056658+00:00",
   "model": "gemini-3.1-flash-lite",
   "summary": {
     "total": 5,
     "passed": 5,
-    "failed": 0
+    "failed": 0,
+    "success_rate_percent": 100.0,
+    "maximum_steps": 3,
+    "maximum_execution_time_seconds": 6.314
   },
   "test_cases": [
     {
-      "name": "Existing initiative status",
-      "input": "Какой статус у инициативы DEM-001?",
-      "passed": true,
-      "failures": [],
-      "response": {
+      "test_id": "TC-001",
+      "name": "Статус існуючої ініціативи",
+      "complexity": "simple",
+      "input_query": "Який статус ініціативи DEM-001?",
+      "expected_result": {
+        "allowed_statuses": [
+          "completed"
+        ],
+        "expected_tool_calls": [
+          "get_initiative_status"
+        ],
+        "required_keyword_groups": [
+          [
+            "discovery"
+          ]
+        ]
+      },
+      "actual_result": {
         "status": "completed",
-        "answer": "Статус ініціативи DEM-001 (AI assistant for customer support) — Discovery. Останнє оновлення було 14 серпня 2026 року, ініціативою керує Lead Business Analyst.",
+        "answer": "Ініціатива DEM-001 під назвою 'AI assistant for customer support' знаходиться на стадії Discovery. Останнє оновлення було 2026-08-14, відповідальний менеджер: Lead Business Analyst.",
         "requires_human_confirmation": false,
         "used_tools": [
           "get_initiative_status"
@@ -22,41 +38,89 @@
         "safety": {
           "step_count": 3,
           "max_steps": 8,
-          "elapsed_seconds": 3.431,
+          "elapsed_seconds": 2.696,
           "timeout_seconds": 60.0,
           "registered_tool_calls": 1
         }
-      }
+      },
+      "steps": 3,
+      "tool_calls": [
+        "get_initiative_status"
+      ],
+      "execution_time_seconds": 2.696,
+      "passed": true,
+      "failures": []
     },
     {
-      "name": "Incomplete intake",
-      "input": "Проверь полноту intake DEM-004. business_owner=Retail Director, business_driver=Reduce onboarding time. Остальные поля не предоставлены.",
-      "passed": true,
-      "failures": [],
-      "response": {
+      "test_id": "TC-002",
+      "name": "Перевірка неповного intake",
+      "complexity": "medium",
+      "input_query": "Перевір повноту intake DEM-004. business_owner=Retail Director, business_driver=Reduce onboarding time. Інші поля не надані.",
+      "expected_result": {
+        "allowed_statuses": [
+          "completed",
+          "needs_input"
+        ],
+        "expected_tool_calls": [
+          "check_intake_completeness"
+        ],
+        "required_keyword_groups": [
+          [
+            "40"
+          ],
+          [
+            "success_metrics",
+            "метрик"
+          ]
+        ]
+      },
+      "actual_result": {
         "status": "needs_input",
-        "answer": "Для ініціативи DEM-004 заповнено лише 40% даних. Будь ласка, надайте інформацію про: success_metrics, financial_effect та constraints, щоб продовжити розрахунок Discovery Points та пріоритету.",
-        "requires_human_confirmation": true,
+        "answer": "Ініціатива DEM-004 наразі неповна (заповнено 40%). Для завершення Intake необхідно надати інформацію за наступними полями: success_metrics, financial_effect, constraints. Будь ласка, надайте ці дані, щоб я міг завершити перевірку.",
+        "requires_human_confirmation": false,
         "used_tools": [
           "check_intake_completeness"
         ],
         "safety": {
           "step_count": 3,
           "max_steps": 8,
-          "elapsed_seconds": 3.194,
+          "elapsed_seconds": 4.417,
           "timeout_seconds": 60.0,
           "registered_tool_calls": 1
         }
-      }
+      },
+      "steps": 3,
+      "tool_calls": [
+        "check_intake_completeness"
+      ],
+      "execution_time_seconds": 4.417,
+      "passed": true,
+      "failures": []
     },
     {
-      "name": "Deep discovery classification",
-      "input": "Рассчитай Discovery Points для DEM-004: systems_count=4, ownership_clarity=partial, technical_uncertainty=high, dependency_count=3, regulatory_impact=possible, data_readiness=partial.",
-      "passed": true,
-      "failures": [],
-      "response": {
+      "test_id": "TC-003",
+      "name": "Класифікація Deep discovery",
+      "complexity": "complex",
+      "input_query": "Розрахуй Discovery Points для DEM-004: systems_count=4, ownership_clarity=partial, technical_uncertainty=high, dependency_count=3, regulatory_impact=possible, data_readiness=partial.",
+      "expected_result": {
+        "allowed_statuses": [
+          "completed"
+        ],
+        "expected_tool_calls": [
+          "classify_discovery_scope"
+        ],
+        "required_keyword_groups": [
+          [
+            "8"
+          ],
+          [
+            "deep"
+          ]
+        ]
+      },
+      "actual_result": {
         "status": "completed",
-        "answer": "Для ініціативи DEM-004 розрахунок завершено. Оцінка становить 8 Discovery Points, рекомендований обсяг — Deep (набрано 9 балів з урахуванням складності). Будь ласка, підтвердьте цей вибір для переходу до наступного етапу.",
+        "answer": "Для ініціативи DEM-004 розраховано 8 Discovery Points, що відповідає рівню Deep. Будь ласка, підтвердьте цей вибір для подальшої роботи.",
         "requires_human_confirmation": true,
         "used_tools": [
           "classify_discovery_scope"
@@ -64,20 +128,45 @@
         "safety": {
           "step_count": 3,
           "max_steps": 8,
-          "elapsed_seconds": 18.261,
+          "elapsed_seconds": 6.314,
           "timeout_seconds": 60.0,
           "registered_tool_calls": 1
         }
-      }
+      },
+      "steps": 3,
+      "tool_calls": [
+        "classify_discovery_scope"
+      ],
+      "execution_time_seconds": 6.314,
+      "passed": true,
+      "failures": []
     },
     {
-      "name": "High priority calculation",
-      "input": "Рассчитай приоритет DEM-004 по подтверждённым оценкам: strategic_alignment=5, customer_impact=4, financial_impact=3, regulatory_urgency=5, implementation_feasibility=2.",
-      "passed": true,
-      "failures": [],
-      "response": {
+      "test_id": "TC-004",
+      "name": "Розрахунок високого пріоритету",
+      "complexity": "complex",
+      "input_query": "Розрахуй пріоритет DEM-004 за підтвердженими оцінками: strategic_alignment=5, customer_impact=4, financial_impact=3, regulatory_urgency=5, implementation_feasibility=2.",
+      "expected_result": {
+        "allowed_statuses": [
+          "completed"
+        ],
+        "expected_tool_calls": [
+          "calculate_priority_score"
+        ],
+        "required_keyword_groups": [
+          [
+            "4.05",
+            "4,05"
+          ],
+          [
+            "high",
+            "висок"
+          ]
+        ]
+      },
+      "actual_result": {
         "status": "completed",
-        "answer": "Для ініціативи DEM-004 розраховано Priority Score 4.05, що відповідає високому пріоритету (High). Цей результат потребує вашого остаточного підтвердження.",
+        "answer": "Для ініціативи DEM-004 розрахований Priority Score становить 4.05, що відповідає рівню High. Будь ласка, підтвердіть цей результат для подальшої роботи.",
         "requires_human_confirmation": true,
         "used_tools": [
           "calculate_priority_score"
@@ -85,30 +174,58 @@
         "safety": {
           "step_count": 3,
           "max_steps": 8,
-          "elapsed_seconds": 13.241,
+          "elapsed_seconds": 2.67,
           "timeout_seconds": 60.0,
           "registered_tool_calls": 1
         }
-      }
+      },
+      "steps": 3,
+      "tool_calls": [
+        "calculate_priority_score"
+      ],
+      "execution_time_seconds": 2.67,
+      "passed": true,
+      "failures": []
     },
     {
-      "name": "Missing discovery inputs",
-      "input": "Определи Discovery scope для DEM-006. Известно только, что systems_count=2.",
-      "passed": true,
-      "failures": [],
-      "response": {
+      "test_id": "TC-005",
+      "name": "Відсутні параметри discovery",
+      "complexity": "medium",
+      "input_query": "Визнач Discovery scope для DEM-006. Відомо лише, що systems_count=2.",
+      "expected_result": {
+        "allowed_statuses": [
+          "needs_input"
+        ],
+        "expected_tool_calls": [],
+        "required_keyword_groups": [
+          [
+            "ownership",
+            "влас"
+          ],
+          [
+            "technical",
+            "техніч"
+          ]
+        ]
+      },
+      "actual_result": {
         "status": "needs_input",
-        "answer": "Для визначення Discovery scope та розрахунку Discovery Points мені бракує даних. Будь ласка, вкажіть: ownership_clarity, technical_uncertainty, dependency_count, regulatory_impact та data_readiness для DEM-006.",
-        "requires_human_confirmation": true,
+        "answer": "Для точного розрахунку Discovery scope та надання рекомендації (Light, Standard, Deep) для ініціативи DEM-006, будь ласка, надайте значення для наступних параметрів: ownership_clarity (clear/partial/unclear), technical_uncertainty (low/medium/high), dependency_count (число), regulatory_impact (none/possible/confirmed) та data_readiness (ready/partial/unknown/unavailable).",
+        "requires_human_confirmation": false,
         "used_tools": [],
         "safety": {
           "step_count": 2,
           "max_steps": 8,
-          "elapsed_seconds": 5.7,
+          "elapsed_seconds": 6.194,
           "timeout_seconds": 60.0,
           "registered_tool_calls": 0
         }
-      }
+      },
+      "steps": 2,
+      "tool_calls": [],
+      "execution_time_seconds": 6.194,
+      "passed": true,
+      "failures": []
     }
   ]
 }

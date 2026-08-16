@@ -622,6 +622,307 @@
           "registered_tool_calls": 0
         }
       }
+    },
+    {
+      "run_id": "2e89acc7-b63d-43af-90ce-ecdd992ba93e",
+      "created_at": "2026-08-16T10:32:57.402452+00:00",
+      "user_input": "Який статус ініціативи DEM-001?",
+      "trajectory": [
+        {
+          "step": 1,
+          "message_type": "human",
+          "name": null,
+          "content": "Який статус ініціативи DEM-001?",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "message_type": "ai",
+          "name": null,
+          "content": "",
+          "tool_calls": [
+            {
+              "name": "get_initiative_status",
+              "args": {
+                "initiative_id": "DEM-001"
+              },
+              "id": "call_1191593",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "message_type": "tool",
+          "name": "get_initiative_status",
+          "content": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-001\",\"title\":\"AI assistant for customer support\",\"status\":\"Discovery\",\"assignee\":\"Lead Business Analyst\",\"last_update\":\"2026-08-14\"},\"error\":null}",
+          "tool_calls": [],
+          "tool_call_id": "call_1191593"
+        },
+        {
+          "step": 4,
+          "message_type": "ai",
+          "name": null,
+          "content": "Ініціатива **DEM-001** («AI assistant for customer support») наразі перебуває на стадії **Discovery**.\n\nОстаннє оновлення: 2026-08-14. Відповідальний: Lead Business Analyst.",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "completed",
+        "answer": "Ініціатива DEM-001 під назвою 'AI assistant for customer support' знаходиться на стадії Discovery. Останнє оновлення було 2026-08-14, відповідальний менеджер: Lead Business Analyst.",
+        "requires_human_confirmation": false,
+        "used_tools": [
+          "get_initiative_status"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 2.696,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "run_id": "c4ed3aff-c7cd-4c10-abbb-bb4913695e82",
+      "created_at": "2026-08-16T10:34:06.827989+00:00",
+      "user_input": "Перевір повноту intake DEM-004. business_owner=Retail Director, business_driver=Reduce onboarding time. Інші поля не надані.",
+      "trajectory": [
+        {
+          "step": 1,
+          "message_type": "human",
+          "name": null,
+          "content": "Перевір повноту intake DEM-004. business_owner=Retail Director, business_driver=Reduce onboarding time. Інші поля не надані.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "message_type": "ai",
+          "name": null,
+          "content": "",
+          "tool_calls": [
+            {
+              "name": "check_intake_completeness",
+              "args": {
+                "initiative_id": "DEM-004",
+                "business_driver": "Reduce onboarding time",
+                "business_owner": "Retail Director"
+              },
+              "id": "call_1380514",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "message_type": "tool",
+          "name": "check_intake_completeness",
+          "content": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-004\",\"is_complete\":false,\"completeness_percent\":40,\"missing_fields\":[\"success_metrics\",\"financial_effect\",\"constraints\"]},\"error\":null}",
+          "tool_calls": [],
+          "tool_call_id": "call_1380514"
+        },
+        {
+          "step": 4,
+          "message_type": "ai",
+          "name": null,
+          "content": "Ініціатива **DEM-004** наразі неповна (заповнено 40%).\n\nДля завершення Intake необхідно надати інформацію за наступними полями:\n* `success_metrics` (очікувані вимірювані результати)\n* `financial_effect` (очікуваний фінансовий ефект)\n* `constraints` (відомі обмеження або підтвердження, що їх немає)\n\nБудь ласка, надайте ці дані, щоб я міг завершити перевірку.",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "needs_input",
+        "answer": "Ініціатива DEM-004 наразі неповна (заповнено 40%). Для завершення Intake необхідно надати інформацію за наступними полями: success_metrics, financial_effect, constraints. Будь ласка, надайте ці дані, щоб я міг завершити перевірку.",
+        "requires_human_confirmation": false,
+        "used_tools": [
+          "check_intake_completeness"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 4.417,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "run_id": "8b86e565-1ae7-43aa-a25a-29ef9d516cc5",
+      "created_at": "2026-08-16T10:35:18.153101+00:00",
+      "user_input": "Розрахуй Discovery Points для DEM-004: systems_count=4, ownership_clarity=partial, technical_uncertainty=high, dependency_count=3, regulatory_impact=possible, data_readiness=partial.",
+      "trajectory": [
+        {
+          "step": 1,
+          "message_type": "human",
+          "name": null,
+          "content": "Розрахуй Discovery Points для DEM-004: systems_count=4, ownership_clarity=partial, technical_uncertainty=high, dependency_count=3, regulatory_impact=possible, data_readiness=partial.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "message_type": "ai",
+          "name": null,
+          "content": "",
+          "tool_calls": [
+            {
+              "name": "classify_discovery_scope",
+              "args": {
+                "technical_uncertainty": "high",
+                "data_readiness": "partial",
+                "regulatory_impact": "possible",
+                "systems_count": 4,
+                "initiative_id": "DEM-004",
+                "dependency_count": 3,
+                "ownership_clarity": "partial"
+              },
+              "id": "call_2169553",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "message_type": "tool",
+          "name": "classify_discovery_scope",
+          "content": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-004\",\"discovery_points\":8,\"recommended_scope\":\"Deep\",\"raw_score\":9,\"scoring_breakdown\":{\"systems\":2,\"ownership\":1,\"technical_uncertainty\":2,\"dependencies\":2,\"regulatory_impact\":1,\"data_readiness\":1},\"requires_lba_confirmation\":true},\"error\":null}",
+          "tool_calls": [],
+          "tool_call_id": "call_2169553"
+        },
+        {
+          "step": 4,
+          "message_type": "ai",
+          "name": null,
+          "content": "Для ініціативи **DEM-004** розрахунок Discovery Points завершено:\n\n*   **Набрані бали (Discovery Points):** 8\n*   **Рекомендований тип Discovery:** **Deep**\n\n**Деталізація балів:**\n*   Системи: 2\n*   Технічна невизначеність: 2\n*   Залежності: 2\n*   Готовність даних: 1\n*   Зрозумілість власності: 1\n*   Регуляторний вплив: 1\n\n*Зверніть увагу: оскільки рівень визначено як \"Deep\", це потребує підтвердження від LBA (Business Analyst Lead).*",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "completed",
+        "answer": "Для ініціативи DEM-004 розраховано 8 Discovery Points, що відповідає рівню Deep. Будь ласка, підтвердьте цей вибір для подальшої роботи.",
+        "requires_human_confirmation": true,
+        "used_tools": [
+          "classify_discovery_scope"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 6.314,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "run_id": "e201cfda-20d0-432b-a49b-8903ed38abaf",
+      "created_at": "2026-08-16T10:36:25.851089+00:00",
+      "user_input": "Розрахуй пріоритет DEM-004 за підтвердженими оцінками: strategic_alignment=5, customer_impact=4, financial_impact=3, regulatory_urgency=5, implementation_feasibility=2.",
+      "trajectory": [
+        {
+          "step": 1,
+          "message_type": "human",
+          "name": null,
+          "content": "Розрахуй пріоритет DEM-004 за підтвердженими оцінками: strategic_alignment=5, customer_impact=4, financial_impact=3, regulatory_urgency=5, implementation_feasibility=2.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "message_type": "ai",
+          "name": null,
+          "content": "",
+          "tool_calls": [
+            {
+              "name": "calculate_priority_score",
+              "args": {
+                "strategic_alignment": 5,
+                "initiative_id": "DEM-004",
+                "customer_impact": 4,
+                "implementation_feasibility": 2,
+                "financial_impact": 3,
+                "regulatory_urgency": 5
+              },
+              "id": "call_1287699",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "message_type": "tool",
+          "name": "calculate_priority_score",
+          "content": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-004\",\"priority_score\":4.05,\"priority_level\":\"High\",\"scores\":{\"strategic_alignment\":5,\"customer_impact\":4,\"financial_impact\":3,\"regulatory_urgency\":5,\"implementation_feasibility\":2},\"weights\":{\"strategic_alignment\":0.3,\"customer_impact\":0.25,\"financial_impact\":0.2,\"regulatory_urgency\":0.15,\"implementation_feasibility\":0.1},\"requires_human_validation\":true},\"error\":null}",
+          "tool_calls": [],
+          "tool_call_id": "call_1287699"
+        },
+        {
+          "step": 4,
+          "message_type": "ai",
+          "name": null,
+          "content": "Для ініціативи **DEM-004** було розраховано пріоритет:\n\n*   **Оцінка пріоритету (Priority Score):** 4.05\n*   **Рівень пріоритету:** High\n\nЗверніть увагу, що цей результат потребує вашого підтвердження (human validation). Чи погоджуєтеся ви з таким рівнем пріоритету, чи необхідно переглянути вхідні оцінки?",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "completed",
+        "answer": "Для ініціативи DEM-004 розрахований Priority Score становить 4.05, що відповідає рівню High. Будь ласка, підтвердіть цей результат для подальшої роботи.",
+        "requires_human_confirmation": true,
+        "used_tools": [
+          "calculate_priority_score"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 2.67,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "run_id": "32166e3e-b7dd-4953-85a4-0cbdcf7aad4b",
+      "created_at": "2026-08-16T10:37:37.055514+00:00",
+      "user_input": "Визнач Discovery scope для DEM-006. Відомо лише, що systems_count=2.",
+      "trajectory": [
+        {
+          "step": 1,
+          "message_type": "human",
+          "name": null,
+          "content": "Визнач Discovery scope для DEM-006. Відомо лише, що systems_count=2.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "message_type": "ai",
+          "name": null,
+          "content": "Для визначення Discovery scope та отримання рекомендації (Light, Standard або Deep) мені необхідно отримати від вас додаткову інформацію про ініціативу **DEM-006**:\n\n1. **ownership_clarity**: Наскільки зрозуміло, хто відповідає за ініціативу? (оберіть: *clear, partial, unclear*)\n2. **technical_uncertainty**: Який рівень технічної невизначеності? (оберіть: *low, medium, high*)\n3. **dependency_count**: Кількість зовнішніх командних залежностей (число).\n4. **regulatory_impact**: Чи є регуляторний вплив? (оберіть: *none, possible, confirmed*)\n5. **data_readiness**: Яка готовність даних? (оберіть: *ready, partial, unknown, unavailable*)\n\nБудь ласка, надайте ці дані, щоб я міг розрахувати Discovery Points та надати рекомендацію.",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "needs_input",
+        "answer": "Для точного розрахунку Discovery scope та надання рекомендації (Light, Standard, Deep) для ініціативи DEM-006, будь ласка, надайте значення для наступних параметрів: ownership_clarity (clear/partial/unclear), technical_uncertainty (low/medium/high), dependency_count (число), regulatory_impact (none/possible/confirmed) та data_readiness (ready/partial/unknown/unavailable).",
+        "requires_human_confirmation": false,
+        "used_tools": [],
+        "safety": {
+          "step_count": 2,
+          "max_steps": 8,
+          "elapsed_seconds": 6.194,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 0
+        }
+      }
     }
   ]
 }

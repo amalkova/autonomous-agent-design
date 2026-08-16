@@ -1,8 +1,14 @@
 """Тести інструментів ReAct-агента."""
 
 import json
+import pytest
+from pydantic import ValidationError
 
 from tools import (
+    CalculatePriorityScoreInput,
+    CheckIntakeCompletenessInput,
+    ClassifyDiscoveryScopeInput,
+    GetInitiativeStatusInput,
     calculate_priority_score,
     check_intake_completeness,
     classify_discovery_scope,
@@ -126,3 +132,45 @@ def test_high_priority_score() -> None:
     assert result["data"]["priority_score"] == 4.05
     assert result["data"]["priority_level"] == "High"
     assert result["data"]["requires_human_validation"] is True
+
+def test_invalid_initiative_id_is_rejected() -> None:
+    with pytest.raises(ValidationError, match="DEM-001"):
+        GetInitiativeStatusInput(
+            initiative_id="incorrect-id",
+        )
+
+
+def test_non_text_intake_field_is_rejected() -> None:
+    with pytest.raises(ValidationError, match="текстом"):
+        CheckIntakeCompletenessInput(
+            initiative_id="DEM-004",
+            business_owner=123,
+        )
+
+
+def test_invalid_systems_count_is_rejected() -> None:
+    with pytest.raises(
+        ValidationError,
+        match="greater than or equal to 1",
+    ):
+        ClassifyDiscoveryScopeInput(
+            initiative_id="DEM-004",
+            systems_count=0,
+            ownership_clarity="clear",
+            technical_uncertainty="low",
+            dependency_count=0,
+            regulatory_impact="none",
+            data_readiness="ready",
+        )
+
+
+def test_invalid_priority_score_is_rejected() -> None:
+    with pytest.raises(ValidationError, match="діапазоні"):
+        CalculatePriorityScoreInput(
+            initiative_id="DEM-004",
+            strategic_alignment=6,
+            customer_impact=4,
+            financial_impact=3,
+            regulatory_urgency=5,
+            implementation_feasibility=2,
+        )
