@@ -1,0 +1,627 @@
+{
+  "runs": [
+    {
+      "run_id": "b69a3b8a-9cc1-4295-ac06-0de790eac2ad",
+      "created_at": "2026-08-16T09:44:54.205897+00:00",
+      "user_input": "Какой статус у инициативы DEM-001?",
+      "trajectory": [
+        {
+          "step": 1,
+          "message_type": "human",
+          "name": null,
+          "content": "Какой статус у инициативы DEM-001?",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "message_type": "ai",
+          "name": null,
+          "content": "",
+          "tool_calls": [
+            {
+              "name": "get_initiative_status",
+              "args": {
+                "initiative_id": "DEM-001"
+              },
+              "id": "call_1170658",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "message_type": "tool",
+          "name": "get_initiative_status",
+          "content": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-001\",\"title\":\"AI assistant for customer support\",\"status\":\"Discovery\",\"assignee\":\"Lead Business Analyst\",\"last_update\":\"2026-08-14\"},\"error\":null}",
+          "tool_calls": [],
+          "tool_call_id": "call_1170658"
+        },
+        {
+          "step": 4,
+          "message_type": "ai",
+          "name": null,
+          "content": "Инициатива **DEM-001** («AI assistant for customer support») на данный момент находится в статусе **Discovery** (Дискавери).\n\n*   **Ответственный:** Lead Business Analyst\n*   **Дата последнего обновления:** 14 августа 2026 г.",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "completed",
+        "answer": "Инициатива **DEM-001** («AI assistant for customer support») на данный момент находится в статусе **Discovery** (Дискавери).\n\n* **Ответственный:** Lead Business Analyst\n* **Дата последнего обновления:** 14 августа 2026 г.",
+        "requires_human_confirmation": false,
+        "used_tools": [
+          "get_initiative_status"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 3.853,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "run_id": "7ffd0062-5e64-4a6c-8eae-9dfc1dc90de6",
+      "created_at": "2026-08-16T09:48:20.557364+00:00",
+      "user_input": "Какой статус у инициативы DEM-001?",
+      "trajectory": [
+        {
+          "step": 1,
+          "message_type": "human",
+          "name": null,
+          "content": "Какой статус у инициативы DEM-001?",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "message_type": "ai",
+          "name": null,
+          "content": "",
+          "tool_calls": [
+            {
+              "name": "get_initiative_status",
+              "args": {
+                "initiative_id": "DEM-001"
+              },
+              "id": "call_1224064",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "message_type": "tool",
+          "name": "get_initiative_status",
+          "content": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-001\",\"title\":\"AI assistant for customer support\",\"status\":\"Discovery\",\"assignee\":\"Lead Business Analyst\",\"last_update\":\"2026-08-14\"},\"error\":null}",
+          "tool_calls": [],
+          "tool_call_id": "call_1224064"
+        },
+        {
+          "step": 4,
+          "message_type": "ai",
+          "name": null,
+          "content": "Статус инициативы **DEM-001** («AI assistant for customer support»): **Discovery**.\n\n* **Ответственный:** Lead Business Analyst\n* **Дата последнего обновления:** 14 августа 2026 г.",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "completed",
+        "answer": "Статус инициативы **DEM-001** («AI assistant for customer support»): **Discovery**.\n\n* **Ответственный:** Lead Business Analyst\n* **Дата последнего обновления:** 14 августа 2026 г.",
+        "requires_human_confirmation": false,
+        "used_tools": [
+          "get_initiative_status"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 3.943,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "run_id": "2894f8b6-169d-4558-a93a-789108d7f687",
+      "created_at": "2026-08-16T09:48:25.964186+00:00",
+      "user_input": "Проверь полноту intake DEM-004. business_owner=Retail Director, business_driver=Reduce onboarding time. Остальные поля не предоставлены.",
+      "trajectory": [
+        {
+          "step": 1,
+          "message_type": "human",
+          "name": null,
+          "content": "Проверь полноту intake DEM-004. business_owner=Retail Director, business_driver=Reduce onboarding time. Остальные поля не предоставлены.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "message_type": "ai",
+          "name": null,
+          "content": "",
+          "tool_calls": [
+            {
+              "name": "check_intake_completeness",
+              "args": {
+                "initiative_id": "DEM-004",
+                "success_metrics": null,
+                "business_driver": "Reduce onboarding time",
+                "constraints": null,
+                "financial_effect": null,
+                "business_owner": "Retail Director"
+              },
+              "id": "call_1187785",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "message_type": "tool",
+          "name": "check_intake_completeness",
+          "content": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-004\",\"is_complete\":false,\"completeness_percent\":40,\"missing_fields\":[\"success_metrics\",\"financial_effect\",\"constraints\"]},\"error\":null}",
+          "tool_calls": [],
+          "tool_call_id": "call_1187785"
+        },
+        {
+          "step": 4,
+          "message_type": "ai",
+          "name": null,
+          "content": "Проверка полноты intake для инициативы **DEM-004** завершена:\n\n* **Статус заполнения:** Не заполнено (Готовность: **40%**)\n* **Пропущенные обязательные поля:**\n  * Ожидаемые измеримые результаты (`success_metrics`)\n  * Ожидаемый финансовый эффект (`financial_effect`)\n  * Известные ограничения (`constraints`) (или явное указание, что их нет)\n\nДля прохождения Gate 0 необходимо заполнить эти поля.",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "needs_input",
+        "answer": "Проверка полноты intake для инициативы DEM-004 завершена:\n\n* Статус заполнения: Не заполнено (Готовность: 40%)\n* Пропущенные поля:\n  - Ожидаемые измеримые результаты (success_metrics)\n  - Ожидаемый финансовый эффект (financial_effect)\n  - Ограничения проекта (constraints)\n\nПожалуйста, предоставьте информацию по этим полям для завершения проверки intake.",
+        "requires_human_confirmation": false,
+        "used_tools": [
+          "check_intake_completeness"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 5.406,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "run_id": "a78faff5-8a74-4f94-83de-4ee4c93a8a28",
+      "created_at": "2026-08-16T09:52:13.379828+00:00",
+      "user_input": "Какой статус у инициативы DEM-001?",
+      "trajectory": [
+        {
+          "step": 1,
+          "message_type": "human",
+          "name": null,
+          "content": "Какой статус у инициативы DEM-001?",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "message_type": "ai",
+          "name": null,
+          "content": "",
+          "tool_calls": [
+            {
+              "name": "get_initiative_status",
+              "args": {
+                "initiative_id": "DEM-001"
+              },
+              "id": "call_1304887",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "message_type": "tool",
+          "name": "get_initiative_status",
+          "content": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-001\",\"title\":\"AI assistant for customer support\",\"status\":\"Discovery\",\"assignee\":\"Lead Business Analyst\",\"last_update\":\"2026-08-14\"},\"error\":null}",
+          "tool_calls": [],
+          "tool_call_id": "call_1304887"
+        },
+        {
+          "step": 4,
+          "message_type": "ai",
+          "name": null,
+          "content": "Инициатива **DEM-001** («AI assistant for customer support») сейчас находится в статусе **Discovery**. \n\n* **Ответственный:** Lead Business Analyst\n* **Последнее обновление:** 14 августа 2026 г.",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "completed",
+        "answer": "Статус инициативы DEM-001 (AI assistant for customer support) — Discovery. Ответственный: Lead Business Analyst. Последнее обновление: 2026-08-14.",
+        "requires_human_confirmation": false,
+        "used_tools": [
+          "get_initiative_status"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 5.321,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "run_id": "4f9d33ee-ffa0-45fd-be23-13c77e1bb437",
+      "created_at": "2026-08-16T09:53:26.515475+00:00",
+      "user_input": "Проверь полноту intake DEM-004. business_owner=Retail Director, business_driver=Reduce onboarding time. Остальные поля не предоставлены.",
+      "trajectory": [
+        {
+          "step": 1,
+          "message_type": "human",
+          "name": null,
+          "content": "Проверь полноту intake DEM-004. business_owner=Retail Director, business_driver=Reduce onboarding time. Остальные поля не предоставлены.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "message_type": "ai",
+          "name": null,
+          "content": "",
+          "tool_calls": [
+            {
+              "name": "check_intake_completeness",
+              "args": {
+                "business_owner": "Retail Director",
+                "business_driver": "Reduce onboarding time",
+                "initiative_id": "DEM-004"
+              },
+              "id": "call_922246",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "message_type": "tool",
+          "name": "check_intake_completeness",
+          "content": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-004\",\"is_complete\":false,\"completeness_percent\":40,\"missing_fields\":[\"success_metrics\",\"financial_effect\",\"constraints\"]},\"error\":null}",
+          "tool_calls": [],
+          "tool_call_id": "call_922246"
+        },
+        {
+          "step": 4,
+          "message_type": "ai",
+          "name": null,
+          "content": "Проверка полноты заполнения Intake для инициативы **DEM-004** завершена:\n\n* **Статус:** Не заполнено полностью (`is_complete: false`)\n* **Процент заполнения:** 40%\n* **Отсутствующие обязательные поля:**\n  1. `success_metrics` (Ожидаемые измеримые результаты)\n  2. `financial_effect` (Ожидаемый финансовый эффект)\n  3. `constraints` (Известные ограничения или явное указание, что их нет)\n\nДля прохождения Gate 0, пожалуйста, предоставьте информацию по недостающим полям.",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "completed",
+        "answer": "Результаты проверки полноты Intake для инициативы DEM-004:\n\n- Процент заполнения: 40%\n- Статус полноты: Не заполнено (необходимо доработать)\n- Отсутствующие поля:\n  1. success_metrics (Ожидаемые измеримые результаты)\n  2. financial_effect (Ожидаемый финансовый эффект)\n  3. constraints (Известные ограничения или явное указание на их отсутствие)\n\nПожалуйста, заполните эти поля для успешного прохождения проверки.",
+        "requires_human_confirmation": false,
+        "used_tools": [
+          "check_intake_completeness"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 8.12,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "run_id": "4dca20dd-13a8-4ed4-a118-096c17becb01",
+      "created_at": "2026-08-16T09:59:54.360530+00:00",
+      "user_input": "Какой статус у инициативы DEM-001?",
+      "trajectory": [
+        {
+          "step": 1,
+          "message_type": "human",
+          "name": null,
+          "content": "Какой статус у инициативы DEM-001?",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "message_type": "ai",
+          "name": null,
+          "content": "",
+          "tool_calls": [
+            {
+              "name": "get_initiative_status",
+              "args": {
+                "initiative_id": "DEM-001"
+              },
+              "id": "call_1966036",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "message_type": "tool",
+          "name": "get_initiative_status",
+          "content": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-001\",\"title\":\"AI assistant for customer support\",\"status\":\"Discovery\",\"assignee\":\"Lead Business Analyst\",\"last_update\":\"2026-08-14\"},\"error\":null}",
+          "tool_calls": [],
+          "tool_call_id": "call_1966036"
+        },
+        {
+          "step": 4,
+          "message_type": "ai",
+          "name": null,
+          "content": "Статус ініціативи **DEM-001 (AI assistant for customer support)** — **Discovery**.\n\nОстання оновлена інформація за 2026-08-14, відповідальний — Lead Business Analyst.",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "completed",
+        "answer": "Статус ініціативи DEM-001 (AI assistant for customer support) — Discovery. Останнє оновлення було 14 серпня 2026 року, ініціативою керує Lead Business Analyst.",
+        "requires_human_confirmation": false,
+        "used_tools": [
+          "get_initiative_status"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 3.431,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "run_id": "71af94f5-239a-4cee-a52c-8d7187f125e5",
+      "created_at": "2026-08-16T10:01:02.569229+00:00",
+      "user_input": "Проверь полноту intake DEM-004. business_owner=Retail Director, business_driver=Reduce onboarding time. Остальные поля не предоставлены.",
+      "trajectory": [
+        {
+          "step": 1,
+          "message_type": "human",
+          "name": null,
+          "content": "Проверь полноту intake DEM-004. business_owner=Retail Director, business_driver=Reduce onboarding time. Остальные поля не предоставлены.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "message_type": "ai",
+          "name": null,
+          "content": "",
+          "tool_calls": [
+            {
+              "name": "check_intake_completeness",
+              "args": {
+                "business_owner": "Retail Director",
+                "business_driver": "Reduce onboarding time",
+                "initiative_id": "DEM-004"
+              },
+              "id": "call_2096129",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "message_type": "tool",
+          "name": "check_intake_completeness",
+          "content": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-004\",\"is_complete\":false,\"completeness_percent\":40,\"missing_fields\":[\"success_metrics\",\"financial_effect\",\"constraints\"]},\"error\":null}",
+          "tool_calls": [],
+          "tool_call_id": "call_2096129"
+        },
+        {
+          "step": 4,
+          "message_type": "ai",
+          "name": null,
+          "content": "Для ініціативи **DEM-004** перевірка повноти intake завершена.\n\nНаразі заповнено 40% необхідних даних. Для проходження Gate 0 необхідно надати інформацію за такими полями:\n\n*   **success_metrics** (очікувані вимірювані результати)\n*   **financial_effect** (очікуваний фінансовий ефект)\n*   **constraints** (відомі обмеження або підтвердження їх відсутності)\n\nБудь ласка, надайте ці дані, щоб ми могли завершити процес.",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "needs_input",
+        "answer": "Для ініціативи DEM-004 заповнено лише 40% даних. Будь ласка, надайте інформацію про: success_metrics, financial_effect та constraints, щоб продовжити розрахунок Discovery Points та пріоритету.",
+        "requires_human_confirmation": true,
+        "used_tools": [
+          "check_intake_completeness"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 3.194,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "run_id": "d47a8c65-0b97-4547-ba66-e8bd5d1cd1dd",
+      "created_at": "2026-08-16T10:02:25.842076+00:00",
+      "user_input": "Рассчитай Discovery Points для DEM-004: systems_count=4, ownership_clarity=partial, technical_uncertainty=high, dependency_count=3, regulatory_impact=possible, data_readiness=partial.",
+      "trajectory": [
+        {
+          "step": 1,
+          "message_type": "human",
+          "name": null,
+          "content": "Рассчитай Discovery Points для DEM-004: systems_count=4, ownership_clarity=partial, technical_uncertainty=high, dependency_count=3, regulatory_impact=possible, data_readiness=partial.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "message_type": "ai",
+          "name": null,
+          "content": "",
+          "tool_calls": [
+            {
+              "name": "classify_discovery_scope",
+              "args": {
+                "technical_uncertainty": "high",
+                "ownership_clarity": "partial",
+                "regulatory_impact": "possible",
+                "initiative_id": "DEM-004",
+                "dependency_count": 3,
+                "systems_count": 4,
+                "data_readiness": "partial"
+              },
+              "id": "call_1653675",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "message_type": "tool",
+          "name": "classify_discovery_scope",
+          "content": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-004\",\"discovery_points\":8,\"recommended_scope\":\"Deep\",\"raw_score\":9,\"scoring_breakdown\":{\"systems\":2,\"ownership\":1,\"technical_uncertainty\":2,\"dependencies\":2,\"regulatory_impact\":1,\"data_readiness\":1},\"requires_lba_confirmation\":true},\"error\":null}",
+          "tool_calls": [],
+          "tool_call_id": "call_1653675"
+        },
+        {
+          "step": 4,
+          "message_type": "ai",
+          "name": null,
+          "content": "Для ініціативи **DEM-004** розрахунок Discovery Points завершено:\n\n*   **Набрані бали:** 9 (загальна складність оцінена у 8 Discovery Points).\n*   **Рекомендований обсяг (Scope):** Deep.\n*   **Розподіл балів:**\n    *   Кількість систем: 2\n    *   Технічна невизначеність: 2\n    *   Залежності: 2\n    *   Чіткість відповідальності: 1\n    *   Регуляторний вплив: 1\n    *   Готовність даних: 1\n\n**Важливо:** Оскільки рекомендовано рівень **Deep**, це потребує підтвердження (LBA confirmation). Будь ласка, підтвердьте, чи згодні ви з цією оцінкою та рекомендацією для подальшої роботи.",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "completed",
+        "answer": "Для ініціативи DEM-004 розрахунок завершено. Оцінка становить 8 Discovery Points, рекомендований обсяг — Deep (набрано 9 балів з урахуванням складності). Будь ласка, підтвердьте цей вибір для переходу до наступного етапу.",
+        "requires_human_confirmation": true,
+        "used_tools": [
+          "classify_discovery_scope"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 18.261,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "run_id": "15cb1668-1add-4930-ad61-d71b7bde90bb",
+      "created_at": "2026-08-16T10:03:44.094350+00:00",
+      "user_input": "Рассчитай приоритет DEM-004 по подтверждённым оценкам: strategic_alignment=5, customer_impact=4, financial_impact=3, regulatory_urgency=5, implementation_feasibility=2.",
+      "trajectory": [
+        {
+          "step": 1,
+          "message_type": "human",
+          "name": null,
+          "content": "Рассчитай приоритет DEM-004 по подтверждённым оценкам: strategic_alignment=5, customer_impact=4, financial_impact=3, regulatory_urgency=5, implementation_feasibility=2.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "message_type": "ai",
+          "name": null,
+          "content": "",
+          "tool_calls": [
+            {
+              "name": "calculate_priority_score",
+              "args": {
+                "strategic_alignment": 5,
+                "initiative_id": "DEM-004",
+                "customer_impact": 4,
+                "regulatory_urgency": 5,
+                "implementation_feasibility": 2,
+                "financial_impact": 3
+              },
+              "id": "call_1301746",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "message_type": "tool",
+          "name": "calculate_priority_score",
+          "content": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-004\",\"priority_score\":4.05,\"priority_level\":\"High\",\"scores\":{\"strategic_alignment\":5,\"customer_impact\":4,\"financial_impact\":3,\"regulatory_urgency\":5,\"implementation_feasibility\":2},\"weights\":{\"strategic_alignment\":0.3,\"customer_impact\":0.25,\"financial_impact\":0.2,\"regulatory_urgency\":0.15,\"implementation_feasibility\":0.1},\"requires_human_validation\":true},\"error\":null}",
+          "tool_calls": [],
+          "tool_call_id": "call_1301746"
+        },
+        {
+          "step": 4,
+          "message_type": "ai",
+          "name": null,
+          "content": "Пріоритет для ініціативи **DEM-004** успішно розраховано:\n\n*   **Priority Score:** 4.05\n*   **Рівень пріоритету:** High\n\nЗверніть увагу, що цей результат потребує підтвердження людиною. Чи бажаєте ви зберегти ці дані або виконати інші дії з цією ініціативою?",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "completed",
+        "answer": "Для ініціативи DEM-004 розраховано Priority Score 4.05, що відповідає високому пріоритету (High). Цей результат потребує вашого остаточного підтвердження.",
+        "requires_human_confirmation": true,
+        "used_tools": [
+          "calculate_priority_score"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 13.241,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "run_id": "3d92708d-e4fb-4d19-9010-73efed11ec14",
+      "created_at": "2026-08-16T10:04:54.806775+00:00",
+      "user_input": "Определи Discovery scope для DEM-006. Известно только, что systems_count=2.",
+      "trajectory": [
+        {
+          "step": 1,
+          "message_type": "human",
+          "name": null,
+          "content": "Определи Discovery scope для DEM-006. Известно только, что systems_count=2.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "message_type": "ai",
+          "name": null,
+          "content": "Для того, щоб я зміг розрахувати Discovery scope для ініціативи **DEM-006**, мені потрібні додаткові дані. Будь ласка, надайте інформацію за такими параметрами:\n\n*   **ownership_clarity** (чи є чітке розуміння власника?): `clear`, `partial` або `unclear`\n*   **technical_uncertainty** (рівень технічної невизначеності): `low`, `medium` або `high`\n*   **dependency_count** (кількість зовнішніх командних залежностей): ціле число\n*   **regulatory_impact** (наявність регуляторних вимог): `none`, `possible` або `confirmed`\n*   **data_readiness** (готовність даних): `ready`, `partial`, `unknown` або `unavailable`\n\nЩойно ви надасте ці дані, я зможу розрахувати Discovery Points та порекомендувати тип Discovery.",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "needs_input",
+        "answer": "Для визначення Discovery scope та розрахунку Discovery Points мені бракує даних. Будь ласка, вкажіть: ownership_clarity, technical_uncertainty, dependency_count, regulatory_impact та data_readiness для DEM-006.",
+        "requires_human_confirmation": true,
+        "used_tools": [],
+        "safety": {
+          "step_count": 2,
+          "max_steps": 8,
+          "elapsed_seconds": 5.7,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 0
+        }
+      }
+    }
+  ]
+}

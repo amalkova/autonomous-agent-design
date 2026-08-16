@@ -1,0 +1,114 @@
+{
+  "created_at": "2026-08-16T10:04:54.808656+00:00",
+  "model": "gemini-3.1-flash-lite",
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "test_cases": [
+    {
+      "name": "Existing initiative status",
+      "input": "Какой статус у инициативы DEM-001?",
+      "passed": true,
+      "failures": [],
+      "response": {
+        "status": "completed",
+        "answer": "Статус ініціативи DEM-001 (AI assistant for customer support) — Discovery. Останнє оновлення було 14 серпня 2026 року, ініціативою керує Lead Business Analyst.",
+        "requires_human_confirmation": false,
+        "used_tools": [
+          "get_initiative_status"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 3.431,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "name": "Incomplete intake",
+      "input": "Проверь полноту intake DEM-004. business_owner=Retail Director, business_driver=Reduce onboarding time. Остальные поля не предоставлены.",
+      "passed": true,
+      "failures": [],
+      "response": {
+        "status": "needs_input",
+        "answer": "Для ініціативи DEM-004 заповнено лише 40% даних. Будь ласка, надайте інформацію про: success_metrics, financial_effect та constraints, щоб продовжити розрахунок Discovery Points та пріоритету.",
+        "requires_human_confirmation": true,
+        "used_tools": [
+          "check_intake_completeness"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 3.194,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "name": "Deep discovery classification",
+      "input": "Рассчитай Discovery Points для DEM-004: systems_count=4, ownership_clarity=partial, technical_uncertainty=high, dependency_count=3, regulatory_impact=possible, data_readiness=partial.",
+      "passed": true,
+      "failures": [],
+      "response": {
+        "status": "completed",
+        "answer": "Для ініціативи DEM-004 розрахунок завершено. Оцінка становить 8 Discovery Points, рекомендований обсяг — Deep (набрано 9 балів з урахуванням складності). Будь ласка, підтвердьте цей вибір для переходу до наступного етапу.",
+        "requires_human_confirmation": true,
+        "used_tools": [
+          "classify_discovery_scope"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 18.261,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "name": "High priority calculation",
+      "input": "Рассчитай приоритет DEM-004 по подтверждённым оценкам: strategic_alignment=5, customer_impact=4, financial_impact=3, regulatory_urgency=5, implementation_feasibility=2.",
+      "passed": true,
+      "failures": [],
+      "response": {
+        "status": "completed",
+        "answer": "Для ініціативи DEM-004 розраховано Priority Score 4.05, що відповідає високому пріоритету (High). Цей результат потребує вашого остаточного підтвердження.",
+        "requires_human_confirmation": true,
+        "used_tools": [
+          "calculate_priority_score"
+        ],
+        "safety": {
+          "step_count": 3,
+          "max_steps": 8,
+          "elapsed_seconds": 13.241,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 1
+        }
+      }
+    },
+    {
+      "name": "Missing discovery inputs",
+      "input": "Определи Discovery scope для DEM-006. Известно только, что systems_count=2.",
+      "passed": true,
+      "failures": [],
+      "response": {
+        "status": "needs_input",
+        "answer": "Для визначення Discovery scope та розрахунку Discovery Points мені бракує даних. Будь ласка, вкажіть: ownership_clarity, technical_uncertainty, dependency_count, regulatory_impact та data_readiness для DEM-006.",
+        "requires_human_confirmation": true,
+        "used_tools": [],
+        "safety": {
+          "step_count": 2,
+          "max_steps": 8,
+          "elapsed_seconds": 5.7,
+          "timeout_seconds": 60.0,
+          "registered_tool_calls": 0
+        }
+      }
+    }
+  ]
+}
