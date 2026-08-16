@@ -1,0 +1,239 @@
+{
+  "created_at": "2026-08-16T14:22:42.853129+00:00",
+  "model": "gemini-3.1-flash-lite",
+  "summary": {
+    "total": 11,
+    "passed": 11,
+    "failed": 0,
+    "success_rate_percent": 100.0
+  },
+  "pytest": {
+    "passed": true,
+    "return_code": 0,
+    "output": "...........................................................              [100%]\n59 passed in 2.31s",
+    "python": "/Users/a.malkova/autonomous-agent-design/practice_1/.venv/bin/python"
+  },
+  "acceptance_cases": [
+    {
+      "test_id": "AC-001",
+      "name": "Unit та integration tests",
+      "expected_result": "Увесь pytest suite завершується успішно.",
+      "passed": true,
+      "error": null,
+      "actual_result": {
+        "passed": true,
+        "return_code": 0,
+        "output": "...........................................................              [100%]\n59 passed in 2.31s",
+        "python": "/Users/a.malkova/autonomous-agent-design/practice_1/.venv/bin/python"
+      }
+    },
+    {
+      "test_id": "AC-002",
+      "name": "Чотири валідовані domain tools",
+      "expected_result": "Рівно 4 tools зі strict Pydantic schemas.",
+      "passed": true,
+      "error": null,
+      "actual_result": {
+        "tool_names": [
+          "check_requirements_readiness",
+          "classify_estimation_complexity",
+          "identify_handover_gaps",
+          "submit_estimation_request"
+        ],
+        "tools_count": 4,
+        "strict_schemas": [
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    {
+      "test_id": "AC-003",
+      "name": "ReAct graph та safety",
+      "expected_result": "LLM–tools–LLM graph із safety limits.",
+      "passed": true,
+      "error": null,
+      "actual_result": {
+        "nodes": [
+          "__start__",
+          "agent",
+          "tools",
+          "finalize",
+          "__end__"
+        ],
+        "max_steps": 10,
+        "timeout_seconds": 120.0,
+        "max_identical_tool_calls": 2,
+        "trajectory_runs": 1
+      }
+    },
+    {
+      "test_id": "AC-004",
+      "name": "Plan-and-Execute graph",
+      "expected_result": "Planner, nested ReAct executor та replanner.",
+      "passed": true,
+      "error": null,
+      "actual_result": {
+        "nodes": [
+          "__start__",
+          "planner",
+          "executor",
+          "approval",
+          "replanner",
+          "__end__"
+        ],
+        "nested_react": true,
+        "structured_replanner": true
+      }
+    },
+    {
+      "test_id": "AC-005",
+      "name": "Agentic RAG",
+      "expected_result": "ChromaDB має ≥8 документів і agent-selected search.",
+      "passed": true,
+      "error": null,
+      "actual_result": {
+        "collection": "requirements_estimation_knowledge",
+        "documents_count": 12,
+        "rag_trajectory_runs": 2
+      }
+    },
+    {
+      "test_id": "AC-006",
+      "name": "SQLite persistence",
+      "expected_result": "State відновлюється, threads незалежні.",
+      "passed": true,
+      "error": null,
+      "actual_result": {
+        "database": "/Users/a.malkova/autonomous-agent-design/practice_1/agent_state.db",
+        "database_size_bytes": 421888,
+        "threads_are_independent": true,
+        "state_values_differ": true,
+        "progress_is_independent": true
+      }
+    },
+    {
+      "test_id": "AC-007",
+      "name": "Human-in-the-Loop",
+      "expected_result": "Approve виконує tool, reject блокує tool.",
+      "passed": true,
+      "error": null,
+      "actual_result": {
+        "approved": {
+          "status": "completed",
+          "used_tools": [
+            "submit_estimation_request"
+          ],
+          "final_answer": "Estimation request для DEM-060 був успішно відправлений до команди Core Banking Delivery. ID запиту: EST-001."
+        },
+        "rejected": {
+          "status": "rejected",
+          "used_tools": [],
+          "final_answer": "Запит на оцінку для DEM-061 не було відправлено, оскільки дію було відхилено користувачем через відсутність погодження від Delivery Lead. Будь ласка, отримайте погодження від Delivery Lead та спробуйте створити запит знову."
+        }
+      }
+    },
+    {
+      "test_id": "AC-008",
+      "name": "JSON trajectories",
+      "expected_result": "Збережені ReAct та Plan-and-Execute runs.",
+      "passed": true,
+      "error": null,
+      "actual_result": {
+        "runs_count": 2,
+        "agent_types": [
+          "plan_execute",
+          "react"
+        ],
+        "messages_per_run": [
+          6,
+          6
+        ],
+        "tools_per_run": [
+          [
+            "check_requirements_readiness",
+            "classify_estimation_complexity",
+            "search_delivery_knowledge"
+          ],
+          [
+            "check_requirements_readiness",
+            "classify_estimation_complexity",
+            "search_delivery_knowledge"
+          ]
+        ]
+      }
+    },
+    {
+      "test_id": "AC-009",
+      "name": "Числове порівняння",
+      "expected_result": "Обидві архітектури мають числові метрики.",
+      "passed": true,
+      "error": null,
+      "actual_result": {
+        "architectures": [
+          "Plan-and-Execute",
+          "ReAct"
+        ],
+        "quality_scores": {
+          "ReAct": 100.0,
+          "Plan-and-Execute": 100.0
+        },
+        "execution_times": {
+          "ReAct": 6.286,
+          "Plan-and-Execute": 17.793
+        },
+        "comparison": {
+          "faster_architecture": "ReAct",
+          "higher_quality_architecture": "tie",
+          "latency_difference_seconds": 11.507,
+          "react_quality_score_percent": 100.0,
+          "plan_execute_quality_score_percent": 100.0,
+          "react_tool_coverage_percent": 100.0,
+          "plan_execute_tool_coverage_percent": 100.0,
+          "conclusions": [
+            "Швидша архітектура: ReAct; різниця latency — 11.507 секунди.",
+            "Вища детермінована quality score: tie.",
+            "ReAct є компактнішим для коротких запитів, а Plan-and-Execute явно фіксує план, прогрес та можливість replanning.",
+            "Latency залежить від зовнішньої LLM, тому один запуск не є статистично репрезентативним benchmark."
+          ]
+        }
+      }
+    },
+    {
+      "test_id": "AC-010",
+      "name": "Документація та deliverables",
+      "expected_result": "README, notebook та artifacts присутні.",
+      "passed": true,
+      "error": null,
+      "actual_result": {
+        "readme_size_bytes": 13980,
+        "notebook_cells": 25,
+        "notebook_format": 4,
+        "artifacts": {
+          "README.md": true,
+          "trajectory.json": true,
+          "agent_state.db": true,
+          "comparison_results.json": true,
+          "react_graph.mmd": true,
+          "plan_execute_graph.mmd": true,
+          "Task_001_Malkova_Requirements_Estimation.ipynb": true
+        }
+      }
+    },
+    {
+      "test_id": "AC-011",
+      "name": "Bonus features",
+      "expected_result": "Comparison, visualization та fallback.",
+      "passed": true,
+      "error": null,
+      "actual_result": {
+        "numeric_comparison": true,
+        "react_visualization_bytes": 388,
+        "plan_visualization_bytes": 508,
+        "fallback_strategy": true
+      }
+    }
+  ]
+}
