@@ -1,0 +1,56 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.2, pytest-9.1.1, pluggy-1.6.0 -- /Users/a.malkova/autonomous-agent-design/final_mas/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/a.malkova/autonomous-agent-design/final_mas
+plugins: langsmith-0.11.0, asyncio-1.4.0, anyio-4.14.2
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 46 items
+
+tests/test_artifacts.py::test_evaluation_artifact_has_five_scenarios PASSED [  2%]
+tests/test_artifacts.py::test_red_team_artifact_has_required_attacks PASSED [  4%]
+tests/test_artifacts.py::test_framework_benchmark_has_same_queries PASSED [  6%]
+tests/test_artifacts.py::test_langsmith_artifact_has_hierarchy PASSED    [  8%]
+tests/test_guardrails.py::test_safe_user_input_is_allowed PASSED         [ 10%]
+tests/test_guardrails.py::test_direct_prompt_injection_is_blocked PASSED [ 13%]
+tests/test_guardrails.py::test_indirect_prompt_injection_is_blocked PASSED [ 15%]
+tests/test_guardrails.py::test_supervisor_cannot_submit_estimation PASSED [ 17%]
+tests/test_guardrails.py::test_estimation_agent_can_classify_complexity PASSED [ 19%]
+tests/test_guardrails.py::test_invalid_tool_arguments_are_blocked PASSED [ 21%]
+tests/test_guardrails.py::test_risky_tool_requires_human_approval PASSED [ 23%]
+tests/test_guardrails.py::test_email_and_phone_are_redacted PASSED       [ 26%]
+tests/test_guardrails.py::test_nested_output_is_redacted PASSED          [ 28%]
+tests/test_guardrails.py::test_ukrainian_prompt_injection_is_blocked PASSED [ 30%]
+tests/test_guardrails.py::test_oversized_input_is_blocked PASSED         [ 32%]
+tests/test_guardrails.py::test_advanced_pii_categories_are_redacted PASSED [ 34%]
+tests/test_guardrails.py::test_invalid_card_candidate_is_not_luhn_redacted PASSED [ 36%]
+tests/test_guardrails.py::test_rate_limiter_is_isolated_per_session PASSED [ 39%]
+tests/test_hitl.py::test_approve_executes_risky_tool PASSED              [ 41%]
+tests/test_hitl.py::test_reject_blocks_risky_tool PASSED                 [ 43%]
+tests/test_hitl.py::test_edit_revalidates_and_executes PASSED            [ 45%]
+tests/test_mas.py::test_graph_contains_supervisor_and_three_agents PASSED [ 47%]
+tests/test_mas.py::test_supervisor_routes_to_all_three_agents PASSED     [ 50%]
+tests/test_mas.py::test_trajectory_records_supervisor_handoff PASSED     [ 52%]
+tests/test_mas.py::test_injection_is_blocked_before_supervisor PASSED    [ 54%]
+tests/test_mas.py::test_agent_output_pii_is_redacted PASSED              [ 56%]
+tests/test_mas.py::test_missing_agent_runner_is_rejected PASSED          [ 58%]
+tests/test_mas.py::test_mcp_tools_are_scoped_per_agent PASSED            [ 60%]
+tests/test_mas.py::test_rate_limit_blocks_before_supervisor PASSED       [ 63%]
+tests/test_mas_ag2.py::test_ag2_routes_to_selected_specialist[requirements_agent-Requirements result.] PASSED [ 65%]
+tests/test_mas_ag2.py::test_ag2_routes_to_selected_specialist[solution_security_agent-Solution and security result.] PASSED [ 67%]
+tests/test_mas_ag2.py::test_ag2_routes_to_selected_specialist[estimation_agent-Estimation result.] PASSED [ 69%]
+tests/test_mas_ag2.py::test_ag2_serializes_structured_specialist_output PASSED [ 71%]
+tests/test_mas_ag2.py::test_ag2_rejects_unknown_route PASSED             [ 73%]
+tests/test_mcp_server.py::test_mcp_registers_four_domain_tools PASSED    [ 76%]
+tests/test_mcp_server.py::test_requirements_readiness_returns_missing_fields PASSED [ 78%]
+tests/test_mcp_server.py::test_invalid_initiative_id_is_rejected PASSED  [ 80%]
+tests/test_mcp_server.py::test_complexity_tool_returns_high_estimation PASSED [ 82%]
+tests/test_mcp_server.py::test_handover_tool_identifies_blocking_gaps PASSED [ 84%]
+tests/test_mcp_server.py::test_submission_tool_persists_request PASSED   [ 86%]
+tests/test_mcp_server.py::test_mcp_registers_two_resources PASSED        [ 89%]
+tests/test_mcp_server.py::test_mcp_resources_return_valid_standards PASSED [ 91%]
+tests/test_mcp_server.py::test_mcp_prompt_renders_handover_workflow PASSED [ 93%]
+tests/test_persistence.py::test_persistence_resumes_same_thread PASSED   [ 95%]
+tests/test_persistence.py::test_static_interrupt_pauses_before_approval PASSED [ 97%]
+tests/test_trajectory_logger.py::test_trajectory_persists_agent_name PASSED [100%]
+
+============================== 46 passed in 4.57s ==============================

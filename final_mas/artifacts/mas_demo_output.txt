@@ -1,0 +1,107 @@
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│                                                                              │
+│                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+│                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│                                FastMCP 3.4.7                                 │
+│                            https://gofastmcp.com                             │
+│                                                                              │
+│                🖥  Server:      requirements_estimation, 3.4.7                │
+│                🚀 Deploy free: https://horizon.prefect.io                    │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+[08/16/26 23:24:22] INFO     Starting MCP server                transport.py:241
+                             'requirements_estimation' with                     
+                             transport 'stdio'                                  
+Direct use of automatic function calling (AFC) in AsyncModels.generate_content is not recommended. Instead, we recommend to use AFC in AsyncChat.send_message. Similarly, direct use of AFC in AsyncModels.generate_content_stream is not recommended. Instead, we recommend to use AFC in AsyncChat.send_message_stream.
+Key 'additionalProperties' is not supported in schema, ignoring
+Key 'additionalProperties' is not supported in schema, ignoring
+Key 'additionalProperties' is not supported in schema, ignoring
+Key 'additionalProperties' is not supported in schema, ignoring
+
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│                                                                              │
+│                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+│                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│                                FastMCP 3.4.7                                 │
+│                            https://gofastmcp.com                             │
+│                                                                              │
+│                🖥  Server:      requirements_estimation, 3.4.7                │
+│                🚀 Deploy free: https://horizon.prefect.io                    │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+[08/16/26 23:24:39] INFO     Starting MCP server                transport.py:241
+                             'requirements_estimation' with                     
+                             transport 'stdio'                                  
+Key 'additionalProperties' is not supported in schema, ignoring
+Key 'additionalProperties' is not supported in schema, ignoring
+
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│                                                                              │
+│                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+│                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│                                FastMCP 3.4.7                                 │
+│                            https://gofastmcp.com                             │
+│                                                                              │
+│                🖥  Server:      requirements_estimation, 3.4.7                │
+│                🚀 Deploy free: https://horizon.prefect.io                    │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+[08/16/26 23:24:44] INFO     Starting MCP server                transport.py:241
+                             'requirements_estimation' with                     
+                             transport 'stdio'                                  
+Key 'additionalProperties' is not supported in schema, ignoring
+Key 'additionalProperties' is not supported in schema, ignoring
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+
+[mas-requirements] agent=requirements_agent
+Ініціатива **DEM-101** наразі **не готова** до передачі на оцінку (estimation handover).
+
+Згідно з внутрішнім стандартом *Definition of Ready for estimation*, пакет вимог є неповним. Хоча ви зазначили, що бізнес-мета (business objective) визначена, система показує відсутність даних у всіх ключових полях.
+
+### Аналіз готовності (Gaps Analysis):
+*   **Статус готовності:** 0%
+*   **Критичні блокери:**
+    *   Відсутні Acceptance Criteria (критерії приймання).
+    *   Відсутні NFR (нефункціональні вимоги).
+    *   Відсутні Functional Requirements (функціональні вимоги).
+    *   Відсутні Integration Scope та Data Requirements.
+*   **Необхідні дії для усунення прогалин:**
+    1.  Визначити та задокументувати **Functional Requirements**.
+    2.  Сформулювати **Acceptance Criteria**, які мають бути тестованими (testable).
+    3.  Провести **NFR Review** (продуктивність, безпека, доступність тощо).
+    4.  Визначити **Integration Scope** та підтвердити **Data Owners**.
+    5.  Завершити **Security Classification**.
+
+**Рекомендація:**
+Будь ласка, оновіть документацію ініціативи DEM-101, додавши відсутні розділи. Після того, як ви заповните ці дані, я зможу повторно перевірити готовність і підтвердити, чи можна передавати ініціативу на оцінку.
+
+[mas-security] agent=solution_security_agent
+Для проведення аналізу ризиків по ініціативі DEM-102 мені недостатньо вхідних даних. Будь ласка, надайте інформацію щодо: 1. Переліку інтегрованих систем та протоколів взаємодії. 2. Класифікації даних (тип, конфіденційність, обсяги). 3. Вимог до безпеки та відповідності регуляторним нормам. 4. Наявності документації з архітектури (C4 model, DFD). Щойно ви надасте ці дані, я зможу проаналізувати інтеграційні, дані та безпекові ризики, а також виявити можливі прогалини для оцінки складності.
+
+[mas-estimation] agent=estimation_agent
+Estimation for initiative DEM-103 is complete. Complexity: High. Points: 8. This assessment reflects the high criticality of NFRs, the complexity of required data migration, necessary security reviews, the number of integrations and dependencies, as well as the partial stability of requirements.

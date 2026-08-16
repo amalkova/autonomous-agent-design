@@ -1,0 +1,135 @@
+{
+  "generated_at": "2026-08-16T20:44:31.078130+00:00",
+  "model": "gemini-3.1-flash-lite",
+  "scenarios": [
+    {
+      "scenario_id": "BENCH-001",
+      "query": "For DEM-981, check requirements readiness. Business objective is to reduce demand lead time. Functional requirements are drafted, but NFR, acceptance criteria, integration scope and data requirements are missing.",
+      "expected_agent": "requirements_agent",
+      "langgraph": {
+        "selected_agent": "requirements_agent",
+        "final_answer": "Для ініціативи **DEM-981** (мета: зменшення часу виконання замовлення/demand lead time) перевірка готовності вимог показала наступне:\n\n### Статус готовності: **Не готово**\n*   **Рівень готовності:** 33%\n*   **Заповнено:** 2 з 6 полів (Бізнес-мета, Функціональні вимоги).\n\n### Відсутні дані (Missing Fields):\nДля того, щоб ініціатива була готова до *estimation handover*, необхідно надати інформацію за наступними пунктами:\n1.  **Non-functional requirements (NFR):** вимоги до продуктивності, доступності, безпеки тощо.\n2.  **Acceptance criteria:** чіткі, тестовані критерії приймання.\n3.  **Integration scope:** перелік систем та інтеграцій, що входять у scope.\n4.  **Data requirements:** джерела даних, обсяги та правила їх обробки.\n\n---\n**Наступні кроки:**\nБудь ласка, надайте відсутню інформацію, щоб я міг оновити статус готовності та провести аналіз прогалин (handover gaps). Якщо вам потрібна допомога у формулюванні цих вимог, дайте знати.",
+        "latency_ms": 7912.44,
+        "usage": {
+          "trace_id": "01a00c4f-be04-7ea0-abd6-f28c5987a194",
+          "runs_count": 16,
+          "model_calls": 3,
+          "prompt_tokens": 1723,
+          "completion_tokens": 382,
+          "total_tokens": 2105
+        }
+      },
+      "ag2": {
+        "selected_agent": "requirements_agent",
+        "route_reasoning": "The user is explicitly asking to check requirements readiness and has identified multiple gaps in the documentation (NFRs, acceptance criteria, integration scope, and data requirements) that fall under the requirements_agent's scope for refinement and handover preparation.",
+        "final_answer": "Для ініціативи **DEM-981** було проведено аналіз готовності вимог. На даний момент ініціатива **не готова до оцінки (estimation)**.\n\n### Результати аналізу:\n*   **Статус готовності:** 33%\n*   **Виконано:** Бізнес-ціль (зменшення часу виконання запиту) та функціональні вимоги.\n*   **Потребують доопрацювання (відсутні):**\n    *   Нефункціональні вимоги (NFR)\n    *   Критерії прийнятності (Acceptance Criteria)\n    *   Обсяг інтеграції (Integration Scope)\n    *   Вимоги до даних (Data Requirements)\n\n### Наступні кроки:\nДля того, щоб підготувати ініціативу до передачі на оцінку (handover), необхідно залучити відповідних стейкхолдерів для заповнення відсутньої інформації.\n\nБудь ласка, надайте наступну інформацію або підтвердіть готовність за наступними пунктами для виявлення потенційних блокерів:\n1.  **Критерії прийнятності:** Чи є вони чітко визначеними та тестованими?\n2.  **Власники даних:** Чи підтверджені джерела даних та відповідальні особи?\n3.  **Залежності:** Чи виявлені та підтверджені всі технічні або організаційні залежності?\n4.  **NFR:** Чи переглянуті нефункціональні вимоги (продуктивність, безпека, доступність)?\n5.  **Безпека:** Чи завершена класифікація безпеки?\n6.  **Блокери:** Чи існують відомі перешкоди, які можуть затримати реалізацію?\n\nЯк тільки ви надасте ці дані, я зможу провести фінальну перевірку прогалин (handover gaps) для передачі в розробку.",
+        "latency_ms": 19820.447,
+        "usage": {
+          "model_calls": 3,
+          "prompt_tokens": 1644,
+          "completion_tokens": 555,
+          "total_tokens": 2199
+        }
+      },
+      "pass": true
+    },
+    {
+      "scenario_id": "BENCH-002",
+      "query": "For DEM-982, analyse solution and security risks: three systems, two APIs, personal data, high availability, mandatory security review and an unconfirmed data owner.",
+      "expected_agent": "solution_security_agent",
+      "langgraph": {
+        "selected_agent": "solution_security_agent",
+        "final_answer": "Для ініціативи DEM-982 оцінка неможлива через критичні прогалини. Вам необхідно підтвердити Data Owner, визначити тестовані критерії приймання (Acceptance Criteria) та підтвердити залежності між системами. Без цих даних ризики неможливо мінімізувати.",
+        "latency_ms": 26911.771,
+        "usage": {
+          "trace_id": "01a00c50-3369-70b2-a149-7c082d21003b",
+          "runs_count": 21,
+          "model_calls": 4,
+          "prompt_tokens": 2725,
+          "completion_tokens": 513,
+          "total_tokens": 3238
+        }
+      },
+      "ag2": {
+        "selected_agent": "solution_security_agent",
+        "route_reasoning": "The request involves architectural components (three systems, two APIs), security risks (personal data, mandatory security review), and data ownership concerns, which fall directly under the scope of the solution_security_agent.",
+        "final_answer": "This analysis outlines the architectural, security, and governance considerations for **DEM-982**.\n\n### 1. System Scope & Integration Analysis\n*   **Architectural Complexity:** The interaction between three distinct systems via two APIs introduces potential points of failure and latency.\n*   **Integration Patterns:** \n    *   Are these APIs synchronous (REST/gRPC) or asynchronous (Event-driven/Message Queues)? \n    *   High availability (HA) requirements suggest a need for circuit breakers, retries, and idempotent operations to prevent data inconsistency during partial system outages.\n*   **Data Flow:** A clear mapping of the data lifecycle (Source → API 1 → System B → API 2 → System C) is required to identify where data is transformed, cached, or logged.\n\n### 2. Security & Compliance\n*   **Personal Data (PII/GDPR):** Since personal data is involved, the solution must adhere to \"Privacy by Design.\"\n    *   **Encryption:** Data must be encrypted at rest and in transit (TLS 1.3).\n    *   **Data Minimization:** Ensure APIs only transmit the minimum fields necessary for the business function.\n    *   **Logging:** Audit logs must capture access to personal data without logging the sensitive values themselves (masking/tokenization).\n*   **Mandatory Security Review:** This is a critical gate. The review will likely focus on:\n    *   **Authentication/Authorization:** Are you using OAuth2/OIDC? Is there a centralized Identity Provider (IdP)?\n    *   **API Security:** Implementation of rate limiting, input validation, and protection against OWASP API Top 10 threats.\n\n### 3. Data Ownership & Governance\n*   **The \"Unconfirmed Data Owner\" Risk:** This is a high-priority blocker. Without a defined owner, there is no accountability for data quality, retention policies, or compliance with Subject Access Requests (SARs).\n*   **Data Stewardship:** The owner must define the classification level (e.g., Confidential, Restricted) to determine the appropriate security controls.\n\n### 4. Migration & Operational Readiness\n*   **Data Integrity:** If this involves migrating existing data, a validation strategy (checksums/reconciliation reports) is required to ensure no data loss between the three systems.\n*   **High Availability (NFRs):** \n    *   What is the target uptime (e.g., 99.99%)? \n    *   Does the HA requirement extend to the database layer (e.g., multi-region replication)?\n    *   Are there defined Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO)?\n\n---\n\n### Assumptions\n1.  **Connectivity:** The three systems reside within a secure network perimeter (e.g., VPC) and do not require public internet exposure for the APIs.\n2.  **Standardization:** The APIs follow internal enterprise standards for authentication and logging.\n3.  **Data Sensitivity:** The \"personal data\" is classified as PII, requiring standard regulatory compliance (e.g., GDPR/CCPA).\n\n### Questions for Human Confirmation\n1.  **Data Ownership:** Who is the designated Data Steward or Product Owner responsible for the data residing in these three systems?\n2.  **API Protocol:** Are the two APIs internal-only, or do they interface with third-party/external systems?\n3.  **Data Residency:** Are there specific geographic constraints on where this personal data can be stored or processed?\n4.  **Security Review Timeline:** Has a formal security review been scheduled, or does the architecture need to be finalized before the request is submitted to the Security/CISO office?\n5.  **HA Strategy:** Is the high availability requirement for the *entire* chain, or are there specific components that are allowed a lower SLA?",
+        "latency_ms": 12948.064,
+        "usage": {
+          "model_calls": 2,
+          "prompt_tokens": 245,
+          "completion_tokens": 876,
+          "total_tokens": 1121
+        }
+      },
+      "pass": true
+    },
+    {
+      "scenario_id": "BENCH-003",
+      "query": "For DEM-983, estimate complexity and Fibonacci points: three systems, two integrations, high NFR criticality, security review required, one dependency, no migration and partially stable requirements.",
+      "expected_agent": "estimation_agent",
+      "langgraph": {
+        "selected_agent": "estimation_agent",
+        "final_answer": "The complexity for DEM-983 has been assessed as 'Medium' with an estimation of 5 Fibonacci points. This reflects the involvement of three systems, two integrations, high NFR/security criticality, and partially stable requirements.",
+        "latency_ms": 35467.004,
+        "usage": {
+          "trace_id": "01a00c50-d957-7f83-b48b-9539faf5a842",
+          "runs_count": 32,
+          "model_calls": 6,
+          "prompt_tokens": 4160,
+          "completion_tokens": 451,
+          "total_tokens": 4611
+        }
+      },
+      "ag2": {
+        "selected_agent": "estimation_agent",
+        "route_reasoning": "The user is explicitly requesting complexity assessment and Fibonacci point estimation for a specific task (DEM-983), which falls under the estimation_agent's primary responsibility.",
+        "final_answer": "Для ініціативи **DEM-983** було проведено оцінку складності. Нижче наведено результати та аналіз ключових факторів.\n\n### Результати оцінки\n*   **Рівень складності:** Середній (Medium)\n*   **Fibonacci Estimation Points:** 5\n\n---\n\n### Аналіз драйверів оцінки (Scoring Breakdown)\nОцінка базується на наступних факторах, які впливають на загальну складність:\n\n1.  **Критичність NFR (High):** Це один із найвагоміших факторів (2 бали). Високі вимоги до продуктивності, безпеки чи доступності значно збільшують обсяг тестування та архітектурного опрацювання.\n2.  **Кількість систем (3) та інтеграцій (2):** Взаємодія між трьома системами через дві інтеграції додає складності в узгодженні даних та обробці помилок (сумарно 2 бали).\n3.  **Security Review (Required):** Необхідність проходження перевірки безпеки додає етап, який вимагає додаткового часу на підготовку документації та виправлення потенційних вразливостей (1 бал).\n4.  **Стабільність вимог (Partial):** Часткова стабільність вимог означає ризик переробок, що підвищує невизначеність і потребує закладення додаткового часу на адаптацію (1 бал).\n5.  **Залежності (1):** Наявність однієї зовнішньої залежності додає ризик блокування роботи через сторонні команди (1 бал).\n\n**Примітка:** Оскільки процес оцінки вимагає окремого робочого процесу для затвердження людиною, ці дані є попередніми та потребують фінального підтвердження керівником проєкту або технічним лідом.",
+        "latency_ms": 12676.134,
+        "usage": {
+          "model_calls": 3,
+          "prompt_tokens": 1170,
+          "completion_tokens": 565,
+          "total_tokens": 1735
+        }
+      },
+      "pass": true
+    }
+  ],
+  "summary": {
+    "LangGraph": {
+      "usage": {
+        "model_calls": 13,
+        "prompt_tokens": 8608,
+        "completion_tokens": 1346,
+        "total_tokens": 9954
+      },
+      "source": {
+        "total_lines": 920,
+        "code_lines": 788,
+        "functions": 24,
+        "classes": 2
+      },
+      "development_time_minutes": 420,
+      "control_rating": 5,
+      "debugging_rating": 5
+    },
+    "AG2": {
+      "usage": {
+        "model_calls": 8,
+        "prompt_tokens": 3059,
+        "completion_tokens": 1996,
+        "total_tokens": 5055
+      },
+      "source": {
+        "total_lines": 304,
+        "code_lines": 246,
+        "functions": 8,
+        "classes": 2
+      },
+      "development_time_minutes": 90,
+      "control_rating": 3,
+      "debugging_rating": 3
+    }
+  }
+}

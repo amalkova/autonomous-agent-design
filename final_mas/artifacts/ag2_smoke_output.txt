@@ -1,0 +1,54 @@
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Direct use of automatic function calling (AFC) in AsyncModels.generate_content is not recommended. Instead, we recommend to use AFC in AsyncChat.send_message. Similarly, direct use of AFC in AsyncModels.generate_content_stream is not recommended. Instead, we recommend to use AFC in AsyncChat.send_message_stream.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│                                                                              │
+│                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+│                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│                                FastMCP 3.4.7                                 │
+│                            https://gofastmcp.com                             │
+│                                                                              │
+│                🖥  Server:      requirements_estimation, 3.4.7                │
+│                🚀 Deploy free: https://horizon.prefect.io                    │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+[08/16/26 23:38:32] INFO     Starting MCP server                transport.py:241
+                             'requirements_estimation' with                     
+                             transport 'stdio'                                  
+
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│                                                                              │
+│                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+│                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│                                FastMCP 3.4.7                                 │
+│                            https://gofastmcp.com                             │
+│                                                                              │
+│                🖥  Server:      requirements_estimation, 3.4.7                │
+│                🚀 Deploy free: https://horizon.prefect.io                    │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+[08/16/26 23:38:33] INFO     Starting MCP server                transport.py:241
+                             'requirements_estimation' with                     
+                             transport 'stdio'                                  
+{
+  "framework": "AG2",
+  "selected_agent": "estimation_agent",
+  "route_reasoning": "The user is explicitly requesting an estimation for a specific demand (DEM-020) involving multiple systems, integrations, and dependencies, which requires an assessment of complexity and effort points.",
+  "final_answer": "Для запиту **DEM-020** було проведено оцінку складності та розрахунок балів за шкалою Фібоначчі.\n\n### Результати оцінки:\n*   **Рівень складності:** Середній (Medium)\n*   **Оцінка (Fibonacci points):** 5\n\n---\n\n### Ключові фактори впливу на оцінку (Score Drivers):\n\nОцінка базується на наступних параметрах, які суттєво впливають на обсяг роботи:\n\n1.  **Висока критичність нефункціональних вимог (NFR Criticality - High):** Це один із найвагоміших факторів. Високі вимоги до продуктивності, доступності або масштабованості вимагають додаткового часу на проектування, тестування та оптимізацію.\n2.  **Кількість систем та інтеграцій:** Взаємодія між трьома системами через дві інтеграції підвищує складність архітектури та потребує синхронізації між різними компонентами.\n3.  **Безпека (Security Review):** Необхідність проведення перевірки безпеки додає етап контролю, який є обов'язковим для забезпечення відповідності стандартам.\n4.  **Стабільність вимог (Requirements Stability - Partial):** Часткова стабільність вимог означає, що команда повинна закласти додатковий час на уточнення деталей у процесі розробки, що підвищує ризик переробок.\n5.  **Залежності (Dependency Count):** Наявність однієї зовнішньої залежності створює ризик блокування роботи, що також враховано в оцінці.\n\n**Важливо:** Цей розрахунок є попередньою оцінкою складності. Оскільки для фінального затвердження необхідний окремий робочий процес погодження, ці дані мають бути розглянуті командою розробки для підтвердження перед початком виконання робіт.",
+  "handoff_count": 1
+}

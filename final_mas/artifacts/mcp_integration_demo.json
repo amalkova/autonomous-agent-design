@@ -1,0 +1,58 @@
+{
+  "client": "MultiServerMCPClient",
+  "transport": "stdio",
+  "server": "requirements_estimation",
+  "available_tools": [
+    "check_requirements_readiness",
+    "classify_estimation_complexity",
+    "identify_handover_gaps",
+    "submit_estimation_request"
+  ],
+  "demos": [
+    {
+      "scenario": "requirements_readiness",
+      "result": {
+        "status": "success",
+        "data": {
+          "initiative_id": "DEM-910",
+          "is_ready": false,
+          "readiness_percent": 17,
+          "completed_fields": 1,
+          "total_fields": 6,
+          "missing_fields": [
+            "functional_requirements",
+            "non_functional_requirements",
+            "acceptance_criteria",
+            "integration_scope",
+            "data_requirements"
+          ],
+          "requires_human_input": true
+        },
+        "error": null
+      }
+    },
+    {
+      "scenario": "complexity_estimation",
+      "result": {
+        "status": "success",
+        "data": {
+          "initiative_id": "DEM-911",
+          "raw_score": 8,
+          "estimation_points": 8,
+          "estimation_complexity": "High",
+          "scoring_breakdown": {
+            "systems": 1,
+            "integrations": 1,
+            "nfr_criticality": 2,
+            "data_migration": 1,
+            "security_review": 1,
+            "dependencies": 1,
+            "requirements_stability": 1
+          },
+          "requires_human_confirmation": true
+        },
+        "error": null
+      }
+    }
+  ]
+}

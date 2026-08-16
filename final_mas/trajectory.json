@@ -1,0 +1,486 @@
+{
+  "runs": [
+    {
+      "run_id": "RUN-001",
+      "created_at": "2026-08-16T20:25:10.368819+00:00",
+      "agent_name": "solution_security_agent",
+      "agent_type": "react",
+      "user_input": "Проаналізуй integration, data та security risks для initiative DEM-102.",
+      "messages": [
+        {
+          "step": 1,
+          "agent_name": "solution_security_agent",
+          "message_type": "human",
+          "name": null,
+          "content": "Проаналізуй integration, data та security risks для initiative DEM-102.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "agent_name": "solution_security_agent",
+          "message_type": "ai",
+          "name": null,
+          "content": [
+            {
+              "type": "text",
+              "text": "Для того, щоб я міг провести детальний аналіз інтеграційних, даних та безпекових ризиків для ініціативи **DEM-102**, мені потрібна додаткова інформація.\n\nБудь ласка, надайте наступні деталі, щоб я міг заповнити необхідні перевірки:\n\n1.  **Integration Scope:** Які саме системи залучені в інтеграцію? (Наприклад: CRM, ERP, Legacy-системи, зовнішні API).\n2.  **Data Requirements:** Які типи даних будуть оброблятися, хто є їх власником (Data Owner) і чи потрібна міграція даних?\n3.  **Security/Non-functional:** Яка класифікація безпеки (чи потрібен Security Review)? Які критичні вимоги (NFR) до продуктивності чи доступності?\n4.  **Dependencies:** Чи є зовнішні залежності, які можуть вплинути на виконання?\n\nВи можете надати цю інформацію у вільній формі, і я використаю інструмент `check_requirements_readiness`, щоб оцінити готовність і виявити прогалини.\n\nЯкщо ви вже маєте частину даних, наприклад:\n*   Чи визначено `solution_scope`?\n*   Чи підтверджено `data_owners`?\n*   Чи завершено `security_classification`?\n\n...дайте знати, і я одразу запущу аналіз через `identify_handover_gaps`.",
+              "extras": {
+                "signature": "EnEKbwERTTIP+yjyIotXFLmoUQLdi3dINFwU0QLTumWNHhmZryg/Tau7Ec8GE+Ejyh9JV5f4cjzA9bveYZkSfRl+xyQShEl/4RCkFbshO5uqDYtIZuyhFxEyoQOBSc0g83I/rOawN8Lq5S3kQJ3AsJOZxA=="
+              }
+            }
+          ],
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "needs_input",
+        "answer": "Для проведення аналізу ризиків по ініціативі DEM-102 мені недостатньо вхідних даних. Будь ласка, надайте інформацію щодо: 1. Переліку інтегрованих систем та протоколів взаємодії. 2. Класифікації даних (тип, конфіденційність, обсяги). 3. Вимог до безпеки та відповідності регуляторним нормам. 4. Наявності документації з архітектури (C4 model, DFD). Щойно ви надасте ці дані, я зможу проаналізувати інтеграційні, дані та безпекові ризики, а також виявити можливі прогалини для оцінки складності.",
+        "requires_human_confirmation": false,
+        "used_tools": [],
+        "safety": {
+          "step_count": 2,
+          "max_steps": 10,
+          "elapsed_seconds": 11.41,
+          "timeout_seconds": 120.0,
+          "registered_tool_calls": 0,
+          "max_identical_tool_calls": 2,
+          "unique_tool_calls": 0
+        }
+      },
+      "safety": {
+        "step_count": 2,
+        "max_steps": 10,
+        "elapsed_seconds": 11.41,
+        "timeout_seconds": 120.0,
+        "registered_tool_calls": 0,
+        "max_identical_tool_calls": 2,
+        "unique_tool_calls": 0
+      },
+      "metadata": {
+        "model": "gemini-3.1-flash-lite",
+        "graph": "agent -> tools -> agent -> finalize"
+      }
+    },
+    {
+      "run_id": "RUN-002",
+      "created_at": "2026-08-16T20:25:45.150059+00:00",
+      "agent_name": "estimation_agent",
+      "agent_type": "plan_execute",
+      "user_input": "Оціни complexity DEM-103: 3 systems, 2 integrations, high NFR criticality, data migration required, security review required, 2 dependencies, partial stability.",
+      "messages": [
+        {
+          "step": 1,
+          "agent_name": "estimation_agent",
+          "message_type": "human",
+          "name": null,
+          "content": "Оціни complexity DEM-103: 3 systems, 2 integrations, high NFR criticality, data migration required, security review required, 2 dependencies, partial stability.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "agent_name": "estimation_agent",
+          "message_type": "ai",
+          "name": null,
+          "content": "Сформований план:\n1. classify_estimation_complexity: initiative_id='DEM-103', systems_count=3, integration_count=2, nfr_complexity='high', data_migration='required', security_review='required', dependency_count=2, requirements_stability='partial'",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "agent_name": "estimation_agent",
+          "message_type": "ai",
+          "name": null,
+          "content": "Крок 1 (classify_estimation_complexity: initiative_id='DEM-103', systems_count=3, integration_count=2, nfr_complexity='high', data_migration='required', security_review='required', dependency_count=2, requirements_stability='partial'): status=completed. Оцінка для ініціативи DEM-103 завершена. Complexity: High, Points: 8. Оцінка базується на високій критичності NFR, наявності міграції даних та вимогах щодо безпеки. Будь ласка, підтвердіть ці дані для подальшого планування.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 4,
+          "agent_name": "estimation_agent",
+          "message_type": "ai",
+          "name": null,
+          "content": "Estimation for initiative DEM-103 is complete. Complexity: High. Points: 8. This assessment reflects the high criticality of NFRs, the complexity of required data migration, necessary security reviews, the number of integrations and dependencies, as well as the partial stability of requirements.",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "user_request": "Оціни complexity DEM-103: 3 systems, 2 integrations, high NFR criticality, data migration required, security review required, 2 dependencies, partial stability.",
+        "goal": "Evaluate the estimation complexity for initiative DEM-103 based on provided system and project parameters.",
+        "plan": [
+          "classify_estimation_complexity: initiative_id='DEM-103', systems_count=3, integration_count=2, nfr_complexity='high', data_migration='required', security_review='required', dependency_count=2, requirements_stability='partial'"
+        ],
+        "current_step": 1,
+        "results": [
+          "Крок 1 (classify_estimation_complexity: initiative_id='DEM-103', systems_count=3, integration_count=2, nfr_complexity='high', data_migration='required', security_review='required', dependency_count=2, requirements_stability='partial'): status=completed. Оцінка для ініціативи DEM-103 завершена. Complexity: High, Points: 8. Оцінка базується на високій критичності NFR, наявності міграції даних та вимогах щодо безпеки. Будь ласка, підтвердіть ці дані для подальшого планування."
+        ],
+        "status": "completed",
+        "completed": true,
+        "final_answer": "Estimation for initiative DEM-103 is complete. Complexity: High. Points: 8. This assessment reflects the high criticality of NFRs, the complexity of required data migration, necessary security reviews, the number of integrations and dependencies, as well as the partial stability of requirements.",
+        "used_tools": [
+          "classify_estimation_complexity"
+        ],
+        "replan_count": 0,
+        "pending_action": null
+      },
+      "safety": {
+        "planned_steps": 1,
+        "executed_steps": 1,
+        "replan_count": 0
+      },
+      "metadata": {
+        "thread_id": "estimation-3e9a342ad19e476bbfcb24ba919f1d1c",
+        "goal": "Evaluate the estimation complexity for initiative DEM-103 based on provided system and project parameters.",
+        "plan": [
+          "classify_estimation_complexity: initiative_id='DEM-103', systems_count=3, integration_count=2, nfr_complexity='high', data_migration='required', security_review='required', dependency_count=2, requirements_stability='partial'"
+        ],
+        "results": [
+          "Крок 1 (classify_estimation_complexity: initiative_id='DEM-103', systems_count=3, integration_count=2, nfr_complexity='high', data_migration='required', security_review='required', dependency_count=2, requirements_stability='partial'): status=completed. Оцінка для ініціативи DEM-103 завершена. Complexity: High, Points: 8. Оцінка базується на високій критичності NFR, наявності міграції даних та вимогах щодо безпеки. Будь ласка, підтвердіть ці дані для подальшого планування."
+        ],
+        "architecture": "Plan-and-Execute"
+      }
+    },
+    {
+      "run_id": "RUN-003",
+      "created_at": "2026-08-16T20:28:57.285477+00:00",
+      "agent_name": "requirements_agent",
+      "agent_type": "multi_agent_system",
+      "user_input": "Перевір requirements readiness DEM-940. Business objective: скоротити demand lead time. Acceptance criteria та NFR ще не визначені.",
+      "messages": [
+        {
+          "step": 1,
+          "agent_name": "requirements_agent",
+          "message_type": "human",
+          "name": null,
+          "content": "Перевір requirements readiness DEM-940. Business objective: скоротити demand lead time. Acceptance criteria та NFR ще не визначені.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "agent_name": "requirements_agent",
+          "message_type": "ai",
+          "name": null,
+          "content": "Ініціатива **DEM-940** наразі не готова до estimation handover. Відповідно до стандартів *Definition of Ready*, рівень готовності становить лише **17%**.\n\n### Аналіз стану готовності:\n*   **Визначено:** Business objective (скорочення demand lead time).\n*   **Відсутні (критичні для handover):**\n    *   Functional requirements\n    *   Non-functional requirements (NFR)\n    *   Acceptance criteria\n    *   Integration scope\n    *   Data requirements\n\n### Виявлені прогалини (Handover Gaps):\nДля успішного переходу до етапу оцінки необхідно усунути наступні блокери:\n1.  **Solution Scope:** Не визначено межі рішення.\n2.  **Dependencies:** Не підтверджено залежності.\n3.  **NFR Review:** Не проведено огляд нефункціональних вимог.\n4.  **Acceptance Criteria:** Критерії приймання не визначені та не є тестованими.\n5.  **Data Governance:** Не підтверджено data owners та не виконано security classification.\n\n**Рекомендація:**\nБудь ласка, опрацюйте відсутні розділи вимог. Як тільки функціональні вимоги, NFR та критерії приймання будуть сформовані, я зможу провести повторну перевірку готовності.",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "final_answer": "Ініціатива **DEM-940** наразі не готова до estimation handover. Відповідно до стандартів *Definition of Ready*, рівень готовності становить лише **17%**.\n\n### Аналіз стану готовності:\n*   **Визначено:** Business objective (скорочення demand lead time).\n*   **Відсутні (критичні для handover):**\n    *   Functional requirements\n    *   Non-functional requirements (NFR)\n    *   Acceptance criteria\n    *   Integration scope\n    *   Data requirements\n\n### Виявлені прогалини (Handover Gaps):\nДля успішного переходу до етапу оцінки необхідно усунути наступні блокери:\n1.  **Solution Scope:** Не визначено межі рішення.\n2.  **Dependencies:** Не підтверджено залежності.\n3.  **NFR Review:** Не проведено огляд нефункціональних вимог.\n4.  **Acceptance Criteria:** Критерії приймання не визначені та не є тестованими.\n5.  **Data Governance:** Не підтверджено data owners та не виконано security classification.\n\n**Рекомендація:**\nБудь ласка, опрацюйте відсутні розділи вимог. Як тільки функціональні вимоги, NFR та критерії приймання будуть сформовані, я зможу провести повторну перевірку готовності.",
+        "completed": true,
+        "blocked": false
+      },
+      "safety": {
+        "blocked": false,
+        "block_reason": null
+      },
+      "metadata": {
+        "thread_id": "trajectory-requirements",
+        "route_reasoning": "Запит стосується перевірки готовності вимог (readiness) та відсутності критеріїв прийняття (acceptance criteria), що входить до компетенції requirements_agent.",
+        "handoff_count": 1,
+        "trajectory_events": [
+          {
+            "agent_name": "input_guardrail",
+            "event": "input_allowed",
+            "details": {
+              "category": "safe"
+            },
+            "timestamp": "2026-08-16T20:28:46.953006+00:00"
+          },
+          {
+            "agent_name": "demand_supervisor",
+            "event": "handoff",
+            "details": {
+              "target_agent": "requirements_agent",
+              "reasoning": "Запит стосується перевірки готовності вимог (readiness) та відсутності критеріїв прийняття (acceptance criteria), що входить до компетенції requirements_agent."
+            },
+            "timestamp": "2026-08-16T20:28:47.912141+00:00"
+          },
+          {
+            "agent_name": "requirements_agent",
+            "event": "agent_completed",
+            "details": {
+              "output_length": 1093
+            },
+            "timestamp": "2026-08-16T20:28:57.277223+00:00"
+          },
+          {
+            "agent_name": "output_guardrail",
+            "event": "output_processed",
+            "details": {
+              "pii_redacted": false
+            },
+            "timestamp": "2026-08-16T20:28:57.279684+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "run_id": "RUN-004",
+      "created_at": "2026-08-16T20:34:22.154551+00:00",
+      "agent_name": "estimation_agent",
+      "agent_type": "plan_execute",
+      "user_input": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request.",
+      "messages": [
+        {
+          "step": 1,
+          "agent_name": "estimation_agent",
+          "message_type": "human",
+          "name": null,
+          "content": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "agent_name": "estimation_agent",
+          "message_type": "ai",
+          "name": null,
+          "content": "Сформований план:\n1. classify_estimation_complexity: initiative_id=DEM-021, systems_count=3, integration_count=2, nfr_complexity=high, data_migration=false, security_review=true, dependency_count=1, requirements_stability=partial",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "agent_name": "estimation_agent",
+          "message_type": "ai",
+          "name": null,
+          "content": "Крок 1 (classify_estimation_complexity: initiative_id=DEM-021, systems_count=3, integration_count=2, nfr_complexity=high, data_migration=false, security_review=true, dependency_count=1, requirements_stability=partial): status=completed. Для ініціативи DEM-021 було визначено складність 'Medium' та 5 Fibonacci points. Драйверами є висока критичність нефункціональних вимог (NFR), необхідність перевірки безпеки, часткова стабільність вимог, наявність 3 систем та 2 інтеграцій. Оцінка потребує підтвердження.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 4,
+          "agent_name": "estimation_agent",
+          "message_type": "ai",
+          "name": null,
+          "content": "Estimation for DEM-021: Complexity is 'Medium', Fibonacci points: 5. Main drivers: High NFR criticality, mandatory security review, partial requirements stability, impact of 3 systems and 2 integrations, and dependency on 1 external component.",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "user_request": "Estimate demand DEM-021. systems_count=3; integration_count=2; nfr_criticality=high; data_migration_required=false; security_review_required=true; dependency_count=1; requirements_stability=partial. Return complexity, Fibonacci points and main drivers. Do not submit the estimation request.",
+        "goal": "Evaluate the complexity and estimate the demand DEM-021 based on provided system parameters without submitting the request.",
+        "plan": [
+          "classify_estimation_complexity: initiative_id=DEM-021, systems_count=3, integration_count=2, nfr_complexity=high, data_migration=false, security_review=true, dependency_count=1, requirements_stability=partial"
+        ],
+        "current_step": 1,
+        "results": [
+          "Крок 1 (classify_estimation_complexity: initiative_id=DEM-021, systems_count=3, integration_count=2, nfr_complexity=high, data_migration=false, security_review=true, dependency_count=1, requirements_stability=partial): status=completed. Для ініціативи DEM-021 було визначено складність 'Medium' та 5 Fibonacci points. Драйверами є висока критичність нефункціональних вимог (NFR), необхідність перевірки безпеки, часткова стабільність вимог, наявність 3 систем та 2 інтеграцій. Оцінка потребує підтвердження."
+        ],
+        "status": "completed",
+        "completed": true,
+        "final_answer": "Estimation for DEM-021: Complexity is 'Medium', Fibonacci points: 5. Main drivers: High NFR criticality, mandatory security review, partial requirements stability, impact of 3 systems and 2 integrations, and dependency on 1 external component.",
+        "used_tools": [
+          "classify_estimation_complexity"
+        ],
+        "replan_count": 0,
+        "pending_action": null
+      },
+      "safety": {
+        "planned_steps": 1,
+        "executed_steps": 1,
+        "replan_count": 0
+      },
+      "metadata": {
+        "thread_id": "estimation-a64f5e653d1d4df2acd8ab5ccd7b723c",
+        "goal": "Evaluate the complexity and estimate the demand DEM-021 based on provided system parameters without submitting the request.",
+        "plan": [
+          "classify_estimation_complexity: initiative_id=DEM-021, systems_count=3, integration_count=2, nfr_complexity=high, data_migration=false, security_review=true, dependency_count=1, requirements_stability=partial"
+        ],
+        "results": [
+          "Крок 1 (classify_estimation_complexity: initiative_id=DEM-021, systems_count=3, integration_count=2, nfr_complexity=high, data_migration=false, security_review=true, dependency_count=1, requirements_stability=partial): status=completed. Для ініціативи DEM-021 було визначено складність 'Medium' та 5 Fibonacci points. Драйверами є висока критичність нефункціональних вимог (NFR), необхідність перевірки безпеки, часткова стабільність вимог, наявність 3 систем та 2 інтеграцій. Оцінка потребує підтвердження."
+        ],
+        "architecture": "Plan-and-Execute"
+      }
+    },
+    {
+      "run_id": "RUN-005",
+      "created_at": "2026-08-16T20:43:24.675223+00:00",
+      "agent_name": "solution_security_agent",
+      "agent_type": "react",
+      "user_input": "For DEM-982, analyse solution and security risks: three systems, two APIs, personal data, high availability, mandatory security review and an unconfirmed data owner.",
+      "messages": [
+        {
+          "step": 1,
+          "agent_name": "solution_security_agent",
+          "message_type": "human",
+          "name": null,
+          "content": "For DEM-982, analyse solution and security risks: three systems, two APIs, personal data, high availability, mandatory security review and an unconfirmed data owner.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "agent_name": "solution_security_agent",
+          "message_type": "ai",
+          "name": null,
+          "content": [],
+          "tool_calls": [
+            {
+              "name": "identify_handover_gaps",
+              "args": {
+                "data_owners_confirmed": false,
+                "known_blockers": [
+                  "Data owner unconfirmed",
+                  "Acceptance criteria not defined/testable",
+                  "Dependencies not confirmed"
+                ],
+                "initiative_id": "DEM-982",
+                "solution_scope_defined": true,
+                "nfr_reviewed": true,
+                "security_classification_completed": true,
+                "acceptance_criteria_testable": false,
+                "dependencies_confirmed": false
+              },
+              "id": "call_2528158",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "agent_name": "solution_security_agent",
+          "message_type": "tool",
+          "name": "identify_handover_gaps",
+          "content": "{\"status\":\"success\",\"data\":{\"initiative_id\":\"DEM-982\",\"can_proceed_to_estimation\":false,\"missing_controls\":[\"dependencies_confirmed\",\"acceptance_criteria_testable\",\"data_owners_confirmed\"],\"known_blockers\":[\"Data owner unconfirmed\",\"Acceptance criteria not defined/testable\",\"Dependencies not confirmed\"],\"gaps_count\":6,\"requires_human_input\":true},\"error\":null}",
+          "tool_calls": [],
+          "tool_call_id": "call_2528158"
+        },
+        {
+          "step": 4,
+          "agent_name": "solution_security_agent",
+          "message_type": "ai",
+          "name": null,
+          "content": [
+            {
+              "type": "text",
+              "text": "Для ініціативи **DEM-982** я проаналізував поточний стан підготовки. На даний момент передача ініціативи на estimation **неможлива** через наявність критичних прогалин.\n\n### Виявлені прогалини (Handover Gaps):\n1.  **Data Owner:** Відсутній підтверджений власник даних (це критично, враховуючи роботу з персональними даними).\n2.  **Acceptance Criteria:** Критерії приймання не визначені або не є тестованими.\n3.  **Dependencies:** Зовнішні залежності не підтверджені.\n\n### Наступні кроки:\nЩоб підготувати ініціативу до оцінки, вам необхідно надати наступну інформацію:\n*   **Data Ownership:** Хто є відповідальним за персональні дані?\n*   **Acceptance Criteria:** Список критеріїв приймання (мають бути чіткими та вимірюваними).\n*   **Dependencies:** Перелік зовнішніх команд/систем, від яких залежить успіх реалізації.\n\n---\n**Попередня оцінка складності (на основі наданих даних):**\n*   **Кількість систем:** 3\n*   **Кількість інтеграцій:** 2\n*   **Ризики:** Високі (персональні дані, висока доступність, обов'язковий security review).\n\n*Примітка: як тільки ви заповните прогалини, я зможу розрахувати Fibonacci points для вашої команди.*",
+              "extras": {
+                "signature": "EnEKbwERTTIPT6zKCgmB6l7H4K34bnb1zrbTpqxrWY44VrlylRz3CZILRXvXOhkw61my5EUdODLV7vi79qMZ1lhTvo1vbIg/B9Vf516gaktd22MFCaW4+HAMvB3kk5hJIjWOXjRfARe2JZxYdPUHPbykmw=="
+              }
+            }
+          ],
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "status": "needs_input",
+        "answer": "Для ініціативи DEM-982 оцінка неможлива через критичні прогалини. Вам необхідно підтвердити Data Owner, визначити тестовані критерії приймання (Acceptance Criteria) та підтвердити залежності між системами. Без цих даних ризики неможливо мінімізувати.",
+        "requires_human_confirmation": true,
+        "used_tools": [
+          "identify_handover_gaps"
+        ],
+        "safety": {
+          "step_count": 4,
+          "max_steps": 10,
+          "elapsed_seconds": 25.547,
+          "timeout_seconds": 120.0,
+          "registered_tool_calls": 1,
+          "max_identical_tool_calls": 2,
+          "unique_tool_calls": 1
+        }
+      },
+      "safety": {
+        "step_count": 4,
+        "max_steps": 10,
+        "elapsed_seconds": 25.547,
+        "timeout_seconds": 120.0,
+        "registered_tool_calls": 1,
+        "max_identical_tool_calls": 2,
+        "unique_tool_calls": 1
+      },
+      "metadata": {
+        "model": "gemini-3.1-flash-lite",
+        "graph": "agent -> tools -> agent -> finalize"
+      }
+    },
+    {
+      "run_id": "RUN-006",
+      "created_at": "2026-08-16T20:44:15.702134+00:00",
+      "agent_name": "estimation_agent",
+      "agent_type": "plan_execute",
+      "user_input": "For DEM-983, estimate complexity and Fibonacci points: three systems, two integrations, high NFR criticality, security review required, one dependency, no migration and partially stable requirements.",
+      "messages": [
+        {
+          "step": 1,
+          "agent_name": "estimation_agent",
+          "message_type": "human",
+          "name": null,
+          "content": "For DEM-983, estimate complexity and Fibonacci points: three systems, two integrations, high NFR criticality, security review required, one dependency, no migration and partially stable requirements.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 2,
+          "agent_name": "estimation_agent",
+          "message_type": "ai",
+          "name": null,
+          "content": "Сформований план:\n1. classify_estimation_complexity: initiative_id=\"DEM-983\", systems_count=3, integration_count=2, nfr_complexity=\"high\", data_migration=false, security_review=true, dependency_count=1, requirements_stability=\"partially stable\"",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 3,
+          "agent_name": "estimation_agent",
+          "message_type": "ai",
+          "name": null,
+          "content": "Крок 1 (classify_estimation_complexity: initiative_id=\"DEM-983\", systems_count=3, integration_count=2, nfr_complexity=\"high\", data_migration=false, security_review=true, dependency_count=1, requirements_stability=\"partially stable\"): status=completed. Для ініціативи DEM-983 визначено рівень складності Medium (5 Fibonacci points). Розрахунок базується на трьох системах, двох інтеграціях та високих вимогах до NFR/безпеки. Будь ласка, підтвердіть ці дані для подальших кроків.",
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "step": 4,
+          "agent_name": "estimation_agent",
+          "message_type": "ai",
+          "name": null,
+          "content": "The complexity for DEM-983 has been assessed as 'Medium' with an estimation of 5 Fibonacci points. This reflects the involvement of three systems, two integrations, high NFR/security criticality, and partially stable requirements.",
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "final_response": {
+        "user_request": "For DEM-983, estimate complexity and Fibonacci points: three systems, two integrations, high NFR criticality, security review required, one dependency, no migration and partially stable requirements.",
+        "goal": "Evaluate the complexity and estimate the effort for project DEM-983.",
+        "plan": [
+          "classify_estimation_complexity: initiative_id=\"DEM-983\", systems_count=3, integration_count=2, nfr_complexity=\"high\", data_migration=false, security_review=true, dependency_count=1, requirements_stability=\"partially stable\""
+        ],
+        "current_step": 1,
+        "results": [
+          "Крок 1 (classify_estimation_complexity: initiative_id=\"DEM-983\", systems_count=3, integration_count=2, nfr_complexity=\"high\", data_migration=false, security_review=true, dependency_count=1, requirements_stability=\"partially stable\"): status=completed. Для ініціативи DEM-983 визначено рівень складності Medium (5 Fibonacci points). Розрахунок базується на трьох системах, двох інтеграціях та високих вимогах до NFR/безпеки. Будь ласка, підтвердіть ці дані для подальших кроків."
+        ],
+        "status": "completed",
+        "completed": true,
+        "final_answer": "The complexity for DEM-983 has been assessed as 'Medium' with an estimation of 5 Fibonacci points. This reflects the involvement of three systems, two integrations, high NFR/security criticality, and partially stable requirements.",
+        "used_tools": [
+          "classify_estimation_complexity"
+        ],
+        "replan_count": 0,
+        "pending_action": null
+      },
+      "safety": {
+        "planned_steps": 1,
+        "executed_steps": 1,
+        "replan_count": 0
+      },
+      "metadata": {
+        "thread_id": "estimation-14b5ae005cad4380a5af81bb121fac69",
+        "goal": "Evaluate the complexity and estimate the effort for project DEM-983.",
+        "plan": [
+          "classify_estimation_complexity: initiative_id=\"DEM-983\", systems_count=3, integration_count=2, nfr_complexity=\"high\", data_migration=false, security_review=true, dependency_count=1, requirements_stability=\"partially stable\""
+        ],
+        "results": [
+          "Крок 1 (classify_estimation_complexity: initiative_id=\"DEM-983\", systems_count=3, integration_count=2, nfr_complexity=\"high\", data_migration=false, security_review=true, dependency_count=1, requirements_stability=\"partially stable\"): status=completed. Для ініціативи DEM-983 визначено рівень складності Medium (5 Fibonacci points). Розрахунок базується на трьох системах, двох інтеграціях та високих вимогах до NFR/безпеки. Будь ласка, підтвердіть ці дані для подальших кроків."
+        ],
+        "architecture": "Plan-and-Execute"
+      }
+    }
+  ]
+}

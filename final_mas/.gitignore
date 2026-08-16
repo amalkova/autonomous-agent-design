@@ -1,0 +1,16 @@
+.venv/
+.env
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.DS_Store
+*.tmp
+submitted_estimation_requests.json
+
+# Runtime SQLite files ігноруються, крім демонстраційного state.
+*.db
+!agent_state.db
